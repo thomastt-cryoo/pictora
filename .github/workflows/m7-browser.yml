@@ -1,0 +1,84 @@
+name: M7 offline browser verification
+on:
+  push:
+    branches: [codex/m7-browser-compatibility]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  chromium:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, macos-15]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install QA tools
+        shell: bash
+        run: |
+          npm install --prefix .build-tools/m7 --no-audit --no-fund playwright@1.62.1
+          python3 -m pip install --user --break-system-packages Pillow
+          echo "PICTORA_PLAYWRIGHT_PATH=$GITHUB_WORKSPACE/.build-tools/m7/node_modules/playwright" >> "$GITHUB_ENV"
+      - name: Install actual Chrome and Edge
+        shell: bash
+        run: |
+          node .build-tools/m7/node_modules/playwright/cli.js install chrome msedge
+      - name: Offline cold start and reopen
+        run: node research/m7/scripts/cold-launch.mjs
+      - name: Chrome features
+        env:
+          PICTORA_BROWSER: chrome
+        run: node research/m7/scripts/customer-workflows.mjs
+      - name: Edge features
+        if: ${{ !cancelled() }}
+        env:
+          PICTORA_BROWSER: edge
+        run: node research/m7/scripts/customer-workflows.mjs
+      - name: Settings, drop handler, zoom and transfers
+        if: ${{ !cancelled() }}
+        run: node research/m7/scripts/settings-check.mjs
+      - name: Inspect exported files
+        if: ${{ !cancelled() }}
+        run: python3 research/m7/scripts/compare-exports.py
+      - name: Runner identity and process memory
+        if: ${{ always() }}
+        shell: bash
+        run: |
+          uname -a > research/m7/logs/runner.txt
+          if [ "$RUNNER_OS" = macOS ]; then sw_vers >> research/m7/logs/runner.txt; ps -axo pid,rss,comm > research/m7/logs/process-memory.txt; fi
+      - uses: actions/upload-artifact@v4
+        if: ${{ always() }}
+        with:
+          name: m7-${{ runner.os }}-${{ runner.arch }}
+          path: |
+            research/m7/logs/
+            research/m7/screenshots/
+            research/m7/outputs/
+          retention-days: 30
+  safari:
+    runs-on: macos-15
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install selenium==4.34.0
+      - name: Enable Safari WebDriver automation
+        run: sudo safaridriver --enable
+      - name: Actual Safari local-file investigation
+        run: python research/m7/scripts/safari-check.py
+      - uses: actions/upload-artifact@v4
+        if: ${{ always() }}
+        with:
+          name: m7-Safari-macOS
+          path: |
+            research/m7/logs/safari.json
+            research/m7/screenshots/safari*.png
+            research/m7/outputs/safari/
+          retention-days: 30

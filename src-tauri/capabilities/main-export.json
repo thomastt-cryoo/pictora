@@ -1,0 +1,6 @@
+{
+  "identifier": "main-export",
+  "description": "The local main window can request a customer-approved SVG/PNG save.",
+  "windows": ["main"],
+  "permissions": ["allow-save-export"]
+}

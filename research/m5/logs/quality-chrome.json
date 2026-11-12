@@ -1,0 +1,2241 @@
+{
+  "browser": "chrome",
+  "version": "151.0.7922.72",
+  "environment": "Built production app, real installed browser decode + original worker. Color-count/region changes precede upload. Runtime has no test-fixture web dependency.",
+  "results": [
+    {
+      "id": "portrait-default",
+      "status": "PASS",
+      "category": "Human portrait",
+      "inputFile": "research/m4/fixtures/portrait.jpg",
+      "inputDimensions": [
+        2615,
+        3269
+      ],
+      "settings": {
+        "workingResolution": 1000,
+        "smoothing": 40,
+        "minShapeSize": 80,
+        "connectivity": 4
+      },
+      "requestedColors": 12,
+      "palette": [
+        {
+          "number": 1,
+          "r": 200,
+          "g": 204,
+          "b": 204
+        },
+        {
+          "number": 2,
+          "r": 218,
+          "g": 172,
+          "b": 152
+        },
+        {
+          "number": 3,
+          "r": 161,
+          "g": 165,
+          "b": 165
+        },
+        {
+          "number": 4,
+          "r": 240,
+          "g": 110,
+          "b": 72
+        },
+        {
+          "number": 5,
+          "r": 160,
+          "g": 124,
+          "b": 106
+        },
+        {
+          "number": 6,
+          "r": 201,
+          "g": 77,
+          "b": 41
+        },
+        {
+          "number": 7,
+          "r": 85,
+          "g": 91,
+          "b": 92
+        },
+        {
+          "number": 8,
+          "r": 120,
+          "g": 79,
+          "b": 54
+        },
+        {
+          "number": 9,
+          "r": 130,
+          "g": 40,
+          "b": 18
+        },
+        {
+          "number": 10,
+          "r": 25,
+          "g": 36,
+          "b": 76
+        },
+        {
+          "number": 11,
+          "r": 61,
+          "g": 27,
+          "b": 16
+        },
+        {
+          "number": 12,
+          "r": 9,
+          "g": 7,
+          "b": 7
+        }
+      ],
+      "regions": 310,
+      "renderedLabels": 283,
+      "workingDimensions": [
+        800,
+        1000
+      ],
+      "dimensions": [
+        1600,
+        2000
+      ],
+      "modelSha256": "c77584bdce36e8efe074a130c331a17da71d0e4c1d844334409681abc882e1a9",
+      "svgSha256": "d29d76f5206162326cddb297eb2ab9588f3174a89c2586a9a7b3c5bdf314e603",
+      "xml": {
+        "valid": true,
+        "width": 1600,
+        "height": 2000,
+        "viewBox": "0 0 800 1000",
+        "paths": 310,
+        "texts": 283,
+        "forbidden": 0,
+        "external": false
+      },
+      "elapsedMs": 8399.7922
+    },
+    {
+      "id": "portrait-reduced",
+      "status": "PASS",
+      "category": "Human portrait",
+      "inputFile": "research/m4/fixtures/portrait.jpg",
+      "inputDimensions": [
+        2615,
+        3269
+      ],
+      "settings": {
+        "workingResolution": 700,
+        "smoothing": 70,
+        "minShapeSize": 160,
+        "connectivity": 8
+      },
+      "requestedColors": 6,
+      "palette": [
+        {
+          "number": 1,
+          "r": 195,
+          "g": 198,
+          "b": 197
+        },
+        {
+          "number": 2,
+          "r": 159,
+          "g": 151,
+          "b": 146
+        },
+        {
+          "number": 3,
+          "r": 225,
+          "g": 98,
+          "b": 61
+        },
+        {
+          "number": 4,
+          "r": 85,
+          "g": 72,
+          "b": 64
+        },
+        {
+          "number": 5,
+          "r": 131,
+          "g": 44,
+          "b": 21
+        },
+        {
+          "number": 6,
+          "r": 12,
+          "g": 10,
+          "b": 13
+        }
+      ],
+      "regions": 83,
+      "renderedLabels": 83,
+      "workingDimensions": [
+        560,
+        700
+      ],
+      "dimensions": [
+        1600,
+        2000
+      ],
+      "modelSha256": "8df12263999bec10b762c8ec966040899c2eb820ddedf216ac161c5f5bb10eff",
+      "svgSha256": "e8b2b55a6fc5e615f3b34a03b454036cf9cfca625aca6555701132beb2f7f2f0",
+      "xml": {
+        "valid": true,
+        "width": 1600,
+        "height": 2000,
+        "viewBox": "0 0 560 700",
+        "paths": 83,
+        "texts": 83,
+        "forbidden": 0,
+        "external": false
+      },
+      "elapsedMs": 5614.3584999999985
+    },
+    {
+      "id": "landscape-default",
+      "status": "PASS",
+      "category": "Landscape photograph",
+      "inputFile": "research/m4/fixtures/landscape.png",
+      "inputDimensions": [
+        1800,
+        809
+      ],
+      "settings": {
+        "workingResolution": 1000,
+        "smoothing": 40,
+        "minShapeSize": 80,
+        "connectivity": 4
+      },
+      "requestedColors": 12,
+      "palette": [
+        {
+          "number": 1,
+          "r": 192,
+          "g": 195,
+          "b": 198
+        },
+        {
+          "number": 2,
+          "r": 155,
+          "g": 168,
+          "b": 180
+        },
+        {
+          "number": 3,
+          "r": 118,
+          "g": 164,
+          "b": 191
+        },
+        {
+          "number": 4,
+          "r": 78,
+          "g": 146,
+          "b": 191
+        },
+        {
+          "number": 5,
+          "r": 105,
+          "g": 137,
+          "b": 107
+        },
+        {
+          "number": 6,
+          "r": 102,
+          "g": 125,
+          "b": 139
+        },
+        {
+          "number": 7,
+          "r": 90,
+          "g": 119,
+          "b": 112
+        },
+        {
+          "number": 8,
+          "r": 56,
+          "g": 97,
+          "b": 125
+        },
+        {
+          "number": 9,
+          "r": 57,
+          "g": 97,
+          "b": 108
+        },
+        {
+          "number": 10,
+          "r": 36,
+          "g": 82,
+          "b": 120
+        },
+        {
+          "number": 11,
+          "r": 38,
+          "g": 80,
+          "b": 104
+        },
+        {
+          "number": 12,
+          "r": 19,
+          "g": 64,
+          "b": 105
+        }
+      ],
+      "regions": 338,
+      "renderedLabels": 323,
+      "workingDimensions": [
+        1000,
+        449
+      ],
+      "dimensions": [
+        1600,
+        718
+      ],
+      "modelSha256": "2fd6afcf7580ba63bb979375ca3f5a4316edfddb69002f3660385bf1e5389dad",
+      "svgSha256": "836a7611c618f4858be9bcefbd1c93f1b62cf8b5715f19af80e5bd2155ddc8b5",
+      "xml": {
+        "valid": true,
+        "width": 1600,
+        "height": 718,
+        "viewBox": "0 0 1000 449",
+        "paths": 338,
+        "texts": 323,
+        "forbidden": 0,
+        "external": false
+      },
+      "elapsedMs": 6912.354699999998
+    },
+    {
+      "id": "landscape-reduced",
+      "status": "PASS",
+      "category": "Landscape photograph",
+      "inputFile": "research/m4/fixtures/landscape.png",
+      "inputDimensions": [
+        1800,
+        809
+      ],
+      "settings": {
+        "workingResolution": 700,
+        "smoothing": 70,
+        "minShapeSize": 160,
+        "connectivity": 8
+      },
+      "requestedColors": 6,
+      "palette": [
+        {
+          "number": 1,
+          "r": 164,
+          "g": 177,
+          "b": 187
+        },
+        {
+          "number": 2,
+          "r": 91,
+          "g": 151,
+          "b": 190
+        },
+        {
+          "number": 3,
+          "r": 100,
+          "g": 129,
+          "b": 111
+        },
+        {
+          "number": 4,
+          "r": 61,
+          "g": 99,
+          "b": 111
+        },
+        {
+          "number": 5,
+          "r": 42,
+          "g": 85,
+          "b": 114
+        },
+        {
+          "number": 6,
+          "r": 25,
+          "g": 70,
+          "b": 111
+        }
+      ],
+      "regions": 50,
+      "renderedLabels": 50,
+      "workingDimensions": [
+        700,
+        315
+      ],
+      "dimensions": [
+        1600,
+        720
+      ],
+      "modelSha256": "c797e359faef4eb59797f61bd40864f09957ed1782d91fff636b27957c890fb9",
+      "svgSha256": "81b4ddf068f85607ea06fb32b4410edaa77eb238afc1aecfd766818d375d74df",
+      "xml": {
+        "valid": true,
+        "width": 1600,
+        "height": 720,
+        "viewBox": "0 0 700 315",
+        "paths": 50,
+        "texts": 50,
+        "forbidden": 0,
+        "external": false
+      },
+      "elapsedMs": 5047.379699999998
+    },
+    {
+      "id": "animal-default",
+      "status": "PASS",
+      "category": "Pet photograph",
+      "inputFile": "research/m4/fixtures/animal.jpg",
+      "inputDimensions": [
+        1795,
+        2397
+      ],
+      "settings": {
+        "workingResolution": 1000,
+        "smoothing": 40,
+        "minShapeSize": 80,
+        "connectivity": 4
+      },
+      "requestedColors": 12,
+      "palette": [
+        {
+          "number": 1,
+          "r": 235,
+          "g": 233,
+          "b": 232
+        },
+        {
+          "number": 2,
+          "r": 194,
+          "g": 200,
+          "b": 210
+        },
+        {
+          "number": 3,
+          "r": 212,
+          "g": 196,
+          "b": 180
+        },
+        {
+          "number": 4,
+          "r": 175,
+          "g": 180,
+          "b": 189
+        },
+        {
+          "number": 5,
+          "r": 195,
+          "g": 170,
+          "b": 138
+        },
+        {
+          "number": 6,
+          "r": 151,
+          "g": 151,
+          "b": 154
+        },
+        {
+          "number": 7,
+          "r": 170,
+          "g": 137,
+          "b": 100
+        },
+        {
+          "number": 8,
+          "r": 140,
+          "g": 101,
+          "b": 66
+        },
+        {
+          "number": 9,
+          "r": 114,
+          "g": 98,
+          "b": 83
+        },
+        {
+          "number": 10,
+          "r": 96,
+          "g": 64,
+          "b": 38
+        },
+        {
+          "number": 11,
+          "r": 62,
+          "g": 46,
+          "b": 32
+        },
+        {
+          "number": 12,
+          "r": 29,
+          "g": 21,
+          "b": 15
+        }
+      ],
+      "regions": 365,
+      "renderedLabels": 364,
+      "workingDimensions": [
+        749,
+        1000
+      ],
+      "dimensions": [
+        1600,
+        2136
+      ],
+      "modelSha256": "e073966c36da6e5beb80a9a61f3f923d21acab8c0c45511c1a3872217be4c3fa",
+      "svgSha256": "dd12b16d4de602aaa007e5d67921645e9b2de43cda52789c03fc9babc1d5b5a0",
+      "xml": {
+        "valid": true,
+        "width": 1600,
+        "height": 2136,
+        "viewBox": "0 0 749 1000",
+        "paths": 365,
+        "texts": 364,
+        "forbidden": 0,
+        "external": false
+      },
+      "elapsedMs": 6711.912400000001
+    },
+    {
+      "id": "animal-reduced",
+      "status": "PASS",
+      "category": "Pet photograph",
+      "inputFile": "research/m4/fixtures/animal.jpg",
+      "inputDimensions": [
+        1795,
+        2397
+      ],
+      "settings": {
+        "workingResolution": 700,
+        "smoothing": 70,
+        "minShapeSize": 160,
+        "connectivity": 8
+      },
+      "requestedColors": 6,
+      "palette": [
+        {
+          "number": 1,
+          "r": 228,
+          "g": 224,
+          "b": 221
+        },
+        {
+          "number": 2,
+          "r": 184,
+          "g": 189,
+          "b": 198
+        },
+        {
+          "number": 3,
+          "r": 184,
+          "g": 155,
+          "b": 121
+        },
+        {
+          "number": 4,
+          "r": 129,
+          "g": 119,
+          "b": 111
+        },
+        {
+          "number": 5,
+          "r": 117,
+          "g": 84,
+          "b": 55
+        },
+        {
+          "number": 6,
+          "r": 49,
+          "g": 35,
+          "b": 25
+        }
+      ],
+      "regions": 54,
+      "renderedLabels": 54,
+      "workingDimensions": [
+        524,
+        700
+      ],
+      "dimensions": [
+        1600,
+        2137
+      ],
+      "modelSha256": "f2eb43c11cebf1db94ef3366bc54f93219744c43545d77f843d0807f84a5059d",
+      "svgSha256": "ce074f52df7c60d375262891b840bb7d76d01a2d7bbd011c01e0555ba416f5ba",
+      "xml": {
+        "valid": true,
+        "width": 1600,
+        "height": 2137,
+        "viewBox": "0 0 524 700",
+        "paths": 54,
+        "texts": 54,
+        "forbidden": 0,
+        "external": false
+      },
+      "elapsedMs": 5510.612399999998
+    },
+    {
+      "id": "botanical-default",
+      "status": "PASS",
+      "category": "Flower photograph",
+      "inputFile": "research/m4/fixtures/botanical.jpg",
+      "inputDimensions": [
+        2434,
+        1697
+      ],
+      "settings": {
+        "workingResolution": 1000,
+        "smoothing": 40,
+        "minShapeSize": 80,
+        "connectivity": 4
+      },
+      "requestedColors": 12,
+      "palette": [
+        {
+          "number": 1,
+          "r": 247,
+          "g": 233,
+          "b": 30
+        },
+        {
+          "number": 2,
+          "r": 223,
+          "g": 192,
+          "b": 17
+        },
+        {
+          "number": 3,
+          "r": 195,
+          "g": 149,
+          "b": 8
+        },
+        {
+          "number": 4,
+          "r": 153,
+          "g": 122,
+          "b": 17
+        },
+        {
+          "number": 5,
+          "r": 167,
+          "g": 111,
+          "b": 3
+        },
+        {
+          "number": 6,
+          "r": 92,
+          "g": 110,
+          "b": 132
+        },
+        {
+          "number": 7,
+          "r": 49,
+          "g": 98,
+          "b": 182
+        },
+        {
+          "number": 8,
+          "r": 52,
+          "g": 94,
+          "b": 170
+        },
+        {
+          "number": 9,
+          "r": 41,
+          "g": 87,
+          "b": 171
+        },
+        {
+          "number": 10,
+          "r": 115,
+          "g": 75,
+          "b": 8
+        },
+        {
+          "number": 11,
+          "r": 71,
+          "g": 77,
+          "b": 43
+        },
+        {
+          "number": 12,
+          "r": 64,
+          "g": 33,
+          "b": 3
+        }
+      ],
+      "regions": 219,
+      "renderedLabels": 180,
+      "workingDimensions": [
+        1000,
+        697
+      ],
+      "dimensions": [
+        1600,
+        1115
+      ],
+      "modelSha256": "4c958694ad88fb02f8472037d0aac2d34256e7dc1338d6a20f83904c746fd6d1",
+      "svgSha256": "481f7a41ceea9a9ad10c6d0b675c6508f2351c7ce88f6d59e1229d517e709ecb",
+      "xml": {
+        "valid": true,
+        "width": 1600,
+        "height": 1115,
+        "viewBox": "0 0 1000 697",
+        "paths": 219,
+        "texts": 180,
+        "forbidden": 0,
+        "external": false
+      },
+      "elapsedMs": 7528.486299999997
+    },
+    {
+      "id": "botanical-reduced",
+      "status": "PASS",
+      "category": "Flower photograph",
+      "inputFile": "research/m4/fixtures/botanical.jpg",
+      "inputDimensions": [
+        2434,
+        1697
+      ],
+      "settings": {
+        "workingResolution": 700,
+        "smoothing": 70,
+        "minShapeSize": 160,
+        "connectivity": 8
+      },
+      "requestedColors": 6,
+      "palette": [
+        {
+          "number": 1,
+          "r": 244,
+          "g": 227,
+          "b": 27
+        },
+        {
+          "number": 2,
+          "r": 211,
+          "g": 174,
+          "b": 15
+        },
+        {
+          "number": 3,
+          "r": 180,
+          "g": 133,
+          "b": 7
+        },
+        {
+          "number": 4,
+          "r": 135,
+          "g": 95,
+          "b": 11
+        },
+        {
+          "number": 5,
+          "r": 46,
+          "g": 92,
+          "b": 175
+        },
+        {
+          "number": 6,
+          "r": 69,
+          "g": 45,
+          "b": 12
+        }
+      ],
+      "regions": 38,
+      "renderedLabels": 38,
+      "workingDimensions": [
+        700,
+        488
+      ],
+      "dimensions": [
+        1600,
+        1115
+      ],
+      "modelSha256": "6d22c24ac4c5ab531d773dc54b1940abeee1ad005d41b57ecb28e187a7988edb",
+      "svgSha256": "a1008ec36d0b3546887ff3b1c8ab685e92537378302f152fd0c3c36f3ac2586c",
+      "xml": {
+        "valid": true,
+        "width": 1600,
+        "height": 1115,
+        "viewBox": "0 0 700 488",
+        "paths": 38,
+        "texts": 38,
+        "forbidden": 0,
+        "external": false
+      },
+      "elapsedMs": 5745.918599999997
+    },
+    {
+      "id": "illustration-default",
+      "status": "PASS",
+      "category": "Illustration/cartoon",
+      "inputFile": "research/m4/fixtures/illustration.png",
+      "inputDimensions": [
+        480,
+        480
+      ],
+      "settings": {
+        "workingResolution": 1000,
+        "smoothing": 40,
+        "minShapeSize": 80,
+        "connectivity": 4
+      },
+      "requestedColors": 12,
+      "palette": [
+        {
+          "number": 1,
+          "r": 246,
+          "g": 240,
+          "b": 214
+        },
+        {
+          "number": 2,
+          "r": 232,
+          "g": 240,
+          "b": 244
+        },
+        {
+          "number": 3,
+          "r": 244,
+          "g": 198,
+          "b": 71
+        },
+        {
+          "number": 4,
+          "r": 143,
+          "g": 184,
+          "b": 135
+        },
+        {
+          "number": 5,
+          "r": 201,
+          "g": 141,
+          "b": 86
+        },
+        {
+          "number": 6,
+          "r": 177,
+          "g": 108,
+          "b": 62
+        },
+        {
+          "number": 7,
+          "r": 121,
+          "g": 63,
+          "b": 61
+        },
+        {
+          "number": 8,
+          "r": 82,
+          "g": 58,
+          "b": 50
+        },
+        {
+          "number": 9,
+          "r": 42,
+          "g": 62,
+          "b": 71
+        }
+      ],
+      "regions": 16,
+      "renderedLabels": 14,
+      "workingDimensions": [
+        480,
+        480
+      ],
+      "dimensions": [
+        1600,
+        1600
+      ],
+      "modelSha256": "4fa4031441efe7629e149cb7c6e0f59c0d69b6e0ffe106f6e801e479fbebfccb",
+      "svgSha256": "82427876fbddfa35fc29ab5c7b86626c7ca122c86232a800f82694f090cb11d8",
+      "xml": {
+        "valid": true,
+        "width": 1600,
+        "height": 1600,
+        "viewBox": "0 0 480 480",
+        "paths": 16,
+        "texts": 14,
+        "forbidden": 0,
+        "external": false
+      },
+      "elapsedMs": 4514.245999999999
+    },
+    {
+      "id": "illustration-reduced",
+      "status": "PASS",
+      "category": "Illustration/cartoon",
+      "inputFile": "research/m4/fixtures/illustration.png",
+      "inputDimensions": [
+        480,
+        480
+      ],
+      "settings": {
+        "workingResolution": 700,
+        "smoothing": 70,
+        "minShapeSize": 160,
+        "connectivity": 8
+      },
+      "requestedColors": 6,
+      "palette": [
+        {
+          "number": 1,
+          "r": 233,
+          "g": 240,
+          "b": 243
+        },
+        {
+          "number": 2,
+          "r": 244,
+          "g": 198,
+          "b": 71
+        },
+        {
+          "number": 3,
+          "r": 143,
+          "g": 184,
+          "b": 135
+        },
+        {
+          "number": 4,
+          "r": 201,
+          "g": 141,
+          "b": 86
+        },
+        {
+          "number": 5,
+          "r": 177,
+          "g": 108,
+          "b": 62
+        },
+        {
+          "number": 6,
+          "r": 73,
+          "g": 61,
+          "b": 64
+        }
+      ],
+      "regions": 15,
+      "renderedLabels": 15,
+      "workingDimensions": [
+        480,
+        480
+      ],
+      "dimensions": [
+        1600,
+        1600
+      ],
+      "modelSha256": "bd60167a944d87183ce05dae25cd7ad92a58868d439173b824bb7fca3fe0bf57",
+      "svgSha256": "b99ff506e34b763b560c7d50572c84912e915f54b697b954692f310d9fbe00f0",
+      "xml": {
+        "valid": true,
+        "width": 1600,
+        "height": 1600,
+        "viewBox": "0 0 480 480",
+        "paths": 15,
+        "texts": 15,
+        "forbidden": 0,
+        "external": false
+      },
+      "elapsedMs": 4395.884699999995
+    },
+    {
+      "id": "high-contrast-default",
+      "status": "PASS",
+      "category": "High-contrast photo derivative",
+      "inputFile": "research/m4/fixtures/high-contrast.png",
+      "inputDimensions": [
+        960,
+        1200
+      ],
+      "settings": {
+        "workingResolution": 1000,
+        "smoothing": 40,
+        "minShapeSize": 80,
+        "connectivity": 4
+      },
+      "requestedColors": 12,
+      "palette": [
+        {
+          "number": 1,
+          "r": 254,
+          "g": 254,
+          "b": 254
+        },
+        {
+          "number": 2,
+          "r": 233,
+          "g": 233,
+          "b": 233
+        },
+        {
+          "number": 3,
+          "r": 212,
+          "g": 212,
+          "b": 212
+        },
+        {
+          "number": 4,
+          "r": 191,
+          "g": 191,
+          "b": 191
+        },
+        {
+          "number": 5,
+          "r": 169,
+          "g": 169,
+          "b": 169
+        },
+        {
+          "number": 6,
+          "r": 150,
+          "g": 150,
+          "b": 150
+        },
+        {
+          "number": 7,
+          "r": 130,
+          "g": 130,
+          "b": 130
+        },
+        {
+          "number": 8,
+          "r": 110,
+          "g": 110,
+          "b": 110
+        },
+        {
+          "number": 9,
+          "r": 90,
+          "g": 90,
+          "b": 90
+        },
+        {
+          "number": 10,
+          "r": 64,
+          "g": 64,
+          "b": 64
+        },
+        {
+          "number": 11,
+          "r": 37,
+          "g": 37,
+          "b": 37
+        },
+        {
+          "number": 12,
+          "r": 1,
+          "g": 1,
+          "b": 1
+        }
+      ],
+      "regions": 3387,
+      "renderedLabels": 559,
+      "workingDimensions": [
+        800,
+        1000
+      ],
+      "dimensions": [
+        1600,
+        2000
+      ],
+      "modelSha256": "1b91b5a827eaa92a10fcacbebd305c42d6b7c997b530ac1fb1ffaf445e606bc6",
+      "svgSha256": "e2eac9d926efd04d058109aa7d84b5bba9c9d1aa7621fb9774885c349abfec33",
+      "xml": {
+        "valid": true,
+        "width": 1600,
+        "height": 2000,
+        "viewBox": "0 0 800 1000",
+        "paths": 3387,
+        "texts": 559,
+        "forbidden": 0,
+        "external": false
+      },
+      "elapsedMs": 9635.715300000003
+    },
+    {
+      "id": "high-contrast-reduced",
+      "status": "PASS",
+      "category": "High-contrast photo derivative",
+      "inputFile": "research/m4/fixtures/high-contrast.png",
+      "inputDimensions": [
+        960,
+        1200
+      ],
+      "settings": {
+        "workingResolution": 700,
+        "smoothing": 70,
+        "minShapeSize": 160,
+        "connectivity": 8
+      },
+      "requestedColors": 6,
+      "palette": [
+        {
+          "number": 1,
+          "r": 251,
+          "g": 251,
+          "b": 251
+        },
+        {
+          "number": 2,
+          "r": 203,
+          "g": 203,
+          "b": 203
+        },
+        {
+          "number": 3,
+          "r": 155,
+          "g": 155,
+          "b": 155
+        },
+        {
+          "number": 4,
+          "r": 107,
+          "g": 107,
+          "b": 107
+        },
+        {
+          "number": 5,
+          "r": 57,
+          "g": 57,
+          "b": 57
+        },
+        {
+          "number": 6,
+          "r": 2,
+          "g": 2,
+          "b": 2
+        }
+      ],
+      "regions": 102,
+      "renderedLabels": 100,
+      "workingDimensions": [
+        560,
+        700
+      ],
+      "dimensions": [
+        1600,
+        2000
+      ],
+      "modelSha256": "dd7f4b612a4aaad5e3572ad7e50c682568803f482dab9e2d4b782e7a368d420e",
+      "svgSha256": "53cbb5a848c95ff4f106e386a9f5d667b7673f0307397a004cf8562d5005a0df",
+      "xml": {
+        "valid": true,
+        "width": 1600,
+        "height": 2000,
+        "viewBox": "0 0 560 700",
+        "paths": 102,
+        "texts": 100,
+        "forbidden": 0,
+        "external": false
+      },
+      "elapsedMs": 5804.9185
+    },
+    {
+      "id": "low-contrast-default",
+      "status": "PASS",
+      "category": "Low-contrast photo derivative",
+      "inputFile": "research/m4/fixtures/low-contrast.png",
+      "inputDimensions": [
+        1800,
+        809
+      ],
+      "settings": {
+        "workingResolution": 1000,
+        "smoothing": 40,
+        "minShapeSize": 80,
+        "connectivity": 4
+      },
+      "requestedColors": 12,
+      "palette": [
+        {
+          "number": 1,
+          "r": 122,
+          "g": 123,
+          "b": 124
+        },
+        {
+          "number": 2,
+          "r": 116,
+          "g": 118,
+          "b": 120
+        },
+        {
+          "number": 3,
+          "r": 109,
+          "g": 118,
+          "b": 122
+        },
+        {
+          "number": 4,
+          "r": 102,
+          "g": 114,
+          "b": 123
+        },
+        {
+          "number": 5,
+          "r": 107,
+          "g": 112,
+          "b": 107
+        },
+        {
+          "number": 6,
+          "r": 105,
+          "g": 110,
+          "b": 109
+        },
+        {
+          "number": 7,
+          "r": 103,
+          "g": 109,
+          "b": 115
+        },
+        {
+          "number": 8,
+          "r": 99,
+          "g": 106,
+          "b": 108
+        },
+        {
+          "number": 9,
+          "r": 96,
+          "g": 104,
+          "b": 108
+        },
+        {
+          "number": 10,
+          "r": 95,
+          "g": 103,
+          "b": 110
+        },
+        {
+          "number": 11,
+          "r": 93,
+          "g": 101,
+          "b": 106
+        },
+        {
+          "number": 12,
+          "r": 91,
+          "g": 99,
+          "b": 107
+        }
+      ],
+      "regions": 412,
+      "renderedLabels": 340,
+      "workingDimensions": [
+        1000,
+        449
+      ],
+      "dimensions": [
+        1600,
+        718
+      ],
+      "modelSha256": "661c31603fc91a37ce09ce99ec355447987403c05054cbf0d58d1addd9a9e111",
+      "svgSha256": "bcfa06c476686b0b693951b5aa2ce67bf85baf15e5331f2c7f4a8230cc2493c4",
+      "xml": {
+        "valid": true,
+        "width": 1600,
+        "height": 718,
+        "viewBox": "0 0 1000 449",
+        "paths": 412,
+        "texts": 340,
+        "forbidden": 0,
+        "external": false
+      },
+      "elapsedMs": 6990.953800000003
+    },
+    {
+      "id": "low-contrast-reduced",
+      "status": "PASS",
+      "category": "Low-contrast photo derivative",
+      "inputFile": "research/m4/fixtures/low-contrast.png",
+      "inputDimensions": [
+        1800,
+        809
+      ],
+      "settings": {
+        "workingResolution": 700,
+        "smoothing": 70,
+        "minShapeSize": 160,
+        "connectivity": 8
+      },
+      "requestedColors": 6,
+      "palette": [
+        {
+          "number": 1,
+          "r": 120,
+          "g": 121,
+          "b": 122
+        },
+        {
+          "number": 2,
+          "r": 111,
+          "g": 117,
+          "b": 121
+        },
+        {
+          "number": 3,
+          "r": 103,
+          "g": 114,
+          "b": 122
+        },
+        {
+          "number": 4,
+          "r": 106,
+          "g": 111,
+          "b": 108
+        },
+        {
+          "number": 5,
+          "r": 98,
+          "g": 105,
+          "b": 108
+        },
+        {
+          "number": 6,
+          "r": 93,
+          "g": 101,
+          "b": 108
+        }
+      ],
+      "regions": 51,
+      "renderedLabels": 51,
+      "workingDimensions": [
+        700,
+        315
+      ],
+      "dimensions": [
+        1600,
+        720
+      ],
+      "modelSha256": "b73db216ee6cb31b067630ca6aa8a1ca6a7136b7b290da352c74886db171dfd1",
+      "svgSha256": "34e6f94651601ef444f9f84ec709f8e5430c877cd9e071cca4a1000eec6b30c1",
+      "xml": {
+        "valid": true,
+        "width": 1600,
+        "height": 720,
+        "viewBox": "0 0 700 315",
+        "paths": 51,
+        "texts": 51,
+        "forbidden": 0,
+        "external": false
+      },
+      "elapsedMs": 5220.390700000004
+    },
+    {
+      "id": "multicolor-default",
+      "status": "PASS",
+      "category": "Complex multicolor photograph",
+      "inputFile": "research/m4/fixtures/botanical.jpg",
+      "inputDimensions": [
+        2434,
+        1697
+      ],
+      "settings": {
+        "workingResolution": 1000,
+        "smoothing": 40,
+        "minShapeSize": 80,
+        "connectivity": 4
+      },
+      "requestedColors": 24,
+      "palette": [
+        {
+          "number": 1,
+          "r": 252,
+          "g": 246,
+          "b": 29
+        },
+        {
+          "number": 2,
+          "r": 246,
+          "g": 228,
+          "b": 33
+        },
+        {
+          "number": 3,
+          "r": 233,
+          "g": 205,
+          "b": 17
+        },
+        {
+          "number": 4,
+          "r": 182,
+          "g": 195,
+          "b": 186
+        },
+        {
+          "number": 5,
+          "r": 217,
+          "g": 182,
+          "b": 11
+        },
+        {
+          "number": 6,
+          "r": 194,
+          "g": 171,
+          "b": 43
+        },
+        {
+          "number": 7,
+          "r": 204,
+          "g": 157,
+          "b": 6
+        },
+        {
+          "number": 8,
+          "r": 194,
+          "g": 137,
+          "b": 4
+        },
+        {
+          "number": 9,
+          "r": 172,
+          "g": 136,
+          "b": 7
+        },
+        {
+          "number": 10,
+          "r": 173,
+          "g": 115,
+          "b": 4
+        },
+        {
+          "number": 11,
+          "r": 149,
+          "g": 116,
+          "b": 16
+        },
+        {
+          "number": 12,
+          "r": 115,
+          "g": 114,
+          "b": 78
+        },
+        {
+          "number": 13,
+          "r": 142,
+          "g": 92,
+          "b": 4
+        },
+        {
+          "number": 14,
+          "r": 69,
+          "g": 100,
+          "b": 159
+        },
+        {
+          "number": 15,
+          "r": 49,
+          "g": 98,
+          "b": 183
+        },
+        {
+          "number": 16,
+          "r": 81,
+          "g": 97,
+          "b": 116
+        },
+        {
+          "number": 17,
+          "r": 48,
+          "g": 93,
+          "b": 172
+        },
+        {
+          "number": 18,
+          "r": 115,
+          "g": 87,
+          "b": 14
+        },
+        {
+          "number": 19,
+          "r": 40,
+          "g": 87,
+          "b": 171
+        },
+        {
+          "number": 20,
+          "r": 105,
+          "g": 62,
+          "b": 6
+        },
+        {
+          "number": 21,
+          "r": 48,
+          "g": 59,
+          "b": 24
+        },
+        {
+          "number": 22,
+          "r": 71,
+          "g": 46,
+          "b": 7
+        },
+        {
+          "number": 23,
+          "r": 77,
+          "g": 38,
+          "b": 3
+        },
+        {
+          "number": 24,
+          "r": 51,
+          "g": 23,
+          "b": 1
+        }
+      ],
+      "regions": 516,
+      "renderedLabels": 371,
+      "workingDimensions": [
+        1000,
+        697
+      ],
+      "dimensions": [
+        1600,
+        1115
+      ],
+      "modelSha256": "2ccd37bfef1a6bec87da8d88771327232613dc7305e6d996ba6183a521f627c7",
+      "svgSha256": "0c4265e249779b1bc76c3230e242136d072827f09d5a5b136c3544a6bac7eb7f",
+      "xml": {
+        "valid": true,
+        "width": 1600,
+        "height": 1115,
+        "viewBox": "0 0 1000 697",
+        "paths": 516,
+        "texts": 371,
+        "forbidden": 0,
+        "external": false
+      },
+      "elapsedMs": 8641.08159999999
+    },
+    {
+      "id": "multicolor-reduced",
+      "status": "PASS",
+      "category": "Complex multicolor photograph",
+      "inputFile": "research/m4/fixtures/botanical.jpg",
+      "inputDimensions": [
+        2434,
+        1697
+      ],
+      "settings": {
+        "workingResolution": 700,
+        "smoothing": 70,
+        "minShapeSize": 160,
+        "connectivity": 8
+      },
+      "requestedColors": 6,
+      "palette": [
+        {
+          "number": 1,
+          "r": 244,
+          "g": 227,
+          "b": 27
+        },
+        {
+          "number": 2,
+          "r": 211,
+          "g": 174,
+          "b": 15
+        },
+        {
+          "number": 3,
+          "r": 180,
+          "g": 133,
+          "b": 7
+        },
+        {
+          "number": 4,
+          "r": 135,
+          "g": 95,
+          "b": 11
+        },
+        {
+          "number": 5,
+          "r": 46,
+          "g": 92,
+          "b": 175
+        },
+        {
+          "number": 6,
+          "r": 69,
+          "g": 45,
+          "b": 12
+        }
+      ],
+      "regions": 38,
+      "renderedLabels": 38,
+      "workingDimensions": [
+        700,
+        488
+      ],
+      "dimensions": [
+        1600,
+        1115
+      ],
+      "modelSha256": "6d22c24ac4c5ab531d773dc54b1940abeee1ad005d41b57ecb28e187a7988edb",
+      "svgSha256": "a1008ec36d0b3546887ff3b1c8ab685e92537378302f152fd0c3c36f3ac2586c",
+      "xml": {
+        "valid": true,
+        "width": 1600,
+        "height": 1115,
+        "viewBox": "0 0 700 488",
+        "paths": 38,
+        "texts": 38,
+        "forbidden": 0,
+        "external": false
+      },
+      "elapsedMs": 6879.161899999992
+    },
+    {
+      "id": "limited-default",
+      "status": "PASS",
+      "category": "Limited-color graphic",
+      "inputFile": "research/m1/fixtures/quadrants.png",
+      "inputDimensions": [
+        120,
+        90
+      ],
+      "settings": {
+        "workingResolution": 1000,
+        "smoothing": 40,
+        "minShapeSize": 80,
+        "connectivity": 4
+      },
+      "requestedColors": 12,
+      "palette": [
+        {
+          "number": 1,
+          "r": 230,
+          "g": 200,
+          "b": 45
+        },
+        {
+          "number": 2,
+          "r": 40,
+          "g": 150,
+          "b": 65
+        },
+        {
+          "number": 3,
+          "r": 220,
+          "g": 55,
+          "b": 45
+        },
+        {
+          "number": 4,
+          "r": 40,
+          "g": 75,
+          "b": 200
+        }
+      ],
+      "regions": 4,
+      "renderedLabels": 4,
+      "workingDimensions": [
+        120,
+        90
+      ],
+      "dimensions": [
+        1600,
+        1200
+      ],
+      "modelSha256": "615c9d5c147b9dd0fcee1e03629fe4e1434303ad2c0c83aa6be62f883f84b672",
+      "svgSha256": "ef62af1528411df950fb33f91ab85debf1ce44c8f1345ebf8ff38f76e81aea96",
+      "xml": {
+        "valid": true,
+        "width": 1600,
+        "height": 1200,
+        "viewBox": "0 0 120 90",
+        "paths": 4,
+        "texts": 4,
+        "forbidden": 0,
+        "external": false
+      },
+      "elapsedMs": 4282.123700000011
+    },
+    {
+      "id": "limited-reduced",
+      "status": "PASS",
+      "category": "Limited-color graphic",
+      "inputFile": "research/m1/fixtures/quadrants.png",
+      "inputDimensions": [
+        120,
+        90
+      ],
+      "settings": {
+        "workingResolution": 700,
+        "smoothing": 70,
+        "minShapeSize": 160,
+        "connectivity": 8
+      },
+      "requestedColors": 6,
+      "palette": [
+        {
+          "number": 1,
+          "r": 230,
+          "g": 200,
+          "b": 45
+        },
+        {
+          "number": 2,
+          "r": 40,
+          "g": 150,
+          "b": 65
+        },
+        {
+          "number": 3,
+          "r": 220,
+          "g": 55,
+          "b": 45
+        },
+        {
+          "number": 4,
+          "r": 40,
+          "g": 75,
+          "b": 200
+        }
+      ],
+      "regions": 4,
+      "renderedLabels": 4,
+      "workingDimensions": [
+        120,
+        90
+      ],
+      "dimensions": [
+        1600,
+        1200
+      ],
+      "modelSha256": "11aae28c1774bec42102a78523657dc1634d77e09c175f2e8b5580127c114874",
+      "svgSha256": "e3983f56388110fb22aadb8bb08df5f426b2ed99cb30e2eca29ba7ceb312338b",
+      "xml": {
+        "valid": true,
+        "width": 1600,
+        "height": 1200,
+        "viewBox": "0 0 120 90",
+        "paths": 4,
+        "texts": 4,
+        "forbidden": 0,
+        "external": false
+      },
+      "elapsedMs": 4119.026699999988
+    },
+    {
+      "id": "transparent-default",
+      "status": "PASS",
+      "category": "Transparent RGBA graphic",
+      "inputFile": "research/m1/fixtures/transparent.png",
+      "inputDimensions": [
+        96,
+        72
+      ],
+      "settings": {
+        "workingResolution": 1000,
+        "smoothing": 40,
+        "minShapeSize": 80,
+        "connectivity": 4
+      },
+      "requestedColors": 6,
+      "palette": [
+        {
+          "number": 1,
+          "r": 206,
+          "g": 200,
+          "b": 208
+        },
+        {
+          "number": 2,
+          "r": 160,
+          "g": 196,
+          "b": 168
+        },
+        {
+          "number": 3,
+          "r": 182,
+          "g": 155,
+          "b": 158
+        },
+        {
+          "number": 4,
+          "r": 191,
+          "g": 117,
+          "b": 136
+        },
+        {
+          "number": 5,
+          "r": 211,
+          "g": 66,
+          "b": 98
+        },
+        {
+          "number": 6,
+          "r": 176,
+          "g": 75,
+          "b": 102
+        }
+      ],
+      "regions": 6,
+      "renderedLabels": 6,
+      "workingDimensions": [
+        96,
+        72
+      ],
+      "dimensions": [
+        1600,
+        1200
+      ],
+      "modelSha256": "0dec14f9ac1226951907fc1bc108c930c98c9b68bcdda1da90a6b4ea045d7f1f",
+      "svgSha256": "c53bb172b6932a05f9f76a5cf62058868c16b1c5027ad8c4c3db4945232daf96",
+      "xml": {
+        "valid": true,
+        "width": 1600,
+        "height": 1200,
+        "viewBox": "0 0 96 72",
+        "paths": 6,
+        "texts": 6,
+        "forbidden": 0,
+        "external": false
+      },
+      "elapsedMs": 4064.981799999994
+    },
+    {
+      "id": "transparent-reduced",
+      "status": "PASS",
+      "category": "Transparent RGBA graphic",
+      "inputFile": "research/m1/fixtures/transparent.png",
+      "inputDimensions": [
+        96,
+        72
+      ],
+      "settings": {
+        "workingResolution": 700,
+        "smoothing": 70,
+        "minShapeSize": 160,
+        "connectivity": 8
+      },
+      "requestedColors": 6,
+      "palette": [
+        {
+          "number": 1,
+          "r": 206,
+          "g": 200,
+          "b": 208
+        },
+        {
+          "number": 2,
+          "r": 160,
+          "g": 196,
+          "b": 168
+        },
+        {
+          "number": 3,
+          "r": 182,
+          "g": 155,
+          "b": 158
+        },
+        {
+          "number": 4,
+          "r": 191,
+          "g": 117,
+          "b": 136
+        },
+        {
+          "number": 5,
+          "r": 211,
+          "g": 66,
+          "b": 98
+        },
+        {
+          "number": 6,
+          "r": 176,
+          "g": 75,
+          "b": 102
+        }
+      ],
+      "regions": 6,
+      "renderedLabels": 6,
+      "workingDimensions": [
+        96,
+        72
+      ],
+      "dimensions": [
+        1600,
+        1200
+      ],
+      "modelSha256": "68a384000d0bed80357efe30bff5b460cf9c4a763f824a06da6ad3ffc9611bca",
+      "svgSha256": "c8dac28414a814c9a65aa33c8152d1a4e06a4089b8a807006089a644ef2ba60a",
+      "xml": {
+        "valid": true,
+        "width": 1600,
+        "height": 1200,
+        "viewBox": "0 0 96 72",
+        "paths": 6,
+        "texts": 6,
+        "forbidden": 0,
+        "external": false
+      },
+      "elapsedMs": 3928.141300000003
+    },
+    {
+      "id": "tiny-default",
+      "status": "PASS",
+      "category": "Very small image",
+      "inputFile": "research/m4/fixtures/tiny.png",
+      "inputDimensions": [
+        12,
+        12
+      ],
+      "settings": {
+        "workingResolution": 1000,
+        "smoothing": 40,
+        "minShapeSize": 80,
+        "connectivity": 4
+      },
+      "requestedColors": 12,
+      "palette": [
+        {
+          "number": 1,
+          "r": 246,
+          "g": 240,
+          "b": 214
+        },
+        {
+          "number": 2,
+          "r": 232,
+          "g": 240,
+          "b": 244
+        },
+        {
+          "number": 3,
+          "r": 244,
+          "g": 198,
+          "b": 71
+        },
+        {
+          "number": 4,
+          "r": 143,
+          "g": 184,
+          "b": 135
+        },
+        {
+          "number": 5,
+          "r": 201,
+          "g": 141,
+          "b": 86
+        },
+        {
+          "number": 6,
+          "r": 177,
+          "g": 108,
+          "b": 62
+        },
+        {
+          "number": 7,
+          "r": 121,
+          "g": 63,
+          "b": 61
+        }
+      ],
+      "regions": 1,
+      "renderedLabels": 1,
+      "workingDimensions": [
+        12,
+        12
+      ],
+      "dimensions": [
+        1600,
+        1600
+      ],
+      "modelSha256": "a97ffb93ae85b8a943e4dfd5afd04e567c755e7626288ed0f39fabe777c72ffd",
+      "svgSha256": "8ca644c89869c996a1c52575df95d4bad936b6514b1b86e83760bf787e1e8323",
+      "xml": {
+        "valid": true,
+        "width": 1600,
+        "height": 1600,
+        "viewBox": "0 0 12 12",
+        "paths": 1,
+        "texts": 1,
+        "forbidden": 0,
+        "external": false
+      },
+      "elapsedMs": 4109.483999999997
+    },
+    {
+      "id": "tiny-reduced",
+      "status": "PASS",
+      "category": "Very small image",
+      "inputFile": "research/m4/fixtures/tiny.png",
+      "inputDimensions": [
+        12,
+        12
+      ],
+      "settings": {
+        "workingResolution": 700,
+        "smoothing": 70,
+        "minShapeSize": 160,
+        "connectivity": 8
+      },
+      "requestedColors": 6,
+      "palette": [
+        {
+          "number": 1,
+          "r": 233,
+          "g": 240,
+          "b": 242
+        },
+        {
+          "number": 2,
+          "r": 244,
+          "g": 198,
+          "b": 71
+        },
+        {
+          "number": 3,
+          "r": 143,
+          "g": 184,
+          "b": 135
+        },
+        {
+          "number": 4,
+          "r": 201,
+          "g": 141,
+          "b": 86
+        },
+        {
+          "number": 5,
+          "r": 177,
+          "g": 108,
+          "b": 62
+        },
+        {
+          "number": 6,
+          "r": 121,
+          "g": 63,
+          "b": 61
+        }
+      ],
+      "regions": 2,
+      "renderedLabels": 2,
+      "workingDimensions": [
+        12,
+        12
+      ],
+      "dimensions": [
+        1600,
+        1600
+      ],
+      "modelSha256": "004557369728b135185ff38438c318454d6f61fcb7c869de1afbf5f60f16a271",
+      "svgSha256": "bcbd6a3d9d321b44455287166845dc366047a056ea8fc42061aa5a9a907945a9",
+      "xml": {
+        "valid": true,
+        "width": 1600,
+        "height": 1600,
+        "viewBox": "0 0 12 12",
+        "paths": 2,
+        "texts": 2,
+        "forbidden": 0,
+        "external": false
+      },
+      "elapsedMs": 3887.199600000007
+    },
+    {
+      "id": "high-resolution-default",
+      "status": "PASS",
+      "category": "45.9 megapixel panorama",
+      "inputFile": "research/m4/fixtures/landscape-highres.jpg",
+      "inputDimensions": [
+        10109,
+        4542
+      ],
+      "settings": {
+        "workingResolution": 1000,
+        "smoothing": 40,
+        "minShapeSize": 80,
+        "connectivity": 4
+      },
+      "requestedColors": 12,
+      "palette": [
+        {
+          "number": 1,
+          "r": 179,
+          "g": 186,
+          "b": 191
+        },
+        {
+          "number": 2,
+          "r": 132,
+          "g": 165,
+          "b": 187
+        },
+        {
+          "number": 3,
+          "r": 87,
+          "g": 152,
+          "b": 193
+        },
+        {
+          "number": 4,
+          "r": 106,
+          "g": 137,
+          "b": 107
+        },
+        {
+          "number": 5,
+          "r": 115,
+          "g": 132,
+          "b": 138
+        },
+        {
+          "number": 6,
+          "r": 69,
+          "g": 130,
+          "b": 178
+        },
+        {
+          "number": 7,
+          "r": 88,
+          "g": 118,
+          "b": 112
+        },
+        {
+          "number": 8,
+          "r": 58,
+          "g": 98,
+          "b": 108
+        },
+        {
+          "number": 9,
+          "r": 52,
+          "g": 94,
+          "b": 118
+        },
+        {
+          "number": 10,
+          "r": 37,
+          "g": 83,
+          "b": 122
+        },
+        {
+          "number": 11,
+          "r": 32,
+          "g": 74,
+          "b": 100
+        },
+        {
+          "number": 12,
+          "r": 18,
+          "g": 63,
+          "b": 105
+        }
+      ],
+      "regions": 318,
+      "renderedLabels": 305,
+      "workingDimensions": [
+        1000,
+        449
+      ],
+      "dimensions": [
+        1600,
+        718
+      ],
+      "modelSha256": "940a51391921e514bd93235e63c6738b601dc7aa9cd53c2ab4f2a3566db5fbec",
+      "svgSha256": "e0b38934e11e8d6cc6b933effc64d67e33865102efdcd1a8858b36dbf1debcc1",
+      "xml": {
+        "valid": true,
+        "width": 1600,
+        "height": 718,
+        "viewBox": "0 0 1000 449",
+        "paths": 318,
+        "texts": 305,
+        "forbidden": 0,
+        "external": false
+      },
+      "elapsedMs": 10680.0527
+    },
+    {
+      "id": "high-resolution-reduced",
+      "status": "PASS",
+      "category": "45.9 megapixel panorama",
+      "inputFile": "research/m4/fixtures/landscape-highres.jpg",
+      "inputDimensions": [
+        10109,
+        4542
+      ],
+      "settings": {
+        "workingResolution": 700,
+        "smoothing": 70,
+        "minShapeSize": 160,
+        "connectivity": 8
+      },
+      "requestedColors": 6,
+      "palette": [
+        {
+          "number": 1,
+          "r": 171,
+          "g": 180,
+          "b": 187
+        },
+        {
+          "number": 2,
+          "r": 115,
+          "g": 160,
+          "b": 189
+        },
+        {
+          "number": 3,
+          "r": 76,
+          "g": 142,
+          "b": 188
+        },
+        {
+          "number": 4,
+          "r": 98,
+          "g": 127,
+          "b": 112
+        },
+        {
+          "number": 5,
+          "r": 53,
+          "g": 93,
+          "b": 111
+        },
+        {
+          "number": 6,
+          "r": 29,
+          "g": 74,
+          "b": 112
+        }
+      ],
+      "regions": 51,
+      "renderedLabels": 51,
+      "workingDimensions": [
+        700,
+        315
+      ],
+      "dimensions": [
+        1600,
+        720
+      ],
+      "modelSha256": "1fb9376c6bca45ebfbec53d7e7c8bb8a77bc81fdf166d9e370ec6fd8bfa8b5dc",
+      "svgSha256": "7b5779c8fef1ab5d3fc699a2e697b3fbed9aee18c497c84224cae3db92142fef",
+      "xml": {
+        "valid": true,
+        "width": 1600,
+        "height": 720,
+        "viewBox": "0 0 700 315",
+        "paths": 51,
+        "texts": 51,
+        "forbidden": 0,
+        "external": false
+      },
+      "elapsedMs": 8368.795300000027
+    }
+  ],
+  "errors": [],
+  "external": []
+}

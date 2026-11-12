@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="description" content="Pictora turns your images into printable paint-by-numbers templates. Process, customize and export on your device." />
+    <title>Pictora — Paint by numbers</title>
+    <script>
+      // Apply a saved local theme before the application paints.
+      try {
+        var pictoraTheme = localStorage.getItem('pictora.theme');
+        var pictoraDark = pictoraTheme === 'dark' || (pictoraTheme !== 'light' && matchMedia('(prefers-color-scheme: dark)').matches);
+        document.documentElement.dataset.theme = pictoraDark ? 'dark' : 'light';
+        document.documentElement.style.colorScheme = pictoraDark ? 'dark' : 'light';
+      } catch (_) { /* The React theme hook also works without storage. */ }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

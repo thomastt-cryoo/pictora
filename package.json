@@ -1,0 +1,33 @@
+{
+  "name": "paint-by-numbers",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "build:offline": "tsc -b && node build/offline.mjs",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "dev:desktop": "vite --config vite.desktop.config.ts",
+    "build:desktop:frontend": "tsc -p tsconfig.desktop.json && vite build --config vite.desktop.config.ts",
+    "tauri": "tauri",
+    "build:windows": "powershell -NoProfile -File build/windows.ps1"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "2.12.4",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "zustand": "^4.5.5"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "2.12.4",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.11",
+    "vitest": "^2.1.8"
+  }
+}

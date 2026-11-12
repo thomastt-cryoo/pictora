@@ -1,0 +1,14 @@
+node_modules
+dist
+dist-ssr
+*.local
+.DS_Store
+.vite
+*.tsbuildinfo
+.build-tools/
+dist-desktop/
+src-tauri/target/
+src-tauri/gen/
+# The optional ~209 MiB customer installer is retained locally and hashed in M6
+# evidence; it exceeds GitHub's ordinary per-file limit.
+release/windows/Pictora-Windows-Offline-Setup-x64.exe

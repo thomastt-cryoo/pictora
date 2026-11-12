@@ -1,0 +1,5 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {"types": ["vitest/globals", "vite/client"]},
+  "include": ["src", "build/DesktopExportButtons.tsx", "build/desktop-save.ts", "build/offline-worker.ts"]
+}

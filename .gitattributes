@@ -1,0 +1,9 @@
+# Frozen milestone evidence must keep its exact bytes, including line endings.
+research/m1/** -text
+research/m2/** -text
+research/m3/** -text
+research/m4/** -text
+research/m5/** -text
+release/browser/** -text
+research/m6/** -text
+release/windows/** -text
