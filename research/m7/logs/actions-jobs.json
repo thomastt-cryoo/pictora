@@ -1,0 +1,485 @@
+{
+  "total_count": 4,
+  "jobs": [
+    {
+      "id": 130885602103,
+      "run_id": 43128190105,
+      "workflow_name": "M7 offline browser verification",
+      "head_branch": "codex/m7-browser-compatibility",
+      "run_url": "https://api.github.com/repos/thomastt-cryoo/pictora/actions/runs/43128190105",
+      "run_attempt": 1,
+      "node_id": "CR_kwDOVWZAhc8AAAAeeWPLNw",
+      "head_sha": "bcf22b65db166b572e47345d9edbac04251e4b86",
+      "url": "https://api.github.com/repos/thomastt-cryoo/pictora/actions/jobs/130885602103",
+      "html_url": "https://github.com/thomastt-cryoo/pictora/actions/runs/43128190105/job/130885602103",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-12T00:34:05Z",
+      "started_at": "2026-11-12T00:34:08Z",
+      "completed_at": "2026-11-12T00:34:13Z",
+      "name": "cancel-superseded",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1,
+          "started_at": "2026-11-12T00:34:09Z",
+          "completed_at": "2026-11-12T00:34:10Z"
+        },
+        {
+          "name": "Run actions/github-script@v7",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2,
+          "started_at": "2026-11-12T00:34:10Z",
+          "completed_at": "2026-11-12T00:34:11Z"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3,
+          "started_at": "2026-11-12T00:34:11Z",
+          "completed_at": "2026-11-12T00:34:11Z"
+        }
+      ],
+      "check_run_url": "https://api.github.com/repos/thomastt-cryoo/pictora/check-runs/130885602103",
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "runner_id": 1000000594,
+      "runner_name": "GitHub Actions 1000000594",
+      "runner_group_id": 0,
+      "runner_group_name": "GitHub Actions"
+    },
+    {
+      "id": 130885658805,
+      "run_id": 43128190105,
+      "workflow_name": "M7 offline browser verification",
+      "head_branch": "codex/m7-browser-compatibility",
+      "run_url": "https://api.github.com/repos/thomastt-cryoo/pictora/actions/runs/43128190105",
+      "run_attempt": 1,
+      "node_id": "CR_kwDOVWZAhc8AAAAeeWSotQ",
+      "head_sha": "bcf22b65db166b572e47345d9edbac04251e4b86",
+      "url": "https://api.github.com/repos/thomastt-cryoo/pictora/actions/jobs/130885658805",
+      "html_url": "https://github.com/thomastt-cryoo/pictora/actions/runs/43128190105/job/130885658805",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-12T00:34:14Z",
+      "started_at": "2026-11-12T00:34:17Z",
+      "completed_at": "2026-11-12T00:38:06Z",
+      "name": "chromium (windows-latest)",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1,
+          "started_at": "2026-11-12T00:34:18Z",
+          "completed_at": "2026-11-12T00:34:20Z"
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2,
+          "started_at": "2026-11-12T00:34:20Z",
+          "completed_at": "2026-11-12T00:34:29Z"
+        },
+        {
+          "name": "Run actions/setup-node@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3,
+          "started_at": "2026-11-12T00:34:29Z",
+          "completed_at": "2026-11-12T00:34:34Z"
+        },
+        {
+          "name": "Prepare evidence directories",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4,
+          "started_at": "2026-11-12T00:34:34Z",
+          "completed_at": "2026-11-12T00:34:34Z"
+        },
+        {
+          "name": "Install QA tools",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5,
+          "started_at": "2026-11-12T00:34:34Z",
+          "completed_at": "2026-11-12T00:34:46Z"
+        },
+        {
+          "name": "Install actual Chrome and Edge",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6,
+          "started_at": "2026-11-12T00:34:46Z",
+          "completed_at": "2026-11-12T00:36:47Z"
+        },
+        {
+          "name": "Offline cold start and reopen",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7,
+          "started_at": "2026-11-12T00:36:47Z",
+          "completed_at": "2026-11-12T00:37:04Z"
+        },
+        {
+          "name": "Chrome features",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 8,
+          "started_at": "2026-11-12T00:37:04Z",
+          "completed_at": "2026-11-12T00:37:23Z"
+        },
+        {
+          "name": "Edge features",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 9,
+          "started_at": "2026-11-12T00:37:23Z",
+          "completed_at": "2026-11-12T00:37:42Z"
+        },
+        {
+          "name": "Settings, drop handler, zoom and transfers",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 10,
+          "started_at": "2026-11-12T00:37:42Z",
+          "completed_at": "2026-11-12T00:38:00Z"
+        },
+        {
+          "name": "Inspect exported files",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 11,
+          "started_at": "2026-11-12T00:38:00Z",
+          "completed_at": "2026-11-12T00:38:00Z"
+        },
+        {
+          "name": "Runner identity and process memory",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 12,
+          "started_at": "2026-11-12T00:38:00Z",
+          "completed_at": "2026-11-12T00:38:00Z"
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 13,
+          "started_at": "2026-11-12T00:38:00Z",
+          "completed_at": "2026-11-12T00:38:03Z"
+        },
+        {
+          "name": "Post Run actions/setup-node@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 25,
+          "started_at": "2026-11-12T00:38:03Z",
+          "completed_at": "2026-11-12T00:38:03Z"
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 26,
+          "started_at": "2026-11-12T00:38:03Z",
+          "completed_at": "2026-11-12T00:38:05Z"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 27,
+          "started_at": "2026-11-12T00:38:05Z",
+          "completed_at": "2026-11-12T00:38:05Z"
+        }
+      ],
+      "check_run_url": "https://api.github.com/repos/thomastt-cryoo/pictora/check-runs/130885658805",
+      "labels": [
+        "windows-latest"
+      ],
+      "runner_id": 1000000597,
+      "runner_name": "GitHub Actions 1000000597",
+      "runner_group_id": 0,
+      "runner_group_name": "GitHub Actions"
+    },
+    {
+      "id": 130885658837,
+      "run_id": 43128190105,
+      "workflow_name": "M7 offline browser verification",
+      "head_branch": "codex/m7-browser-compatibility",
+      "run_url": "https://api.github.com/repos/thomastt-cryoo/pictora/actions/runs/43128190105",
+      "run_attempt": 1,
+      "node_id": "CR_kwDOVWZAhc8AAAAeeWSo1Q",
+      "head_sha": "bcf22b65db166b572e47345d9edbac04251e4b86",
+      "url": "https://api.github.com/repos/thomastt-cryoo/pictora/actions/jobs/130885658837",
+      "html_url": "https://github.com/thomastt-cryoo/pictora/actions/runs/43128190105/job/130885658837",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-12T00:34:14Z",
+      "started_at": "2026-11-12T00:34:27Z",
+      "completed_at": "2026-11-12T00:36:03Z",
+      "name": "safari",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1,
+          "started_at": "2026-11-12T00:34:27Z",
+          "completed_at": "2026-11-12T00:34:29Z"
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2,
+          "started_at": "2026-11-12T00:34:29Z",
+          "completed_at": "2026-11-12T00:34:32Z"
+        },
+        {
+          "name": "Run actions/setup-python@v5",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3,
+          "started_at": "2026-11-12T00:34:32Z",
+          "completed_at": "2026-11-12T00:34:32Z"
+        },
+        {
+          "name": "Run mkdir -p research/m7/logs research/m7/screenshots research/m7/outputs",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4,
+          "started_at": "2026-11-12T00:34:32Z",
+          "completed_at": "2026-11-12T00:34:33Z"
+        },
+        {
+          "name": "Run python -m pip install selenium==4.34.0",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5,
+          "started_at": "2026-11-12T00:34:33Z",
+          "completed_at": "2026-11-12T00:34:40Z"
+        },
+        {
+          "name": "Enable Safari WebDriver automation",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6,
+          "started_at": "2026-11-12T00:34:40Z",
+          "completed_at": "2026-11-12T00:34:40Z"
+        },
+        {
+          "name": "Actual Safari local-file investigation",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7,
+          "started_at": "2026-11-12T00:34:40Z",
+          "completed_at": "2026-11-12T00:35:54Z"
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 8,
+          "started_at": "2026-11-12T00:35:54Z",
+          "completed_at": "2026-11-12T00:35:56Z"
+        },
+        {
+          "name": "Post Run actions/setup-python@v5",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 15,
+          "started_at": "2026-11-12T00:35:56Z",
+          "completed_at": "2026-11-12T00:35:57Z"
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 16,
+          "started_at": "2026-11-12T00:35:57Z",
+          "completed_at": "2026-11-12T00:35:58Z"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 17,
+          "started_at": "2026-11-12T00:35:58Z",
+          "completed_at": "2026-11-12T00:36:01Z"
+        }
+      ],
+      "check_run_url": "https://api.github.com/repos/thomastt-cryoo/pictora/check-runs/130885658837",
+      "labels": [
+        "macos-15"
+      ],
+      "runner_id": 1000000596,
+      "runner_name": "GitHub Actions 1000000596",
+      "runner_group_id": 0,
+      "runner_group_name": "GitHub Actions"
+    },
+    {
+      "id": 130885658861,
+      "run_id": 43128190105,
+      "workflow_name": "M7 offline browser verification",
+      "head_branch": "codex/m7-browser-compatibility",
+      "run_url": "https://api.github.com/repos/thomastt-cryoo/pictora/actions/runs/43128190105",
+      "run_attempt": 1,
+      "node_id": "CR_kwDOVWZAhc8AAAAeeWSo7Q",
+      "head_sha": "bcf22b65db166b572e47345d9edbac04251e4b86",
+      "url": "https://api.github.com/repos/thomastt-cryoo/pictora/actions/jobs/130885658861",
+      "html_url": "https://github.com/thomastt-cryoo/pictora/actions/runs/43128190105/job/130885658861",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-12T00:34:14Z",
+      "started_at": "2026-11-12T00:34:27Z",
+      "completed_at": "2026-11-12T00:37:34Z",
+      "name": "chromium (macos-15)",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1,
+          "started_at": "2026-11-12T00:34:28Z",
+          "completed_at": "2026-11-12T00:34:29Z"
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2,
+          "started_at": "2026-11-12T00:34:29Z",
+          "completed_at": "2026-11-12T00:34:31Z"
+        },
+        {
+          "name": "Run actions/setup-node@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3,
+          "started_at": "2026-11-12T00:34:31Z",
+          "completed_at": "2026-11-12T00:34:33Z"
+        },
+        {
+          "name": "Prepare evidence directories",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4,
+          "started_at": "2026-11-12T00:34:33Z",
+          "completed_at": "2026-11-12T00:34:33Z"
+        },
+        {
+          "name": "Install QA tools",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5,
+          "started_at": "2026-11-12T00:34:33Z",
+          "completed_at": "2026-11-12T00:34:42Z"
+        },
+        {
+          "name": "Install actual Chrome and Edge",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6,
+          "started_at": "2026-11-12T00:34:42Z",
+          "completed_at": "2026-11-12T00:35:45Z"
+        },
+        {
+          "name": "Offline cold start and reopen",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7,
+          "started_at": "2026-11-12T00:35:45Z",
+          "completed_at": "2026-11-12T00:36:14Z"
+        },
+        {
+          "name": "Chrome features",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 8,
+          "started_at": "2026-11-12T00:36:14Z",
+          "completed_at": "2026-11-12T00:36:38Z"
+        },
+        {
+          "name": "Edge features",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 9,
+          "started_at": "2026-11-12T00:36:38Z",
+          "completed_at": "2026-11-12T00:37:04Z"
+        },
+        {
+          "name": "Settings, drop handler, zoom and transfers",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 10,
+          "started_at": "2026-11-12T00:37:04Z",
+          "completed_at": "2026-11-12T00:37:24Z"
+        },
+        {
+          "name": "Inspect exported files",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 11,
+          "started_at": "2026-11-12T00:37:24Z",
+          "completed_at": "2026-11-12T00:37:26Z"
+        },
+        {
+          "name": "Runner identity and process memory",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 12,
+          "started_at": "2026-11-12T00:37:26Z",
+          "completed_at": "2026-11-12T00:37:26Z"
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 13,
+          "started_at": "2026-11-12T00:37:26Z",
+          "completed_at": "2026-11-12T00:37:29Z"
+        },
+        {
+          "name": "Post Run actions/setup-node@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 25,
+          "started_at": "2026-11-12T00:37:29Z",
+          "completed_at": "2026-11-12T00:37:29Z"
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 26,
+          "started_at": "2026-11-12T00:37:29Z",
+          "completed_at": "2026-11-12T00:37:30Z"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 27,
+          "started_at": "2026-11-12T00:37:30Z",
+          "completed_at": "2026-11-12T00:37:32Z"
+        }
+      ],
+      "check_run_url": "https://api.github.com/repos/thomastt-cryoo/pictora/check-runs/130885658861",
+      "labels": [
+        "macos-15"
+      ],
+      "runner_id": 1000000595,
+      "runner_name": "GitHub Actions 1000000595",
+      "runner_group_id": 0,
+      "runner_group_name": "GitHub Actions"
+    }
+  ]
+}

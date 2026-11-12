@@ -1,0 +1,65 @@
+{
+  "total_count": 3,
+  "artifacts": [
+    {
+      "id": 13904136142,
+      "node_id": "MDg6QXJ0aWZhY3QxMzkwNDEzNjE0Mg==",
+      "name": "m7-Safari-macOS",
+      "size_in_bytes": 20518,
+      "url": "https://api.github.com/repos/thomastt-cryoo/pictora/actions/artifacts/13904136142",
+      "archive_download_url": "https://api.github.com/repos/thomastt-cryoo/pictora/actions/artifacts/13904136142/zip",
+      "expired": false,
+      "digest": "sha256:52dfdd852a53ee2cf1123b5e9a6c23bfc06c877c390785e4298a9dc588c8ff0e",
+      "created_at": "2026-11-12T00:35:57Z",
+      "updated_at": "2026-11-12T00:35:57Z",
+      "expires_at": "2026-12-12T00:35:56Z",
+      "workflow_run": {
+        "id": 43128190105,
+        "repository_id": 1432764549,
+        "head_repository_id": 1432764549,
+        "head_branch": "codex/m7-browser-compatibility",
+        "head_sha": "bcf22b65db166b572e47345d9edbac04251e4b86"
+      }
+    },
+    {
+      "id": 13903683001,
+      "node_id": "MDg6QXJ0aWZhY3QxMzkwMzY4MzAwMQ==",
+      "name": "m7-macOS-ARM64",
+      "size_in_bytes": 5618110,
+      "url": "https://api.github.com/repos/thomastt-cryoo/pictora/actions/artifacts/13903683001",
+      "archive_download_url": "https://api.github.com/repos/thomastt-cryoo/pictora/actions/artifacts/13903683001/zip",
+      "expired": false,
+      "digest": "sha256:ddaa93fa39e25dd2f265af432151b1eba6ccf69c46a7afea4d361b80a3a32e00",
+      "created_at": "2026-11-12T00:37:29Z",
+      "updated_at": "2026-11-12T00:37:29Z",
+      "expires_at": "2026-12-12T00:37:27Z",
+      "workflow_run": {
+        "id": 43128190105,
+        "repository_id": 1432764549,
+        "head_repository_id": 1432764549,
+        "head_branch": "codex/m7-browser-compatibility",
+        "head_sha": "bcf22b65db166b572e47345d9edbac04251e4b86"
+      }
+    },
+    {
+      "id": 13903484187,
+      "node_id": "MDg6QXJ0aWZhY3QxMzkwMzQ4NDE4Nw==",
+      "name": "m7-Windows-X64",
+      "size_in_bytes": 8560013,
+      "url": "https://api.github.com/repos/thomastt-cryoo/pictora/actions/artifacts/13903484187",
+      "archive_download_url": "https://api.github.com/repos/thomastt-cryoo/pictora/actions/artifacts/13903484187/zip",
+      "expired": false,
+      "digest": "sha256:814b055a4e7b85429e481464def63049502091220b55f036bd5df9b7dbd08817",
+      "created_at": "2026-11-12T00:38:03Z",
+      "updated_at": "2026-11-12T00:38:03Z",
+      "expires_at": "2026-12-12T00:38:01Z",
+      "workflow_run": {
+        "id": 43128190105,
+        "repository_id": 1432764549,
+        "head_repository_id": 1432764549,
+        "head_branch": "codex/m7-browser-compatibility",
+        "head_sha": "bcf22b65db166b572e47345d9edbac04251e4b86"
+      }
+    }
+  ]
+}

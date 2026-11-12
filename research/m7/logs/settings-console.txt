@@ -1,0 +1,2 @@
+PASS chrome drop event, reduced settings parity, zoom, filled PNG and memory observation
+PASS edge drop event, reduced settings parity, zoom, filled PNG and memory observation

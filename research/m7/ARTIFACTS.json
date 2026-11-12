@@ -1,0 +1,1204 @@
+{
+  "milestone": "M7",
+  "artifactCount": 235,
+  "files": [
+    {
+      "path": "ATTRIBUTION.md",
+      "bytes": 827,
+      "sha256": "fd16c45116cb3d4f7776fa856ca905b4c3e1acdc9bf267ced32be9281fdd13b5"
+    },
+    {
+      "path": "ci/macos/logs/cold-launch.json",
+      "bytes": 3160,
+      "sha256": "efda5f95988f728f839e15d49cd1818bcc84f1177622048e2bc6800a5b51be8f"
+    },
+    {
+      "path": "ci/macos/logs/export-comparisons.json",
+      "bytes": 7719,
+      "sha256": "d739fd791b04db8ff73eb0d0a25d10ef6e22f0e7049483077e63d0c5baa66753"
+    },
+    {
+      "path": "ci/macos/logs/process-memory.txt",
+      "bytes": 40930,
+      "sha256": "0872acbb8aa3ee3696545bd4bc1dbf4980a959f221513a59c9dce73e35b85038"
+    },
+    {
+      "path": "ci/macos/logs/runner.txt",
+      "bytes": 267,
+      "sha256": "6098a954d84394af0d680a41f011287524b7e8162d462ad4fd311d48085cd593"
+    },
+    {
+      "path": "ci/macos/logs/settings.json",
+      "bytes": 2650,
+      "sha256": "7084d52d44045529e04c521c26e7e049ea99b5d4728768f39324e2836dcb2d25"
+    },
+    {
+      "path": "ci/macos/logs/workflows-chrome.json",
+      "bytes": 2205,
+      "sha256": "64b345250ef17b70cbd5d5726ecc0c5bb0f12a6a1961aefd44c4484edd716cc3"
+    },
+    {
+      "path": "ci/macos/logs/workflows-edge.json",
+      "bytes": 2203,
+      "sha256": "57a665376516ab8d147334099e17818587370c8e02778d176f8d461b3a9c5153"
+    },
+    {
+      "path": "ci/macos/outputs/chrome/cold-portrait.png",
+      "bytes": 524456,
+      "sha256": "cffb4eae2041d226daa7a89cdc589dfe6635df0df7d4241e2a2b697a6aea9fa0"
+    },
+    {
+      "path": "ci/macos/outputs/chrome/cold-portrait.svg",
+      "bytes": 140280,
+      "sha256": "d29d76f5206162326cddb297eb2ab9588f3174a89c2586a9a7b3c5bdf314e603"
+    },
+    {
+      "path": "ci/macos/outputs/chrome/offline-paints.png",
+      "bytes": 87310,
+      "sha256": "d21b7666af026159d1a3f87c866b3d10297f60860b61f206323a8981f5d0a850"
+    },
+    {
+      "path": "ci/macos/outputs/chrome/offline-paints.svg",
+      "bytes": 1998,
+      "sha256": "a622ad89643f320c20d09ff5a5a6c265d12715d08a92c8fe4edc21f729df5a56"
+    },
+    {
+      "path": "ci/macos/outputs/chrome/offline-warmup.png",
+      "bytes": 176772,
+      "sha256": "103220dff27086201d20dac101c50d51cbb2fec3e04cff9954ab86d12c6ab382"
+    },
+    {
+      "path": "ci/macos/outputs/chrome/portrait-reduced-styled.png",
+      "bytes": 437263,
+      "sha256": "ae151227a3fad6167f0bf479a3036391bd57373cb5277e1c3f537eb0b08ad3af"
+    },
+    {
+      "path": "ci/macos/outputs/chrome/portrait-reduced.svg",
+      "bytes": 36931,
+      "sha256": "e8b2b55a6fc5e615f3b34a03b454036cf9cfca625aca6555701132beb2f7f2f0"
+    },
+    {
+      "path": "ci/macos/outputs/chrome/safe-color-dark.svg",
+      "bytes": 9721,
+      "sha256": "42ce92b24f0a9252c9ceb5a0a56ca781dadba42b5cc2453ca3aff14c6afa9996"
+    },
+    {
+      "path": "ci/macos/outputs/chrome/safe-color-light.svg",
+      "bytes": 9721,
+      "sha256": "42ce92b24f0a9252c9ceb5a0a56ca781dadba42b5cc2453ca3aff14c6afa9996"
+    },
+    {
+      "path": "ci/macos/outputs/chrome/workflow-manual.png",
+      "bytes": 171429,
+      "sha256": "356a882920448be7ff838df10e3c2f4ad178e50d6e5e033b3eb2123859bbab61"
+    },
+    {
+      "path": "ci/macos/outputs/chrome/workflow-manual.svg",
+      "bytes": 9406,
+      "sha256": "51edc09034c6b5b0f3034b0efe7a7e54b9ae9734788ed7fc06ae682a81b6c05b"
+    },
+    {
+      "path": "ci/macos/outputs/chrome/workflow-paints.png",
+      "bytes": 155412,
+      "sha256": "eadc23b2d627addbc16df078ec34e710dde59ad85aa533c15ca7c6daaa20ba7d"
+    },
+    {
+      "path": "ci/macos/outputs/chrome/workflow-paints.svg",
+      "bytes": 12709,
+      "sha256": "0d3c8650b33603179a32b522bb59cb576ee43e1556bef6a345eb602b3d879e59"
+    },
+    {
+      "path": "ci/macos/outputs/chrome/workflow-rapid.svg",
+      "bytes": 1355,
+      "sha256": "4ee11f06703ff5167e8e88e99923027be700bdc6eff598ef6bbc602a2e27d5e4"
+    },
+    {
+      "path": "ci/macos/outputs/chrome/workflow-recovered-dark.svg",
+      "bytes": 9451,
+      "sha256": "79543dcc66cb4efc2877c26b6e1836fec5517645e851912b40ec6babd09a6bc4"
+    },
+    {
+      "path": "ci/macos/outputs/chrome/workflow-recovered-light.svg",
+      "bytes": 9451,
+      "sha256": "79543dcc66cb4efc2877c26b6e1836fec5517645e851912b40ec6babd09a6bc4"
+    },
+    {
+      "path": "ci/macos/outputs/chrome/workflow-simple.png",
+      "bytes": 156153,
+      "sha256": "77d2ac2574accf68f1e78f45af1b7662108cc0853a6745b5366fc8ffb63f6fe1"
+    },
+    {
+      "path": "ci/macos/outputs/chrome/workflow-simple.svg",
+      "bytes": 6238,
+      "sha256": "b972b4faebc9a5534c92aa36474d329996dc7ad43e134751dfb3ea57f26215ce"
+    },
+    {
+      "path": "ci/macos/outputs/edge/cold-portrait.png",
+      "bytes": 524456,
+      "sha256": "cffb4eae2041d226daa7a89cdc589dfe6635df0df7d4241e2a2b697a6aea9fa0"
+    },
+    {
+      "path": "ci/macos/outputs/edge/cold-portrait.svg",
+      "bytes": 140280,
+      "sha256": "d29d76f5206162326cddb297eb2ab9588f3174a89c2586a9a7b3c5bdf314e603"
+    },
+    {
+      "path": "ci/macos/outputs/edge/offline-paints.png",
+      "bytes": 87310,
+      "sha256": "d21b7666af026159d1a3f87c866b3d10297f60860b61f206323a8981f5d0a850"
+    },
+    {
+      "path": "ci/macos/outputs/edge/offline-paints.svg",
+      "bytes": 1998,
+      "sha256": "a622ad89643f320c20d09ff5a5a6c265d12715d08a92c8fe4edc21f729df5a56"
+    },
+    {
+      "path": "ci/macos/outputs/edge/offline-warmup.png",
+      "bytes": 176772,
+      "sha256": "103220dff27086201d20dac101c50d51cbb2fec3e04cff9954ab86d12c6ab382"
+    },
+    {
+      "path": "ci/macos/outputs/edge/portrait-reduced-styled.png",
+      "bytes": 437263,
+      "sha256": "ae151227a3fad6167f0bf479a3036391bd57373cb5277e1c3f537eb0b08ad3af"
+    },
+    {
+      "path": "ci/macos/outputs/edge/portrait-reduced.svg",
+      "bytes": 36931,
+      "sha256": "e8b2b55a6fc5e615f3b34a03b454036cf9cfca625aca6555701132beb2f7f2f0"
+    },
+    {
+      "path": "ci/macos/outputs/edge/safe-color-dark.svg",
+      "bytes": 9721,
+      "sha256": "42ce92b24f0a9252c9ceb5a0a56ca781dadba42b5cc2453ca3aff14c6afa9996"
+    },
+    {
+      "path": "ci/macos/outputs/edge/safe-color-light.svg",
+      "bytes": 9721,
+      "sha256": "42ce92b24f0a9252c9ceb5a0a56ca781dadba42b5cc2453ca3aff14c6afa9996"
+    },
+    {
+      "path": "ci/macos/outputs/edge/workflow-manual.png",
+      "bytes": 171429,
+      "sha256": "356a882920448be7ff838df10e3c2f4ad178e50d6e5e033b3eb2123859bbab61"
+    },
+    {
+      "path": "ci/macos/outputs/edge/workflow-manual.svg",
+      "bytes": 9406,
+      "sha256": "51edc09034c6b5b0f3034b0efe7a7e54b9ae9734788ed7fc06ae682a81b6c05b"
+    },
+    {
+      "path": "ci/macos/outputs/edge/workflow-paints.png",
+      "bytes": 155412,
+      "sha256": "eadc23b2d627addbc16df078ec34e710dde59ad85aa533c15ca7c6daaa20ba7d"
+    },
+    {
+      "path": "ci/macos/outputs/edge/workflow-paints.svg",
+      "bytes": 12709,
+      "sha256": "0d3c8650b33603179a32b522bb59cb576ee43e1556bef6a345eb602b3d879e59"
+    },
+    {
+      "path": "ci/macos/outputs/edge/workflow-rapid.svg",
+      "bytes": 1355,
+      "sha256": "4ee11f06703ff5167e8e88e99923027be700bdc6eff598ef6bbc602a2e27d5e4"
+    },
+    {
+      "path": "ci/macos/outputs/edge/workflow-recovered-dark.svg",
+      "bytes": 9451,
+      "sha256": "79543dcc66cb4efc2877c26b6e1836fec5517645e851912b40ec6babd09a6bc4"
+    },
+    {
+      "path": "ci/macos/outputs/edge/workflow-recovered-light.svg",
+      "bytes": 9451,
+      "sha256": "79543dcc66cb4efc2877c26b6e1836fec5517645e851912b40ec6babd09a6bc4"
+    },
+    {
+      "path": "ci/macos/outputs/edge/workflow-simple.png",
+      "bytes": 156153,
+      "sha256": "77d2ac2574accf68f1e78f45af1b7662108cc0853a6745b5366fc8ffb63f6fe1"
+    },
+    {
+      "path": "ci/macos/outputs/edge/workflow-simple.svg",
+      "bytes": 6238,
+      "sha256": "b972b4faebc9a5534c92aa36474d329996dc7ad43e134751dfb3ea57f26215ce"
+    },
+    {
+      "path": "ci/macos/screenshots/chrome-cold-file-dark.png",
+      "bytes": 126587,
+      "sha256": "0e40b4cb3cd22b309f2753d5b9c63a8fba22dfeb9f0a24af6c1fc568e215b262"
+    },
+    {
+      "path": "ci/macos/screenshots/chrome-color-validation-dark.png",
+      "bytes": 91863,
+      "sha256": "21812272b1c180bb43f71d752c5940aca9f31564d36de26fbe2eb77cbbec8ba0"
+    },
+    {
+      "path": "ci/macos/screenshots/chrome-color-validation-light.png",
+      "bytes": 91992,
+      "sha256": "d10457773a7f9f3cdf64d425d868a353f0ddd98634b46f4e78016c413ecb03fa"
+    },
+    {
+      "path": "ci/macos/screenshots/chrome-keyboard-drawer-dark.png",
+      "bytes": 29981,
+      "sha256": "ecfae050d36f3e007c211b93cf60d560c4ae55094a5f005573788f0b3e28c975"
+    },
+    {
+      "path": "ci/macos/screenshots/chrome-keyboard-drawer-light.png",
+      "bytes": 29782,
+      "sha256": "82507079967cc740500b5ad09f7cb188c7bb9587caf2333b47a7edb189881a84"
+    },
+    {
+      "path": "ci/macos/screenshots/chrome-recovery-dark.png",
+      "bytes": 64691,
+      "sha256": "66463369faed66b230597f5130c57719d0d708e6beade04e7fb083367ab355f5"
+    },
+    {
+      "path": "ci/macos/screenshots/chrome-recovery-light.png",
+      "bytes": 64504,
+      "sha256": "d46b88bf457982dc8886ebfd87a6e72acc4176bf9f6e78aff3a6247c6adba6f7"
+    },
+    {
+      "path": "ci/macos/screenshots/chrome-reopened-file.png",
+      "bytes": 172714,
+      "sha256": "104af18d5f6f649291a2f025ac8d61b2e85484214b5dd8aa7fcef7f87239d3d6"
+    },
+    {
+      "path": "ci/macos/screenshots/chrome-settings.png",
+      "bytes": 133961,
+      "sha256": "bbf77086764f9bf3bfb44154488f64f7366fba8fc1275a6624d888045f757a94"
+    },
+    {
+      "path": "ci/macos/screenshots/chrome-viewport-1024.png",
+      "bytes": 68352,
+      "sha256": "ac5f67750660ebfb983f7eeea11089b214ea34538146bb3875d7a570425420d0"
+    },
+    {
+      "path": "ci/macos/screenshots/chrome-viewport-1280.png",
+      "bytes": 76817,
+      "sha256": "f61edbd92c2a2fcd45cca4b9a1d113ed8d46a2cbe8e66eb9f8d31e0930d1ba39"
+    },
+    {
+      "path": "ci/macos/screenshots/chrome-viewport-1440.png",
+      "bytes": 88596,
+      "sha256": "0e8140a049aa30a3fbe1a8b30b8845393fce9073ecff22340ee49c312ecc9aed"
+    },
+    {
+      "path": "ci/macos/screenshots/chrome-viewport-1920.png",
+      "bytes": 107616,
+      "sha256": "0dd075af9b44352c794d60cf73bc703ca121fb623c6105682c4d62bd485eb53d"
+    },
+    {
+      "path": "ci/macos/screenshots/chrome-viewport-375.png",
+      "bytes": 21030,
+      "sha256": "72d16700da59a0d1dde92621b3ba1fbcc948e238a61bae4b915fdbed93e899e6"
+    },
+    {
+      "path": "ci/macos/screenshots/edge-cold-file-dark.png",
+      "bytes": 126587,
+      "sha256": "0e40b4cb3cd22b309f2753d5b9c63a8fba22dfeb9f0a24af6c1fc568e215b262"
+    },
+    {
+      "path": "ci/macos/screenshots/edge-color-validation-dark.png",
+      "bytes": 91863,
+      "sha256": "1def299be9fc46c104a89b99fd2946a47a56658496b2595c50c9be28363e264c"
+    },
+    {
+      "path": "ci/macos/screenshots/edge-color-validation-light.png",
+      "bytes": 91992,
+      "sha256": "d10457773a7f9f3cdf64d425d868a353f0ddd98634b46f4e78016c413ecb03fa"
+    },
+    {
+      "path": "ci/macos/screenshots/edge-keyboard-drawer-dark.png",
+      "bytes": 29981,
+      "sha256": "ecfae050d36f3e007c211b93cf60d560c4ae55094a5f005573788f0b3e28c975"
+    },
+    {
+      "path": "ci/macos/screenshots/edge-keyboard-drawer-light.png",
+      "bytes": 29782,
+      "sha256": "82507079967cc740500b5ad09f7cb188c7bb9587caf2333b47a7edb189881a84"
+    },
+    {
+      "path": "ci/macos/screenshots/edge-recovery-dark.png",
+      "bytes": 64691,
+      "sha256": "66463369faed66b230597f5130c57719d0d708e6beade04e7fb083367ab355f5"
+    },
+    {
+      "path": "ci/macos/screenshots/edge-recovery-light.png",
+      "bytes": 64504,
+      "sha256": "d46b88bf457982dc8886ebfd87a6e72acc4176bf9f6e78aff3a6247c6adba6f7"
+    },
+    {
+      "path": "ci/macos/screenshots/edge-reopened-file.png",
+      "bytes": 172719,
+      "sha256": "9f2043882bd67eccac54d3eae9903f3a9e45d0ca92d206bd5a113046fdb6bbde"
+    },
+    {
+      "path": "ci/macos/screenshots/edge-settings.png",
+      "bytes": 133966,
+      "sha256": "0bbce5dc7b90435baee01cba466daaeaf97ffb5ad75e438fa2646622d19a99a8"
+    },
+    {
+      "path": "ci/macos/screenshots/edge-viewport-1024.png",
+      "bytes": 68352,
+      "sha256": "ac5f67750660ebfb983f7eeea11089b214ea34538146bb3875d7a570425420d0"
+    },
+    {
+      "path": "ci/macos/screenshots/edge-viewport-1280.png",
+      "bytes": 76817,
+      "sha256": "f61edbd92c2a2fcd45cca4b9a1d113ed8d46a2cbe8e66eb9f8d31e0930d1ba39"
+    },
+    {
+      "path": "ci/macos/screenshots/edge-viewport-1440.png",
+      "bytes": 88596,
+      "sha256": "0e8140a049aa30a3fbe1a8b30b8845393fce9073ecff22340ee49c312ecc9aed"
+    },
+    {
+      "path": "ci/macos/screenshots/edge-viewport-1920.png",
+      "bytes": 107616,
+      "sha256": "0dd075af9b44352c794d60cf73bc703ca121fb623c6105682c4d62bd485eb53d"
+    },
+    {
+      "path": "ci/macos/screenshots/edge-viewport-375.png",
+      "bytes": 21030,
+      "sha256": "72d16700da59a0d1dde92621b3ba1fbcc948e238a61bae4b915fdbed93e899e6"
+    },
+    {
+      "path": "ci/safari/logs/safari.json",
+      "bytes": 948,
+      "sha256": "a07ef9157b319fb1b22f36ad73c98b08971cc18c31f918812a9adf77dd2680a9"
+    },
+    {
+      "path": "ci/safari/screenshots/safari-investigation-failure.png",
+      "bytes": 33676,
+      "sha256": "ff0fd54e0af8d1fe8b9dc5e294c7a57e0ebb764f1c8d766733323139133f3935"
+    },
+    {
+      "path": "ci/windows/logs/cold-launch.json",
+      "bytes": 3089,
+      "sha256": "8e81fd8c3ac488db22d790f3e6aee5d01b60946a85308590e076253571b396e9"
+    },
+    {
+      "path": "ci/windows/logs/export-comparisons.json",
+      "bytes": 8227,
+      "sha256": "760ae1df16c00a833a0d23cf253be943d9e3069e0c57bdff361ef6c3d06e1323"
+    },
+    {
+      "path": "ci/windows/logs/runner.txt",
+      "bytes": 92,
+      "sha256": "887725cb50c58adfdc44b144ba5fb4146e087573d51ac115bf0429615a1bfc5a"
+    },
+    {
+      "path": "ci/windows/logs/settings.json",
+      "bytes": 2650,
+      "sha256": "790b1483dc4b621bba0d6e86151f83787a6e00f0945200d4883c44eb735c72e9"
+    },
+    {
+      "path": "ci/windows/logs/workflows-chrome.json",
+      "bytes": 2205,
+      "sha256": "64b345250ef17b70cbd5d5726ecc0c5bb0f12a6a1961aefd44c4484edd716cc3"
+    },
+    {
+      "path": "ci/windows/logs/workflows-edge.json",
+      "bytes": 2203,
+      "sha256": "57a665376516ab8d147334099e17818587370c8e02778d176f8d461b3a9c5153"
+    },
+    {
+      "path": "ci/windows/outputs/chrome/cold-portrait.png",
+      "bytes": 815992,
+      "sha256": "2e07ea2496d3c51ba4626f6f672048a2b3502eb50dfd651ae03800977574eb71"
+    },
+    {
+      "path": "ci/windows/outputs/chrome/cold-portrait.svg",
+      "bytes": 140280,
+      "sha256": "d29d76f5206162326cddb297eb2ab9588f3174a89c2586a9a7b3c5bdf314e603"
+    },
+    {
+      "path": "ci/windows/outputs/chrome/offline-paints.png",
+      "bytes": 122076,
+      "sha256": "b4711155abf63d70dbc4aae7fbe205810c25d165d87835970e0bc5268955178f"
+    },
+    {
+      "path": "ci/windows/outputs/chrome/offline-paints.svg",
+      "bytes": 1998,
+      "sha256": "a622ad89643f320c20d09ff5a5a6c265d12715d08a92c8fe4edc21f729df5a56"
+    },
+    {
+      "path": "ci/windows/outputs/chrome/offline-warmup.png",
+      "bytes": 256090,
+      "sha256": "76a299d296bbd02a51a05dccea3895c04528608716135bf3a67ec95e491ac39c"
+    },
+    {
+      "path": "ci/windows/outputs/chrome/portrait-reduced-styled.png",
+      "bytes": 782853,
+      "sha256": "4dc225d916853e36c839e22855ff8a5c222776686fd1240e5ab0d53b8af3ee7e"
+    },
+    {
+      "path": "ci/windows/outputs/chrome/portrait-reduced.svg",
+      "bytes": 36931,
+      "sha256": "e8b2b55a6fc5e615f3b34a03b454036cf9cfca625aca6555701132beb2f7f2f0"
+    },
+    {
+      "path": "ci/windows/outputs/chrome/safe-color-dark.svg",
+      "bytes": 9721,
+      "sha256": "42ce92b24f0a9252c9ceb5a0a56ca781dadba42b5cc2453ca3aff14c6afa9996"
+    },
+    {
+      "path": "ci/windows/outputs/chrome/safe-color-light.svg",
+      "bytes": 9721,
+      "sha256": "42ce92b24f0a9252c9ceb5a0a56ca781dadba42b5cc2453ca3aff14c6afa9996"
+    },
+    {
+      "path": "ci/windows/outputs/chrome/workflow-manual.png",
+      "bytes": 247219,
+      "sha256": "e15319bbbac8d283ee78acf0caa65c2ed9951f6670b9ea2a4c01f1ef2c81f2fe"
+    },
+    {
+      "path": "ci/windows/outputs/chrome/workflow-manual.svg",
+      "bytes": 9406,
+      "sha256": "51edc09034c6b5b0f3034b0efe7a7e54b9ae9734788ed7fc06ae682a81b6c05b"
+    },
+    {
+      "path": "ci/windows/outputs/chrome/workflow-paints.png",
+      "bytes": 218901,
+      "sha256": "3575358d353d3c09d2f50e76e766f200fde7a931d09ab16f387523c87056efab"
+    },
+    {
+      "path": "ci/windows/outputs/chrome/workflow-paints.svg",
+      "bytes": 12709,
+      "sha256": "0d3c8650b33603179a32b522bb59cb576ee43e1556bef6a345eb602b3d879e59"
+    },
+    {
+      "path": "ci/windows/outputs/chrome/workflow-rapid.svg",
+      "bytes": 1355,
+      "sha256": "4ee11f06703ff5167e8e88e99923027be700bdc6eff598ef6bbc602a2e27d5e4"
+    },
+    {
+      "path": "ci/windows/outputs/chrome/workflow-recovered-dark.svg",
+      "bytes": 9451,
+      "sha256": "79543dcc66cb4efc2877c26b6e1836fec5517645e851912b40ec6babd09a6bc4"
+    },
+    {
+      "path": "ci/windows/outputs/chrome/workflow-recovered-light.svg",
+      "bytes": 9451,
+      "sha256": "79543dcc66cb4efc2877c26b6e1836fec5517645e851912b40ec6babd09a6bc4"
+    },
+    {
+      "path": "ci/windows/outputs/chrome/workflow-simple.png",
+      "bytes": 224732,
+      "sha256": "f3c0fca5805e94da9ebe8db65ca6a84ec4e7e45f32e3e2964ace5d26abe79e3a"
+    },
+    {
+      "path": "ci/windows/outputs/chrome/workflow-simple.svg",
+      "bytes": 6238,
+      "sha256": "b972b4faebc9a5534c92aa36474d329996dc7ad43e134751dfb3ea57f26215ce"
+    },
+    {
+      "path": "ci/windows/outputs/edge/cold-portrait.png",
+      "bytes": 815992,
+      "sha256": "2e07ea2496d3c51ba4626f6f672048a2b3502eb50dfd651ae03800977574eb71"
+    },
+    {
+      "path": "ci/windows/outputs/edge/cold-portrait.svg",
+      "bytes": 140280,
+      "sha256": "d29d76f5206162326cddb297eb2ab9588f3174a89c2586a9a7b3c5bdf314e603"
+    },
+    {
+      "path": "ci/windows/outputs/edge/offline-paints.png",
+      "bytes": 122076,
+      "sha256": "b4711155abf63d70dbc4aae7fbe205810c25d165d87835970e0bc5268955178f"
+    },
+    {
+      "path": "ci/windows/outputs/edge/offline-paints.svg",
+      "bytes": 1998,
+      "sha256": "a622ad89643f320c20d09ff5a5a6c265d12715d08a92c8fe4edc21f729df5a56"
+    },
+    {
+      "path": "ci/windows/outputs/edge/offline-warmup.png",
+      "bytes": 256090,
+      "sha256": "76a299d296bbd02a51a05dccea3895c04528608716135bf3a67ec95e491ac39c"
+    },
+    {
+      "path": "ci/windows/outputs/edge/portrait-reduced-styled.png",
+      "bytes": 782853,
+      "sha256": "4dc225d916853e36c839e22855ff8a5c222776686fd1240e5ab0d53b8af3ee7e"
+    },
+    {
+      "path": "ci/windows/outputs/edge/portrait-reduced.svg",
+      "bytes": 36931,
+      "sha256": "e8b2b55a6fc5e615f3b34a03b454036cf9cfca625aca6555701132beb2f7f2f0"
+    },
+    {
+      "path": "ci/windows/outputs/edge/safe-color-dark.svg",
+      "bytes": 9721,
+      "sha256": "42ce92b24f0a9252c9ceb5a0a56ca781dadba42b5cc2453ca3aff14c6afa9996"
+    },
+    {
+      "path": "ci/windows/outputs/edge/safe-color-light.svg",
+      "bytes": 9721,
+      "sha256": "42ce92b24f0a9252c9ceb5a0a56ca781dadba42b5cc2453ca3aff14c6afa9996"
+    },
+    {
+      "path": "ci/windows/outputs/edge/workflow-manual.png",
+      "bytes": 247219,
+      "sha256": "e15319bbbac8d283ee78acf0caa65c2ed9951f6670b9ea2a4c01f1ef2c81f2fe"
+    },
+    {
+      "path": "ci/windows/outputs/edge/workflow-manual.svg",
+      "bytes": 9406,
+      "sha256": "51edc09034c6b5b0f3034b0efe7a7e54b9ae9734788ed7fc06ae682a81b6c05b"
+    },
+    {
+      "path": "ci/windows/outputs/edge/workflow-paints.png",
+      "bytes": 218901,
+      "sha256": "3575358d353d3c09d2f50e76e766f200fde7a931d09ab16f387523c87056efab"
+    },
+    {
+      "path": "ci/windows/outputs/edge/workflow-paints.svg",
+      "bytes": 12709,
+      "sha256": "0d3c8650b33603179a32b522bb59cb576ee43e1556bef6a345eb602b3d879e59"
+    },
+    {
+      "path": "ci/windows/outputs/edge/workflow-rapid.svg",
+      "bytes": 1355,
+      "sha256": "4ee11f06703ff5167e8e88e99923027be700bdc6eff598ef6bbc602a2e27d5e4"
+    },
+    {
+      "path": "ci/windows/outputs/edge/workflow-recovered-dark.svg",
+      "bytes": 9451,
+      "sha256": "79543dcc66cb4efc2877c26b6e1836fec5517645e851912b40ec6babd09a6bc4"
+    },
+    {
+      "path": "ci/windows/outputs/edge/workflow-recovered-light.svg",
+      "bytes": 9451,
+      "sha256": "79543dcc66cb4efc2877c26b6e1836fec5517645e851912b40ec6babd09a6bc4"
+    },
+    {
+      "path": "ci/windows/outputs/edge/workflow-simple.png",
+      "bytes": 224732,
+      "sha256": "f3c0fca5805e94da9ebe8db65ca6a84ec4e7e45f32e3e2964ace5d26abe79e3a"
+    },
+    {
+      "path": "ci/windows/outputs/edge/workflow-simple.svg",
+      "bytes": 6238,
+      "sha256": "b972b4faebc9a5534c92aa36474d329996dc7ad43e134751dfb3ea57f26215ce"
+    },
+    {
+      "path": "ci/windows/screenshots/chrome-cold-file-dark.png",
+      "bytes": 238661,
+      "sha256": "0b296d3cd9e3fbb28350cad9487d01d01d673a88af1a4ff730630c9a8f13d1ea"
+    },
+    {
+      "path": "ci/windows/screenshots/chrome-color-validation-dark.png",
+      "bytes": 139861,
+      "sha256": "52e4f27b87dd45b29b00e5020d15b4a6dbac475c4b09e77ac572a99667e6f6bd"
+    },
+    {
+      "path": "ci/windows/screenshots/chrome-color-validation-light.png",
+      "bytes": 139166,
+      "sha256": "6a4aa67142fe5b1aa9e9b991765a09aa139c8717b7fcf2298fc4983aa3a138f7"
+    },
+    {
+      "path": "ci/windows/screenshots/chrome-keyboard-drawer-dark.png",
+      "bytes": 24462,
+      "sha256": "de2a744e743953231d86ec34b6017288ec03c8342a7f463f36a2f5f86790c82a"
+    },
+    {
+      "path": "ci/windows/screenshots/chrome-keyboard-drawer-light.png",
+      "bytes": 23963,
+      "sha256": "6ee93fdac805776ab96ed72797aae8dceafb421cf54c518eacea7a786dea6f06"
+    },
+    {
+      "path": "ci/windows/screenshots/chrome-recovery-dark.png",
+      "bytes": 50637,
+      "sha256": "61f8ae1cfec28d618e80e018ad07576a2554f71b6c39e50c91ddf3d02b79289a"
+    },
+    {
+      "path": "ci/windows/screenshots/chrome-recovery-light.png",
+      "bytes": 50361,
+      "sha256": "f1104778c9d6a2452c226d53c94989918bfc8fe3e011c7fb60f2dd773328d22f"
+    },
+    {
+      "path": "ci/windows/screenshots/chrome-reopened-file.png",
+      "bytes": 315549,
+      "sha256": "f2b88eda775f55a5e8209fa3fcd7392bba301a59450b7de2450675afd4170d4b"
+    },
+    {
+      "path": "ci/windows/screenshots/chrome-settings.png",
+      "bytes": 178927,
+      "sha256": "aad2613a24b0a7a84580f5332432f064f2384e267cc11c689394d2703c6d51fd"
+    },
+    {
+      "path": "ci/windows/screenshots/chrome-viewport-1024.png",
+      "bytes": 98076,
+      "sha256": "3eea2abb489102eb6d65df1d34f60ef8aa48dd27f872cefadea198169af0934b"
+    },
+    {
+      "path": "ci/windows/screenshots/chrome-viewport-1280.png",
+      "bytes": 114553,
+      "sha256": "da507b3026ede7a45462cbf0720cff9a02d61a84a07dcff62c2fa3e741df8d4b"
+    },
+    {
+      "path": "ci/windows/screenshots/chrome-viewport-1440.png",
+      "bytes": 136844,
+      "sha256": "9c5a8fd09bdec91eaeeb5cb4a1ce09aa369128c36c8e649ac0efdb7c17e1e803"
+    },
+    {
+      "path": "ci/windows/screenshots/chrome-viewport-1920.png",
+      "bytes": 171313,
+      "sha256": "8da090b56eef5a5d3cd470d3d3a4c52cc4d669253182e9f88680d0f732862165"
+    },
+    {
+      "path": "ci/windows/screenshots/chrome-viewport-375.png",
+      "bytes": 33922,
+      "sha256": "5475b0a2cd85267efe22d7a1ad56059f8367795938b391eaa68ddfbb9950d003"
+    },
+    {
+      "path": "ci/windows/screenshots/edge-cold-file-dark.png",
+      "bytes": 238661,
+      "sha256": "0b296d3cd9e3fbb28350cad9487d01d01d673a88af1a4ff730630c9a8f13d1ea"
+    },
+    {
+      "path": "ci/windows/screenshots/edge-color-validation-dark.png",
+      "bytes": 139861,
+      "sha256": "52e4f27b87dd45b29b00e5020d15b4a6dbac475c4b09e77ac572a99667e6f6bd"
+    },
+    {
+      "path": "ci/windows/screenshots/edge-color-validation-light.png",
+      "bytes": 139166,
+      "sha256": "6a4aa67142fe5b1aa9e9b991765a09aa139c8717b7fcf2298fc4983aa3a138f7"
+    },
+    {
+      "path": "ci/windows/screenshots/edge-keyboard-drawer-dark.png",
+      "bytes": 24465,
+      "sha256": "53bc35e6fea53023dabeb0b215d03adb61629b63a966f62cadb5211a1df1f135"
+    },
+    {
+      "path": "ci/windows/screenshots/edge-keyboard-drawer-light.png",
+      "bytes": 23963,
+      "sha256": "6ee93fdac805776ab96ed72797aae8dceafb421cf54c518eacea7a786dea6f06"
+    },
+    {
+      "path": "ci/windows/screenshots/edge-recovery-dark.png",
+      "bytes": 50637,
+      "sha256": "61f8ae1cfec28d618e80e018ad07576a2554f71b6c39e50c91ddf3d02b79289a"
+    },
+    {
+      "path": "ci/windows/screenshots/edge-recovery-light.png",
+      "bytes": 50361,
+      "sha256": "f1104778c9d6a2452c226d53c94989918bfc8fe3e011c7fb60f2dd773328d22f"
+    },
+    {
+      "path": "ci/windows/screenshots/edge-reopened-file.png",
+      "bytes": 315549,
+      "sha256": "f2b88eda775f55a5e8209fa3fcd7392bba301a59450b7de2450675afd4170d4b"
+    },
+    {
+      "path": "ci/windows/screenshots/edge-settings.png",
+      "bytes": 178927,
+      "sha256": "aad2613a24b0a7a84580f5332432f064f2384e267cc11c689394d2703c6d51fd"
+    },
+    {
+      "path": "ci/windows/screenshots/edge-viewport-1024.png",
+      "bytes": 98076,
+      "sha256": "3eea2abb489102eb6d65df1d34f60ef8aa48dd27f872cefadea198169af0934b"
+    },
+    {
+      "path": "ci/windows/screenshots/edge-viewport-1280.png",
+      "bytes": 114553,
+      "sha256": "da507b3026ede7a45462cbf0720cff9a02d61a84a07dcff62c2fa3e741df8d4b"
+    },
+    {
+      "path": "ci/windows/screenshots/edge-viewport-1440.png",
+      "bytes": 136844,
+      "sha256": "9c5a8fd09bdec91eaeeb5cb4a1ce09aa369128c36c8e649ac0efdb7c17e1e803"
+    },
+    {
+      "path": "ci/windows/screenshots/edge-viewport-1920.png",
+      "bytes": 171313,
+      "sha256": "8da090b56eef5a5d3cd470d3d3a4c52cc4d669253182e9f88680d0f732862165"
+    },
+    {
+      "path": "ci/windows/screenshots/edge-viewport-375.png",
+      "bytes": 33922,
+      "sha256": "5475b0a2cd85267efe22d7a1ad56059f8367795938b391eaa68ddfbb9950d003"
+    },
+    {
+      "path": "logs/actions-artifacts.json",
+      "bytes": 2739,
+      "sha256": "323ef85c10ed68949f1f6e81798db79960b342f6638cc9d8839284a58425e06a"
+    },
+    {
+      "path": "logs/actions-jobs.json",
+      "bytes": 17006,
+      "sha256": "057de16102164c616ce9ba43d8a2155b0e095a7ecffbed694ca1a13d6bdab6f0"
+    },
+    {
+      "path": "logs/actions-run.json",
+      "bytes": 14165,
+      "sha256": "d0b24111a2c5b70e7f7a64264067625ff82be4b47035cba6ba7295f2d49078b6"
+    },
+    {
+      "path": "logs/candidate-artifacts.json",
+      "bytes": 600,
+      "sha256": "4245027ab65c556d55acf7f9152a939bf00b8e8ec5e9d5baa3c051ae1f8c7a8b"
+    },
+    {
+      "path": "logs/cold-launch-console.txt",
+      "bytes": 196,
+      "sha256": "920f94a3d15e60458abbdb9bf0207a6a799b81e132dac08b84a85fdfcc52d058"
+    },
+    {
+      "path": "logs/cold-launch.json",
+      "bytes": 3057,
+      "sha256": "5dc115a2f54d38dd207a60b8c09954d067701bb9079eab396cf5e3140fa592fd"
+    },
+    {
+      "path": "logs/environment.json",
+      "bytes": 319,
+      "sha256": "27cdf167ba7789bccd1f0a13823ee1b41646cf8a0b361d5b676468010d62620c"
+    },
+    {
+      "path": "logs/export-comparisons.json",
+      "bytes": 7627,
+      "sha256": "02045b82fa53ca379704fe56703ce26cc8e4a525801c8a6b81ebbe6a4a112b2e"
+    },
+    {
+      "path": "logs/mac-chrome-edge-png.json",
+      "bytes": 765,
+      "sha256": "0dc5cb356c8666466c5aaf286d2153f6d122d6740bc6104b1e5ef53889ba66e9"
+    },
+    {
+      "path": "logs/preservation.json",
+      "bytes": 694,
+      "sha256": "30a9bc8a14add7c5b1b98a3cf4c06706a5b8be6b09cc1f3800f75a5a8d7b493f"
+    },
+    {
+      "path": "logs/settings-console.txt",
+      "bytes": 178,
+      "sha256": "629e2200b315d8a1dff2f0a0e937ed1926c8c95d59a2ec7256ddcebccda01955"
+    },
+    {
+      "path": "logs/settings.json",
+      "bytes": 5236,
+      "sha256": "fe95bd9cdf471f60c766d60ed140d2a08af7a58b750aa891caac72c6cb292a8d"
+    },
+    {
+      "path": "logs/workflows-chrome-console.txt",
+      "bytes": 1148,
+      "sha256": "d824ff15ab82f3973f190689a54aac63d84eaa15b995e9fdbeb58af655da37f3"
+    },
+    {
+      "path": "logs/workflows-chrome.json",
+      "bytes": 2205,
+      "sha256": "0ea5e15141340fcd14c58670f14ebe2358d5e19abaedcf2199b6ceef6ef3614c"
+    },
+    {
+      "path": "logs/workflows-edge-console.txt",
+      "bytes": 1146,
+      "sha256": "45df755fbcd9fbccda2db4c6748becc023d5757d1e102948ea27a582a7876f81"
+    },
+    {
+      "path": "logs/workflows-edge.json",
+      "bytes": 2203,
+      "sha256": "57a665376516ab8d147334099e17818587370c8e02778d176f8d461b3a9c5153"
+    },
+    {
+      "path": "M7-REPORT.md",
+      "bytes": 7968,
+      "sha256": "4dc5967c0242fad547fa96ac07de6679b0074048658037a928768f6d87d00fbe"
+    },
+    {
+      "path": "MACOS-TEST-PROTOCOL.md",
+      "bytes": 2011,
+      "sha256": "364f00d02ca06d3e06349efd4a39d7387a5f4b2ccea2d8d5a7986bfd7db2deea"
+    },
+    {
+      "path": "outputs/chrome/cold-portrait.png",
+      "bytes": 856966,
+      "sha256": "905b7ab4300494d15fa2dbbc541484d161bc0b9a5db590b471d92b94fe7ea571"
+    },
+    {
+      "path": "outputs/chrome/cold-portrait.svg",
+      "bytes": 140280,
+      "sha256": "d29d76f5206162326cddb297eb2ab9588f3174a89c2586a9a7b3c5bdf314e603"
+    },
+    {
+      "path": "outputs/chrome/offline-paints.png",
+      "bytes": 126898,
+      "sha256": "523ec5e53d655a5778c7257cfbb17aa01c2b06d66b20ad6efcdbd46d4c9ef15d"
+    },
+    {
+      "path": "outputs/chrome/offline-paints.svg",
+      "bytes": 1998,
+      "sha256": "a622ad89643f320c20d09ff5a5a6c265d12715d08a92c8fe4edc21f729df5a56"
+    },
+    {
+      "path": "outputs/chrome/offline-warmup.png",
+      "bytes": 261618,
+      "sha256": "1b000a2941bc8df44a420467d5c8475b8b2d3a911280e9836f187d311664db63"
+    },
+    {
+      "path": "outputs/chrome/portrait-reduced-styled.png",
+      "bytes": 739974,
+      "sha256": "28bf7ec063236e5af9111108ac78b0d180fea393a769f7d7f4ffc981ccb0f5b0"
+    },
+    {
+      "path": "outputs/chrome/portrait-reduced.svg",
+      "bytes": 36931,
+      "sha256": "e8b2b55a6fc5e615f3b34a03b454036cf9cfca625aca6555701132beb2f7f2f0"
+    },
+    {
+      "path": "outputs/chrome/safe-color-dark.svg",
+      "bytes": 9721,
+      "sha256": "42ce92b24f0a9252c9ceb5a0a56ca781dadba42b5cc2453ca3aff14c6afa9996"
+    },
+    {
+      "path": "outputs/chrome/safe-color-light.svg",
+      "bytes": 9721,
+      "sha256": "42ce92b24f0a9252c9ceb5a0a56ca781dadba42b5cc2453ca3aff14c6afa9996"
+    },
+    {
+      "path": "outputs/chrome/workflow-manual.png",
+      "bytes": 252730,
+      "sha256": "9992ccd063407ad8242383a25f3d3fae62a824d9d7b0737569017bb763029529"
+    },
+    {
+      "path": "outputs/chrome/workflow-manual.svg",
+      "bytes": 9406,
+      "sha256": "51edc09034c6b5b0f3034b0efe7a7e54b9ae9734788ed7fc06ae682a81b6c05b"
+    },
+    {
+      "path": "outputs/chrome/workflow-paints.png",
+      "bytes": 222922,
+      "sha256": "4fe5fe91aea2925d35dac8e9ebd0231eb20bd758843aea9832175c478f2a1e82"
+    },
+    {
+      "path": "outputs/chrome/workflow-paints.svg",
+      "bytes": 12709,
+      "sha256": "0d3c8650b33603179a32b522bb59cb576ee43e1556bef6a345eb602b3d879e59"
+    },
+    {
+      "path": "outputs/chrome/workflow-rapid.svg",
+      "bytes": 1355,
+      "sha256": "4ee11f06703ff5167e8e88e99923027be700bdc6eff598ef6bbc602a2e27d5e4"
+    },
+    {
+      "path": "outputs/chrome/workflow-recovered-dark.svg",
+      "bytes": 9451,
+      "sha256": "79543dcc66cb4efc2877c26b6e1836fec5517645e851912b40ec6babd09a6bc4"
+    },
+    {
+      "path": "outputs/chrome/workflow-recovered-light.svg",
+      "bytes": 9451,
+      "sha256": "79543dcc66cb4efc2877c26b6e1836fec5517645e851912b40ec6babd09a6bc4"
+    },
+    {
+      "path": "outputs/chrome/workflow-simple.png",
+      "bytes": 231248,
+      "sha256": "4599e5db7e11a5fc5252f2fba4c59b9d3662840662f248e8adba8ec606d800c4"
+    },
+    {
+      "path": "outputs/chrome/workflow-simple.svg",
+      "bytes": 6238,
+      "sha256": "b972b4faebc9a5534c92aa36474d329996dc7ad43e134751dfb3ea57f26215ce"
+    },
+    {
+      "path": "outputs/edge/cold-portrait.png",
+      "bytes": 856966,
+      "sha256": "905b7ab4300494d15fa2dbbc541484d161bc0b9a5db590b471d92b94fe7ea571"
+    },
+    {
+      "path": "outputs/edge/cold-portrait.svg",
+      "bytes": 140280,
+      "sha256": "d29d76f5206162326cddb297eb2ab9588f3174a89c2586a9a7b3c5bdf314e603"
+    },
+    {
+      "path": "outputs/edge/offline-paints.png",
+      "bytes": 126898,
+      "sha256": "523ec5e53d655a5778c7257cfbb17aa01c2b06d66b20ad6efcdbd46d4c9ef15d"
+    },
+    {
+      "path": "outputs/edge/offline-paints.svg",
+      "bytes": 1998,
+      "sha256": "a622ad89643f320c20d09ff5a5a6c265d12715d08a92c8fe4edc21f729df5a56"
+    },
+    {
+      "path": "outputs/edge/offline-warmup.png",
+      "bytes": 261618,
+      "sha256": "1b000a2941bc8df44a420467d5c8475b8b2d3a911280e9836f187d311664db63"
+    },
+    {
+      "path": "outputs/edge/portrait-reduced-styled.png",
+      "bytes": 739974,
+      "sha256": "28bf7ec063236e5af9111108ac78b0d180fea393a769f7d7f4ffc981ccb0f5b0"
+    },
+    {
+      "path": "outputs/edge/portrait-reduced.svg",
+      "bytes": 36931,
+      "sha256": "e8b2b55a6fc5e615f3b34a03b454036cf9cfca625aca6555701132beb2f7f2f0"
+    },
+    {
+      "path": "outputs/edge/safe-color-dark.svg",
+      "bytes": 9721,
+      "sha256": "42ce92b24f0a9252c9ceb5a0a56ca781dadba42b5cc2453ca3aff14c6afa9996"
+    },
+    {
+      "path": "outputs/edge/safe-color-light.svg",
+      "bytes": 9721,
+      "sha256": "42ce92b24f0a9252c9ceb5a0a56ca781dadba42b5cc2453ca3aff14c6afa9996"
+    },
+    {
+      "path": "outputs/edge/workflow-manual.png",
+      "bytes": 252730,
+      "sha256": "9992ccd063407ad8242383a25f3d3fae62a824d9d7b0737569017bb763029529"
+    },
+    {
+      "path": "outputs/edge/workflow-manual.svg",
+      "bytes": 9406,
+      "sha256": "51edc09034c6b5b0f3034b0efe7a7e54b9ae9734788ed7fc06ae682a81b6c05b"
+    },
+    {
+      "path": "outputs/edge/workflow-paints.png",
+      "bytes": 222922,
+      "sha256": "4fe5fe91aea2925d35dac8e9ebd0231eb20bd758843aea9832175c478f2a1e82"
+    },
+    {
+      "path": "outputs/edge/workflow-paints.svg",
+      "bytes": 12709,
+      "sha256": "0d3c8650b33603179a32b522bb59cb576ee43e1556bef6a345eb602b3d879e59"
+    },
+    {
+      "path": "outputs/edge/workflow-rapid.svg",
+      "bytes": 1355,
+      "sha256": "4ee11f06703ff5167e8e88e99923027be700bdc6eff598ef6bbc602a2e27d5e4"
+    },
+    {
+      "path": "outputs/edge/workflow-recovered-dark.svg",
+      "bytes": 9451,
+      "sha256": "79543dcc66cb4efc2877c26b6e1836fec5517645e851912b40ec6babd09a6bc4"
+    },
+    {
+      "path": "outputs/edge/workflow-recovered-light.svg",
+      "bytes": 9451,
+      "sha256": "79543dcc66cb4efc2877c26b6e1836fec5517645e851912b40ec6babd09a6bc4"
+    },
+    {
+      "path": "outputs/edge/workflow-simple.png",
+      "bytes": 231248,
+      "sha256": "4599e5db7e11a5fc5252f2fba4c59b9d3662840662f248e8adba8ec606d800c4"
+    },
+    {
+      "path": "outputs/edge/workflow-simple.svg",
+      "bytes": 6238,
+      "sha256": "b972b4faebc9a5534c92aa36474d329996dc7ad43e134751dfb3ea57f26215ce"
+    },
+    {
+      "path": "SAFARI-INVESTIGATION.md",
+      "bytes": 2672,
+      "sha256": "c43608fb42ce8e56097cf79e282b5494b22fb1c767807cd1b7145bd0db383c20"
+    },
+    {
+      "path": "screenshots/chrome-cold-file-dark.png",
+      "bytes": 244253,
+      "sha256": "9aa62c242a3c631a0c70c2613dcec6c773e02e4aff48fc76d0d1cc3ee0fc1734"
+    },
+    {
+      "path": "screenshots/chrome-color-validation-dark.png",
+      "bytes": 141016,
+      "sha256": "7322e1873afa6e4c3292cb35a31e691969fe87d4facdde88403c65ed5bcb904a"
+    },
+    {
+      "path": "screenshots/chrome-color-validation-light.png",
+      "bytes": 140412,
+      "sha256": "aaa726e5b418a7b7aabdff046684ffa22126126f216ba57c343f10be934cc44a"
+    },
+    {
+      "path": "screenshots/chrome-keyboard-drawer-dark.png",
+      "bytes": 25037,
+      "sha256": "7e6d4299d61371ebd4ce56b54ba2dc9745e3e89ed13aa03c6479eae6257dccfd"
+    },
+    {
+      "path": "screenshots/chrome-keyboard-drawer-light.png",
+      "bytes": 24890,
+      "sha256": "331981c32f1259c52c13e59a13ebc15c59693af2bfa40ca39c3c405535505dab"
+    },
+    {
+      "path": "screenshots/chrome-recovery-dark.png",
+      "bytes": 54244,
+      "sha256": "99fa332be4fe3888449d6a2c98b7d6e3b1cf28f76d8bdb1a9668597e7d6ece57"
+    },
+    {
+      "path": "screenshots/chrome-recovery-light.png",
+      "bytes": 53882,
+      "sha256": "dd020f8317f1316ba5b98c8b23f63a92a74f12049be8fbe9822c516dce1c6281"
+    },
+    {
+      "path": "screenshots/chrome-reopened-file.png",
+      "bytes": 325833,
+      "sha256": "a475b4b4457a32905fb3b44507ca25f05f0af3c39aec0e41a320a4190ede64fb"
+    },
+    {
+      "path": "screenshots/chrome-settings.png",
+      "bytes": 184551,
+      "sha256": "352d84d59d757d4dfc213a56e389ef103cbb26da25d27fb8b352daaa5fa79238"
+    },
+    {
+      "path": "screenshots/chrome-viewport-1024.png",
+      "bytes": 100844,
+      "sha256": "88c78daf8be9824f94071be69efd9639610cd12cab27c46a85df8bd6b25b6d8c"
+    },
+    {
+      "path": "screenshots/chrome-viewport-1280.png",
+      "bytes": 116695,
+      "sha256": "7097e70e2895b7781beb2f6cb067292dbcc4396930be23290d4548d4b163e390"
+    },
+    {
+      "path": "screenshots/chrome-viewport-1440.png",
+      "bytes": 138772,
+      "sha256": "b201403d87f1794df4bd72cc580141eb9f01fc926a8859b2781c24259e238da7"
+    },
+    {
+      "path": "screenshots/chrome-viewport-1920.png",
+      "bytes": 173962,
+      "sha256": "ae9c761e4840438650f31a1cbc580c3983281ac506b0352f741af3a7a9f12e77"
+    },
+    {
+      "path": "screenshots/chrome-viewport-375.png",
+      "bytes": 35100,
+      "sha256": "8fbc69968ac39564e0a2d548d57cf5543d92ee6ef1fe4aef0bd8b9a066955f26"
+    },
+    {
+      "path": "screenshots/edge-cold-file-dark.png",
+      "bytes": 244183,
+      "sha256": "219bb9778fe6c9ed780a7c28d9725ad5de07975079807c4a62b324f9eddf21cb"
+    },
+    {
+      "path": "screenshots/edge-color-validation-dark.png",
+      "bytes": 141016,
+      "sha256": "7322e1873afa6e4c3292cb35a31e691969fe87d4facdde88403c65ed5bcb904a"
+    },
+    {
+      "path": "screenshots/edge-color-validation-light.png",
+      "bytes": 140412,
+      "sha256": "aaa726e5b418a7b7aabdff046684ffa22126126f216ba57c343f10be934cc44a"
+    },
+    {
+      "path": "screenshots/edge-keyboard-drawer-dark.png",
+      "bytes": 25037,
+      "sha256": "7e6d4299d61371ebd4ce56b54ba2dc9745e3e89ed13aa03c6479eae6257dccfd"
+    },
+    {
+      "path": "screenshots/edge-keyboard-drawer-light.png",
+      "bytes": 24890,
+      "sha256": "331981c32f1259c52c13e59a13ebc15c59693af2bfa40ca39c3c405535505dab"
+    },
+    {
+      "path": "screenshots/edge-recovery-dark.png",
+      "bytes": 54244,
+      "sha256": "99fa332be4fe3888449d6a2c98b7d6e3b1cf28f76d8bdb1a9668597e7d6ece57"
+    },
+    {
+      "path": "screenshots/edge-recovery-light.png",
+      "bytes": 53882,
+      "sha256": "dd020f8317f1316ba5b98c8b23f63a92a74f12049be8fbe9822c516dce1c6281"
+    },
+    {
+      "path": "screenshots/edge-reopened-file.png",
+      "bytes": 325833,
+      "sha256": "a475b4b4457a32905fb3b44507ca25f05f0af3c39aec0e41a320a4190ede64fb"
+    },
+    {
+      "path": "screenshots/edge-settings.png",
+      "bytes": 184551,
+      "sha256": "352d84d59d757d4dfc213a56e389ef103cbb26da25d27fb8b352daaa5fa79238"
+    },
+    {
+      "path": "screenshots/edge-viewport-1024.png",
+      "bytes": 100847,
+      "sha256": "0c9e2b0435ba527e3a2dea081d9c25c6a1641adc04e3c42b83c527fcdbbbaaee"
+    },
+    {
+      "path": "screenshots/edge-viewport-1280.png",
+      "bytes": 116695,
+      "sha256": "7097e70e2895b7781beb2f6cb067292dbcc4396930be23290d4548d4b163e390"
+    },
+    {
+      "path": "screenshots/edge-viewport-1440.png",
+      "bytes": 138772,
+      "sha256": "b201403d87f1794df4bd72cc580141eb9f01fc926a8859b2781c24259e238da7"
+    },
+    {
+      "path": "screenshots/edge-viewport-1920.png",
+      "bytes": 173962,
+      "sha256": "ae9c761e4840438650f31a1cbc580c3983281ac506b0352f741af3a7a9f12e77"
+    },
+    {
+      "path": "screenshots/edge-viewport-375.png",
+      "bytes": 35100,
+      "sha256": "8fbc69968ac39564e0a2d548d57cf5543d92ee6ef1fe4aef0bd8b9a066955f26"
+    },
+    {
+      "path": "screenshots/png-platform-comparison.png",
+      "bytes": 79052,
+      "sha256": "7df331354c9b35fcb4bb438eaffa42e7e0e96c3154ef9816a19c6182c46009ce"
+    },
+    {
+      "path": "scripts/browser-common.mjs",
+      "bytes": 5954,
+      "sha256": "95d7f73088f2d550ef3ebab2be6df9390f47a66c77d8a099da7ccfc814fc60d0"
+    },
+    {
+      "path": "scripts/cold-launch.mjs",
+      "bytes": 5375,
+      "sha256": "399c80fb9bbb5eca3753e741ee529abcd72d57a6919c60be84e699781d312a32"
+    },
+    {
+      "path": "scripts/compare-exports.py",
+      "bytes": 1372,
+      "sha256": "a64d5f279f713ce05a302f37611c6cdb99d4eaa51b50a8306ba7274b9de73352"
+    },
+    {
+      "path": "scripts/customer-workflows.mjs",
+      "bytes": 10905,
+      "sha256": "09ac5c024aa68aa1996dcce0f454daf597034ac635f826c75e1ee909791a4530"
+    },
+    {
+      "path": "scripts/preserve.mjs",
+      "bytes": 1470,
+      "sha256": "bce6d664e54e28c9b88af77bb3af7e16dda6b5349e9141438cc7bf8b2aef6d55"
+    },
+    {
+      "path": "scripts/safari-check.py",
+      "bytes": 2647,
+      "sha256": "4fb7afcd080c859110b42d68a903e6e5f820b7bfb945c886750fb0a9956067c8"
+    },
+    {
+      "path": "scripts/settings-check.mjs",
+      "bytes": 4311,
+      "sha256": "62ca0ce1c7014f789daa2b25b4d9a737ebc76a334fc397d762cc1d8cb44d4266"
+    }
+  ],
+  "release": [
+    {
+      "name": "Pictora-Browser-Offline.zip",
+      "bytes": 76750,
+      "sha256": "ea78b4a5bf05e822ecbb1ff0f7a5d43e911af48f975b235ebb6f3fab15b0a7e6"
+    },
+    {
+      "name": "Pictora.html",
+      "bytes": 233683,
+      "sha256": "2952e3de6a80c270bd0aee1018caaa177c6e1182b562092aeaaf9d242336c857"
+    },
+    {
+      "name": "README.txt",
+      "bytes": 1898,
+      "sha256": "0f464526ba14b5b2a1e26828aaa568e94289a03e6a3b3622477b15f6e056b56a"
+    },
+    {
+      "name": "THIRD-PARTY-NOTICES.txt",
+      "bytes": 8195,
+      "sha256": "a615125e44489a7c3c870420034887575e2bb162e234e4ba715f79283c5697bd"
+    }
+  ],
+  "testedHtmlSha256": "2952e3de6a80c270bd0aee1018caaa177c6e1182b562092aeaaf9d242336c857"
+}

@@ -1,0 +1,15 @@
+PASS simple conversion, color count, smoothing and both actual exports
+PASS manual add, modify, remove, consecutive numbers and exports
+PASS paint photo extraction, legend and both exports
+PASS rapid pending edits keep exports disabled and presentation independent
+PASS file error, controlled worker failure and retry (light)
+PASS file error, controlled worker failure and retry (dark)
+PASS color text rejects remote paint and malformed strings; valid colors remain local (light)
+PASS color text rejects remote paint and malformed strings; valid colors remain local (dark)
+PASS modal settings drawer has initial focus, contained Tab and Escape restoration (light)
+PASS modal settings drawer has initial focus, contained Tab and Escape restoration (dark)
+PASS untrusted SVG is rasterized without script, external image, or filename markup execution
+PASS built app works with network disabled after load and preserves explicit theme after reload
+PASS desktop and narrow viewports retain controls, proportions and exports
+PASS no unhandled errors, rejections or external application requests
+{"browser":"chrome","passed":14,"failed":0}

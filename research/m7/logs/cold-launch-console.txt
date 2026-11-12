@@ -1,0 +1,2 @@
+chrome: fresh-profile offline file launch, real worker, photo/export and full browser reopen PASS
+edge: fresh-profile offline file launch, real worker, photo/export and full browser reopen PASS

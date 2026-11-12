@@ -1,0 +1,37 @@
+{
+  "records": [
+    {
+      "milestone": "m1",
+      "artifactCount": 144,
+      "changed": []
+    },
+    {
+      "milestone": "m2",
+      "artifactCount": 121,
+      "changed": []
+    },
+    {
+      "milestone": "m3",
+      "artifactCount": 267,
+      "changed": []
+    },
+    {
+      "milestone": "m4",
+      "artifactCount": 880,
+      "changed": []
+    },
+    {
+      "milestone": "m5",
+      "artifactCount": 620,
+      "changed": []
+    },
+    {
+      "milestone": "m6",
+      "artifactCount": 353,
+      "changed": []
+    }
+  ],
+  "protectedGitChanges": "",
+  "candidateHtmlIdenticalToM5": true,
+  "candidateSha256": "2952e3de6a80c270bd0aee1018caaa177c6e1182b562092aeaaf9d242336c857"
+}

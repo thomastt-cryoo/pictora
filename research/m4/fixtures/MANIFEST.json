@@ -1,0 +1,217 @@
+{
+  "sources": [
+    {
+      "name": "paintbox.jpg",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Tuschkasten.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Tuschkasten.jpg",
+      "author": "Stilfehler",
+      "license": "CC BY-SA 3.0 (selected from offered licenses)",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "bytes": 338577,
+      "sha256": "41fe09e93dcc58713a4628af0f4a3bd4631f8a3986a21bb1ac8b9e62a68e8366"
+    },
+    {
+      "name": "portrait.jpg",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/8/88/Commander_Eileen_Collins_-_GPN-2000-001177.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Commander_Eileen_Collins_-_GPN-2000-001177.jpg",
+      "author": "NASA / Robert Markowitz",
+      "license": "Public domain (NASA)",
+      "licenseUrl": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "bytes": 1215060,
+      "sha256": "752846bd7bc6496b66ee4aebf1799635b676ba15b2c06adb6cf7be6da1eb91bb"
+    },
+    {
+      "name": "animal.jpg",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/4/4d/Cat_November_2010-1a.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Cat_November_2010-1a.jpg",
+      "author": "Alvesgaspar",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "bytes": 2833605,
+      "sha256": "59ec9bf12a5b63e0913e986b9566b96228c9f8921fda4fb87bf2a7f9acff3dd2"
+    },
+    {
+      "name": "landscape-highres.jpg",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Fronalpstock_big.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Fronalpstock_big.jpg",
+      "author": "Hannes R\u00f6st",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "bytes": 14679474,
+      "sha256": "24eb29eccdf0af691b406d1a3d22c0ef5d761cc454d8a917848c33958f6fc857"
+    },
+    {
+      "name": "botanical.jpg",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/4/41/Sunflower_from_Silesia2.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Sunflower_from_Silesia2.jpg",
+      "author": "Pudelek; edited by Yzmo",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "bytes": 2803917,
+      "sha256": "c6f91a01bd0688c83088def88e48d94da65731e351370e22ea359f687f13cbf1"
+    }
+  ],
+  "derived": [
+    {
+      "name": "landscape.png",
+      "width": 1800,
+      "height": 809,
+      "sha256": "189232046b2e1131e70f4e34d6a388e05fe4795dfb53b1e8fdd81d19f15414bc",
+      "derivedFrom": "landscape-highres.jpg",
+      "changes": "Resized to longest edge 1800 for bounded normal-use comparison"
+    },
+    {
+      "name": "high-contrast.png",
+      "width": 960,
+      "height": 1200,
+      "sha256": "8477561c7b00e29457d9af46507820c356717849d7c94aafa3a6f8c3a93045fc",
+      "derivedFrom": "portrait.jpg",
+      "changes": "Resized, grayscale and contrast factor 2.2"
+    },
+    {
+      "name": "low-contrast.png",
+      "width": 1800,
+      "height": 809,
+      "sha256": "09f6e21b397f7ac8d266338ccbc70b2600b5c01251b083ec057da0f018ecbcf4",
+      "derivedFrom": "landscape-highres.jpg",
+      "changes": "Resized and contrast factor 0.18"
+    },
+    {
+      "name": "square-animal.png",
+      "width": 800,
+      "height": 800,
+      "sha256": "c41d38583ec6e614b85ad9dc623903aa4244989f7c01e87b4797d8224dcaf6c9",
+      "derivedFrom": "animal.jpg",
+      "changes": "Square crop and resize, for square PNG/export checks"
+    },
+    {
+      "name": "illustration.png",
+      "width": 480,
+      "height": 480,
+      "sha256": "58487e8c167269e1503115756dc46a0d1181980d1edccc817ea895d93dd1b22b",
+      "derivedFrom": "Generated deterministic drawing",
+      "changes": "Code-authored geometric cartoon; no AI image generation"
+    },
+    {
+      "name": "tiny.png",
+      "width": 12,
+      "height": 12,
+      "sha256": "98b6872ae39a1837dce905d3b7bffeb6cd855628a1b4e84acc7b17b0235bbd42",
+      "derivedFrom": "illustration.png",
+      "changes": "Nearest-neighbor 12x12 tiny test"
+    }
+  ],
+  "cases": [
+    {
+      "id": "portrait",
+      "file": "research/m4/fixtures/portrait.jpg",
+      "category": "Human portrait",
+      "inputDimensions": [
+        2615,
+        3269
+      ]
+    },
+    {
+      "id": "landscape",
+      "file": "research/m4/fixtures/landscape.png",
+      "category": "Landscape photograph",
+      "inputDimensions": [
+        1800,
+        809
+      ]
+    },
+    {
+      "id": "animal",
+      "file": "research/m4/fixtures/animal.jpg",
+      "category": "Pet photograph",
+      "inputDimensions": [
+        1795,
+        2397
+      ]
+    },
+    {
+      "id": "botanical",
+      "file": "research/m4/fixtures/botanical.jpg",
+      "category": "Flower photograph",
+      "inputDimensions": [
+        2434,
+        1697
+      ]
+    },
+    {
+      "id": "illustration",
+      "file": "research/m4/fixtures/illustration.png",
+      "category": "Illustration/cartoon",
+      "inputDimensions": [
+        480,
+        480
+      ]
+    },
+    {
+      "id": "high-contrast",
+      "file": "research/m4/fixtures/high-contrast.png",
+      "category": "High-contrast photo derivative",
+      "inputDimensions": [
+        960,
+        1200
+      ]
+    },
+    {
+      "id": "low-contrast",
+      "file": "research/m4/fixtures/low-contrast.png",
+      "category": "Low-contrast photo derivative",
+      "inputDimensions": [
+        1800,
+        809
+      ]
+    },
+    {
+      "id": "multicolor",
+      "file": "research/m4/fixtures/botanical.jpg",
+      "category": "Complex multicolor photograph",
+      "colors": 24,
+      "inputDimensions": [
+        2434,
+        1697
+      ]
+    },
+    {
+      "id": "limited",
+      "file": "research/m1/fixtures/quadrants.png",
+      "category": "Limited-color graphic",
+      "colors": 12,
+      "inputDimensions": [
+        120,
+        90
+      ]
+    },
+    {
+      "id": "transparent",
+      "file": "research/m1/fixtures/transparent.png",
+      "category": "Transparent RGBA graphic",
+      "colors": 6,
+      "inputDimensions": [
+        96,
+        72
+      ]
+    },
+    {
+      "id": "tiny",
+      "file": "research/m4/fixtures/tiny.png",
+      "category": "Very small image",
+      "inputDimensions": [
+        12,
+        12
+      ]
+    },
+    {
+      "id": "high-resolution",
+      "file": "research/m4/fixtures/landscape-highres.jpg",
+      "category": "45.9 megapixel panorama",
+      "inputDimensions": [
+        10109,
+        4542
+      ]
+    }
+  ]
+}

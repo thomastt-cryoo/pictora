@@ -1,0 +1,80 @@
+{
+  "browser": "chrome",
+  "version": "157.0.8103.79",
+  "results": [
+    {
+      "title": "simple conversion, color count, smoothing and both actual exports",
+      "status": "PASS",
+      "details": {
+        "regions": 26
+      }
+    },
+    {
+      "title": "manual add, modify, remove, consecutive numbers and exports",
+      "status": "PASS",
+      "details": {
+        "colors": 12
+      }
+    },
+    {
+      "title": "paint photo extraction, legend and both exports",
+      "status": "PASS",
+      "details": {
+        "colors": 10
+      }
+    },
+    {
+      "title": "rapid pending edits keep exports disabled and presentation independent",
+      "status": "PASS"
+    },
+    {
+      "title": "file error, controlled worker failure and retry (light)",
+      "status": "PASS"
+    },
+    {
+      "title": "file error, controlled worker failure and retry (dark)",
+      "status": "PASS"
+    },
+    {
+      "title": "color text rejects remote paint and malformed strings; valid colors remain local (light)",
+      "status": "PASS"
+    },
+    {
+      "title": "color text rejects remote paint and malformed strings; valid colors remain local (dark)",
+      "status": "PASS"
+    },
+    {
+      "title": "modal settings drawer has initial focus, contained Tab and Escape restoration (light)",
+      "status": "PASS"
+    },
+    {
+      "title": "modal settings drawer has initial focus, contained Tab and Escape restoration (dark)",
+      "status": "PASS"
+    },
+    {
+      "title": "untrusted SVG is rasterized without script, external image, or filename markup execution",
+      "status": "PASS",
+      "details": {
+        "outcome": "Browser rejected SVG safely; valid image recovered"
+      }
+    },
+    {
+      "title": "built app works with network disabled after load and preserves explicit theme after reload",
+      "status": "PASS"
+    },
+    {
+      "title": "desktop and narrow viewports retain controls, proportions and exports",
+      "status": "PASS"
+    },
+    {
+      "title": "no unhandled errors, rejections or external application requests",
+      "status": "PASS",
+      "details": {
+        "errors": [],
+        "external": []
+      }
+    }
+  ],
+  "errors": [],
+  "external": []
+}

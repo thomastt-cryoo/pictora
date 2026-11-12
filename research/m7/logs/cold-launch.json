@@ -1,0 +1,82 @@
+{
+  "method": "Fresh persistent disk profile; offline:true supplied at browser context launch before file navigation; standalone HTML copied alone into OS temp directory. No project assets in that folder, no local HTTP server. Browser sandbox retained. Actual browser process closed/reopened with the same profile for storage/reopen check.",
+  "isolated": "C:\\Users\\mazin\\AppData\\Local\\Temp\\Pictora-M7-browser-4GBy9y",
+  "records": [
+    {
+      "browser": "chrome",
+      "version": "151.0.7922.72",
+      "status": "PASS",
+      "url": "file:///C:/Users/mazin/AppData/Local/Temp/Pictora-M7-browser-4GBy9y/chrome/Pictora.html",
+      "profile": "C:\\Users\\mazin\\AppData\\Local\\Temp\\Pictora-M7-browser-4GBy9y\\chrome-profile",
+      "profileInitiallyEmpty": true,
+      "offlineBeforeNavigation": true,
+      "applicationDirectoryContents": [
+        "Pictora.html"
+      ],
+      "localServerRequired": false,
+      "workerMs": 431.9508000000001,
+      "capabilities": {
+        "OffscreenCanvas": "function",
+        "createImageBitmap": "function",
+        "data": [
+          18,
+          52,
+          86,
+          255
+        ],
+        "handler": "function",
+        "url": "blob:null/18b1057f-bf06-4298-ae2d-a8676ec06537"
+      },
+      "reopened": true,
+      "savedTheme": "dark",
+      "requests": [
+        "file:///C:/Users/mazin/AppData/Local/Temp/Pictora-M7-browser-4GBy9y/chrome/Pictora.html",
+        "file:///C:/Users/mazin/AppData/Local/Temp/Pictora-M7-browser-4GBy9y/chrome/Pictora.html",
+        "blob:null/e6159c86-c358-433a-806a-bb3cdabe3cfb",
+        "blob:null/3a8e7cf8-13d9-4d28-944c-148a0a632c2b"
+      ],
+      "external": [],
+      "unexpectedFiles": [],
+      "errors": [],
+      "consoleMessages": []
+    },
+    {
+      "browser": "edge",
+      "version": "157.0.4341.46",
+      "status": "PASS",
+      "url": "file:///C:/Users/mazin/AppData/Local/Temp/Pictora-M7-browser-4GBy9y/edge/Pictora.html",
+      "profile": "C:\\Users\\mazin\\AppData\\Local\\Temp\\Pictora-M7-browser-4GBy9y\\edge-profile",
+      "profileInitiallyEmpty": true,
+      "offlineBeforeNavigation": true,
+      "applicationDirectoryContents": [
+        "Pictora.html"
+      ],
+      "localServerRequired": false,
+      "workerMs": 564.0771000000004,
+      "capabilities": {
+        "OffscreenCanvas": "function",
+        "createImageBitmap": "function",
+        "data": [
+          18,
+          52,
+          86,
+          255
+        ],
+        "handler": "function",
+        "url": "blob:null/a06872a2-b285-44ee-b9f9-581e77bf8fcc"
+      },
+      "reopened": true,
+      "savedTheme": "dark",
+      "requests": [
+        "file:///C:/Users/mazin/AppData/Local/Temp/Pictora-M7-browser-4GBy9y/edge/Pictora.html",
+        "file:///C:/Users/mazin/AppData/Local/Temp/Pictora-M7-browser-4GBy9y/edge/Pictora.html",
+        "blob:null/8de61fe2-acd7-4116-85a3-c5c18093d047",
+        "blob:null/738b8a83-9e00-4a38-bd2b-35faa6427dfc"
+      ],
+      "external": [],
+      "unexpectedFiles": [],
+      "errors": [],
+      "consoleMessages": []
+    }
+  ]
+}

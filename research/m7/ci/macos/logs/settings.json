@@ -1,0 +1,103 @@
+{
+  "method": "Actual file URL, network disabled before navigation, synthetic HTML DataTransfer drop into the application handler. Process memory is a sample rather than an allocation peak.",
+  "records": [
+    {
+      "browser": "chrome",
+      "version": "157.0.8103.79",
+      "status": "PASS",
+      "conversionMs": 1696.9511670000002,
+      "modelSha256": "8df12263999bec10b762c8ec966040899c2eb820ddedf216ac161c5f5bb10eff",
+      "svgSha256": "e8b2b55a6fc5e615f3b34a03b454036cf9cfca625aca6555701132beb2f7f2f0",
+      "settings": {
+        "workingResolution": 700,
+        "smoothing": 70,
+        "minShapeSize": 160,
+        "connectivity": 8
+      },
+      "zoom": {
+        "before": "33%",
+        "after": "50%"
+      },
+      "memory": {
+        "processCount": 7,
+        "note": "Runner native memory is recorded separately."
+      },
+      "resources": {
+        "transfers": [
+          {
+            "type": "generatePalette",
+            "before": 2615,
+            "after": 0
+          },
+          {
+            "type": "segment",
+            "before": 2615,
+            "after": 0
+          },
+          {
+            "type": "generatePalette",
+            "before": 2615,
+            "after": 0
+          },
+          {
+            "type": "segment",
+            "before": 2615,
+            "after": 0
+          }
+        ],
+        "progress": 12
+      },
+      "errors": [],
+      "external": []
+    },
+    {
+      "browser": "edge",
+      "version": "157.0.4341.46",
+      "status": "PASS",
+      "conversionMs": 1785.8855829999993,
+      "modelSha256": "8df12263999bec10b762c8ec966040899c2eb820ddedf216ac161c5f5bb10eff",
+      "svgSha256": "e8b2b55a6fc5e615f3b34a03b454036cf9cfca625aca6555701132beb2f7f2f0",
+      "settings": {
+        "workingResolution": 700,
+        "smoothing": 70,
+        "minShapeSize": 160,
+        "connectivity": 8
+      },
+      "zoom": {
+        "before": "33%",
+        "after": "50%"
+      },
+      "memory": {
+        "processCount": 8,
+        "note": "Runner native memory is recorded separately."
+      },
+      "resources": {
+        "transfers": [
+          {
+            "type": "generatePalette",
+            "before": 2615,
+            "after": 0
+          },
+          {
+            "type": "segment",
+            "before": 2615,
+            "after": 0
+          },
+          {
+            "type": "generatePalette",
+            "before": 2615,
+            "after": 0
+          },
+          {
+            "type": "segment",
+            "before": 2615,
+            "after": 0
+          }
+        ],
+        "progress": 12
+      },
+      "errors": [],
+      "external": []
+    }
+  ]
+}

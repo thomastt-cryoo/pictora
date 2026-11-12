@@ -1,0 +1,82 @@
+{
+  "method": "Fresh persistent disk profile; offline:true supplied at browser context launch before file navigation; standalone HTML copied alone into OS temp directory. No project assets in that folder, no local HTTP server. Browser sandbox retained. Actual browser process closed/reopened with the same profile for storage/reopen check.",
+  "isolated": "/var/folders/2s/vty41l455yv698g4xkgfv7z00000gn/T/Pictora-M7-browser-eX5Av0",
+  "records": [
+    {
+      "browser": "chrome",
+      "version": "157.0.8103.79",
+      "status": "PASS",
+      "url": "file:///var/folders/2s/vty41l455yv698g4xkgfv7z00000gn/T/Pictora-M7-browser-eX5Av0/chrome/Pictora.html",
+      "profile": "/var/folders/2s/vty41l455yv698g4xkgfv7z00000gn/T/Pictora-M7-browser-eX5Av0/chrome-profile",
+      "profileInitiallyEmpty": true,
+      "offlineBeforeNavigation": true,
+      "applicationDirectoryContents": [
+        "Pictora.html"
+      ],
+      "localServerRequired": false,
+      "workerMs": 1161.179209,
+      "capabilities": {
+        "OffscreenCanvas": "function",
+        "createImageBitmap": "function",
+        "data": [
+          18,
+          52,
+          86,
+          255
+        ],
+        "handler": "function",
+        "url": "blob:null/94594021-1642-472a-9a9f-cd9a62bf277c"
+      },
+      "reopened": true,
+      "savedTheme": "dark",
+      "requests": [
+        "file:///var/folders/2s/vty41l455yv698g4xkgfv7z00000gn/T/Pictora-M7-browser-eX5Av0/chrome/Pictora.html",
+        "file:///var/folders/2s/vty41l455yv698g4xkgfv7z00000gn/T/Pictora-M7-browser-eX5Av0/chrome/Pictora.html",
+        "blob:null/77e99db8-8a06-4fc7-8c3c-651529a05bb1",
+        "blob:null/918e8515-7d88-4661-b069-f31e128e9ee9"
+      ],
+      "external": [],
+      "unexpectedFiles": [],
+      "errors": [],
+      "consoleMessages": []
+    },
+    {
+      "browser": "edge",
+      "version": "157.0.4341.46",
+      "status": "PASS",
+      "url": "file:///var/folders/2s/vty41l455yv698g4xkgfv7z00000gn/T/Pictora-M7-browser-eX5Av0/edge/Pictora.html",
+      "profile": "/var/folders/2s/vty41l455yv698g4xkgfv7z00000gn/T/Pictora-M7-browser-eX5Av0/edge-profile",
+      "profileInitiallyEmpty": true,
+      "offlineBeforeNavigation": true,
+      "applicationDirectoryContents": [
+        "Pictora.html"
+      ],
+      "localServerRequired": false,
+      "workerMs": 1117.122374999999,
+      "capabilities": {
+        "OffscreenCanvas": "function",
+        "createImageBitmap": "function",
+        "data": [
+          18,
+          52,
+          86,
+          255
+        ],
+        "handler": "function",
+        "url": "blob:null/3be99248-64d9-4b4c-83ea-c9714504c4f8"
+      },
+      "reopened": true,
+      "savedTheme": "dark",
+      "requests": [
+        "file:///var/folders/2s/vty41l455yv698g4xkgfv7z00000gn/T/Pictora-M7-browser-eX5Av0/edge/Pictora.html",
+        "file:///var/folders/2s/vty41l455yv698g4xkgfv7z00000gn/T/Pictora-M7-browser-eX5Av0/edge/Pictora.html",
+        "blob:null/46af0077-fa29-4674-977c-911cb1af3c2b",
+        "blob:null/714fc865-c1e1-402c-af5d-bf334b1d735f"
+      ],
+      "external": [],
+      "unexpectedFiles": [],
+      "errors": [],
+      "consoleMessages": []
+    }
+  ]
+}

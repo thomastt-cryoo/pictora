@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Pictora-Browser-Offline.zip",
+    "bytes": 76750,
+    "sha256": "ea78b4a5bf05e822ecbb1ff0f7a5d43e911af48f975b235ebb6f3fab15b0a7e6"
+  },
+  {
+    "name": "Pictora.html",
+    "bytes": 233683,
+    "sha256": "2952e3de6a80c270bd0aee1018caaa177c6e1182b562092aeaaf9d242336c857"
+  },
+  {
+    "name": "README.txt",
+    "bytes": 1898,
+    "sha256": "0f464526ba14b5b2a1e26828aaa568e94289a03e6a3b3622477b15f6e056b56a"
+  },
+  {
+    "name": "THIRD-PARTY-NOTICES.txt",
+    "bytes": 8195,
+    "sha256": "a615125e44489a7c3c870420034887575e2bb162e234e4ba715f79283c5697bd"
+  }
+]

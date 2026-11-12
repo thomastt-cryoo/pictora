@@ -7,3 +7,5 @@ research/m5/** -text
 release/browser/** -text
 research/m6/** -text
 release/windows/** -text
+research/m7/** -text
+release/candidates/m7-browser/** -text

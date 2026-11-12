@@ -1,0 +1,56 @@
+{
+  "retrieved": "2026-10-25",
+  "purpose": "Local QA inputs, not bundled product assets. Source photos unchanged. Derived fixtures/templates attributed under corresponding source licenses.",
+  "records": [
+    {
+      "name": "paintbox.jpg",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Tuschkasten.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Tuschkasten.jpg",
+      "author": "Stilfehler",
+      "license": "CC BY-SA 3.0 (selected from offered licenses)",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "bytes": 338577,
+      "sha256": "41fe09e93dcc58713a4628af0f4a3bd4631f8a3986a21bb1ac8b9e62a68e8366"
+    },
+    {
+      "name": "portrait.jpg",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/8/88/Commander_Eileen_Collins_-_GPN-2000-001177.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Commander_Eileen_Collins_-_GPN-2000-001177.jpg",
+      "author": "NASA / Robert Markowitz",
+      "license": "Public domain (NASA)",
+      "licenseUrl": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "bytes": 1215060,
+      "sha256": "752846bd7bc6496b66ee4aebf1799635b676ba15b2c06adb6cf7be6da1eb91bb"
+    },
+    {
+      "name": "animal.jpg",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/4/4d/Cat_November_2010-1a.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Cat_November_2010-1a.jpg",
+      "author": "Alvesgaspar",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "bytes": 2833605,
+      "sha256": "59ec9bf12a5b63e0913e986b9566b96228c9f8921fda4fb87bf2a7f9acff3dd2"
+    },
+    {
+      "name": "landscape-highres.jpg",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Fronalpstock_big.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Fronalpstock_big.jpg",
+      "author": "Hannes Röst",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "bytes": 14679474,
+      "sha256": "24eb29eccdf0af691b406d1a3d22c0ef5d761cc454d8a917848c33958f6fc857"
+    },
+    {
+      "name": "botanical.jpg",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/4/41/Sunflower_from_Silesia2.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Sunflower_from_Silesia2.jpg",
+      "author": "Pudelek; edited by Yzmo",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "bytes": 2803917,
+      "sha256": "c6f91a01bd0688c83088def88e48d94da65731e351370e22ea359f687f13cbf1"
+    }
+  ]
+}

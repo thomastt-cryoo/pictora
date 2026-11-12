@@ -1,0 +1,508 @@
+[
+  {
+    "file": "research/m7/outputs/chrome/cold-portrait.png",
+    "kind": "png",
+    "dimensions": [
+      1600,
+      2000
+    ],
+    "extrema": [
+      [
+        0,
+        158
+      ],
+      [
+        0,
+        158
+      ],
+      [
+        0,
+        158
+      ],
+      [
+        0,
+        0
+      ]
+    ],
+    "rms": [
+      6.299236436862804,
+      6.299236436862804,
+      6.299236436862804,
+      0.0
+    ],
+    "exact": false
+  },
+  {
+    "file": "research/m7/outputs/chrome/cold-portrait.svg",
+    "kind": "svg",
+    "exact": true
+  },
+  {
+    "file": "research/m7/outputs/chrome/offline-paints.png",
+    "kind": "png",
+    "dimensions": [
+      1600,
+      1200
+    ],
+    "extrema": [
+      [
+        0,
+        137
+      ],
+      [
+        0,
+        137
+      ],
+      [
+        0,
+        137
+      ],
+      [
+        0,
+        0
+      ]
+    ],
+    "rms": [
+      1.3205355211049796,
+      1.3205355211049796,
+      1.3205355211049796,
+      0.0
+    ],
+    "exact": false
+  },
+  {
+    "file": "research/m7/outputs/chrome/offline-paints.svg",
+    "kind": "svg",
+    "exact": true
+  },
+  {
+    "file": "research/m7/outputs/chrome/offline-warmup.png",
+    "kind": "png",
+    "dimensions": [
+      1600,
+      1200
+    ],
+    "extrema": [
+      [
+        0,
+        150
+      ],
+      [
+        0,
+        150
+      ],
+      [
+        0,
+        150
+      ],
+      [
+        0,
+        0
+      ]
+    ],
+    "rms": [
+      3.407362050888243,
+      3.407362050888243,
+      3.407362050888243,
+      0.0
+    ],
+    "exact": false
+  },
+  {
+    "file": "research/m7/outputs/chrome/portrait-reduced.svg",
+    "kind": "svg",
+    "exact": true
+  },
+  {
+    "file": "research/m7/outputs/chrome/safe-color-dark.svg",
+    "kind": "svg",
+    "exact": true
+  },
+  {
+    "file": "research/m7/outputs/chrome/safe-color-light.svg",
+    "kind": "svg",
+    "exact": true
+  },
+  {
+    "file": "research/m7/outputs/chrome/workflow-manual.png",
+    "kind": "png",
+    "dimensions": [
+      1600,
+      1200
+    ],
+    "extrema": [
+      [
+        0,
+        150
+      ],
+      [
+        0,
+        150
+      ],
+      [
+        0,
+        150
+      ],
+      [
+        0,
+        0
+      ]
+    ],
+    "rms": [
+      3.3963834932665264,
+      3.3963834932665264,
+      3.3963834932665264,
+      0.0
+    ],
+    "exact": false
+  },
+  {
+    "file": "research/m7/outputs/chrome/workflow-manual.svg",
+    "kind": "svg",
+    "exact": true
+  },
+  {
+    "file": "research/m7/outputs/chrome/workflow-paints.png",
+    "kind": "png",
+    "dimensions": [
+      1600,
+      1200
+    ],
+    "extrema": [
+      [
+        0,
+        129
+      ],
+      [
+        0,
+        129
+      ],
+      [
+        0,
+        129
+      ],
+      [
+        0,
+        0
+      ]
+    ],
+    "rms": [
+      2.986062677255787,
+      2.986062677255787,
+      2.986062677255787,
+      0.0
+    ],
+    "exact": false
+  },
+  {
+    "file": "research/m7/outputs/chrome/workflow-paints.svg",
+    "kind": "svg",
+    "exact": true
+  },
+  {
+    "file": "research/m7/outputs/chrome/workflow-rapid.svg",
+    "kind": "svg",
+    "exact": true
+  },
+  {
+    "file": "research/m7/outputs/chrome/workflow-recovered-dark.svg",
+    "kind": "svg",
+    "exact": true
+  },
+  {
+    "file": "research/m7/outputs/chrome/workflow-recovered-light.svg",
+    "kind": "svg",
+    "exact": true
+  },
+  {
+    "file": "research/m7/outputs/chrome/workflow-simple.png",
+    "kind": "png",
+    "dimensions": [
+      1600,
+      1200
+    ],
+    "extrema": [
+      [
+        0,
+        143
+      ],
+      [
+        0,
+        143
+      ],
+      [
+        0,
+        143
+      ],
+      [
+        0,
+        0
+      ]
+    ],
+    "rms": [
+      2.956464403782554,
+      2.956464403782554,
+      2.956464403782554,
+      0.0
+    ],
+    "exact": false
+  },
+  {
+    "file": "research/m7/outputs/chrome/workflow-simple.svg",
+    "kind": "svg",
+    "exact": true
+  },
+  {
+    "file": "research/m7/outputs/edge/cold-portrait.png",
+    "kind": "png",
+    "dimensions": [
+      1600,
+      2000
+    ],
+    "extrema": [
+      [
+        0,
+        158
+      ],
+      [
+        0,
+        158
+      ],
+      [
+        0,
+        158
+      ],
+      [
+        0,
+        0
+      ]
+    ],
+    "rms": [
+      6.299236436862804,
+      6.299236436862804,
+      6.299236436862804,
+      0.0
+    ],
+    "exact": false
+  },
+  {
+    "file": "research/m7/outputs/edge/cold-portrait.svg",
+    "kind": "svg",
+    "exact": true
+  },
+  {
+    "file": "research/m7/outputs/edge/offline-paints.png",
+    "kind": "png",
+    "dimensions": [
+      1600,
+      1200
+    ],
+    "extrema": [
+      [
+        0,
+        137
+      ],
+      [
+        0,
+        137
+      ],
+      [
+        0,
+        137
+      ],
+      [
+        0,
+        0
+      ]
+    ],
+    "rms": [
+      1.3205355211049796,
+      1.3205355211049796,
+      1.3205355211049796,
+      0.0
+    ],
+    "exact": false
+  },
+  {
+    "file": "research/m7/outputs/edge/offline-paints.svg",
+    "kind": "svg",
+    "exact": true
+  },
+  {
+    "file": "research/m7/outputs/edge/offline-warmup.png",
+    "kind": "png",
+    "dimensions": [
+      1600,
+      1200
+    ],
+    "extrema": [
+      [
+        0,
+        150
+      ],
+      [
+        0,
+        150
+      ],
+      [
+        0,
+        150
+      ],
+      [
+        0,
+        0
+      ]
+    ],
+    "rms": [
+      3.407362050888243,
+      3.407362050888243,
+      3.407362050888243,
+      0.0
+    ],
+    "exact": false
+  },
+  {
+    "file": "research/m7/outputs/edge/portrait-reduced.svg",
+    "kind": "svg",
+    "exact": true
+  },
+  {
+    "file": "research/m7/outputs/edge/safe-color-dark.svg",
+    "kind": "svg",
+    "exact": true
+  },
+  {
+    "file": "research/m7/outputs/edge/safe-color-light.svg",
+    "kind": "svg",
+    "exact": true
+  },
+  {
+    "file": "research/m7/outputs/edge/workflow-manual.png",
+    "kind": "png",
+    "dimensions": [
+      1600,
+      1200
+    ],
+    "extrema": [
+      [
+        0,
+        150
+      ],
+      [
+        0,
+        150
+      ],
+      [
+        0,
+        150
+      ],
+      [
+        0,
+        0
+      ]
+    ],
+    "rms": [
+      3.3963834932665264,
+      3.3963834932665264,
+      3.3963834932665264,
+      0.0
+    ],
+    "exact": false
+  },
+  {
+    "file": "research/m7/outputs/edge/workflow-manual.svg",
+    "kind": "svg",
+    "exact": true
+  },
+  {
+    "file": "research/m7/outputs/edge/workflow-paints.png",
+    "kind": "png",
+    "dimensions": [
+      1600,
+      1200
+    ],
+    "extrema": [
+      [
+        0,
+        129
+      ],
+      [
+        0,
+        129
+      ],
+      [
+        0,
+        129
+      ],
+      [
+        0,
+        0
+      ]
+    ],
+    "rms": [
+      2.986062677255787,
+      2.986062677255787,
+      2.986062677255787,
+      0.0
+    ],
+    "exact": false
+  },
+  {
+    "file": "research/m7/outputs/edge/workflow-paints.svg",
+    "kind": "svg",
+    "exact": true
+  },
+  {
+    "file": "research/m7/outputs/edge/workflow-rapid.svg",
+    "kind": "svg",
+    "exact": true
+  },
+  {
+    "file": "research/m7/outputs/edge/workflow-recovered-dark.svg",
+    "kind": "svg",
+    "exact": true
+  },
+  {
+    "file": "research/m7/outputs/edge/workflow-recovered-light.svg",
+    "kind": "svg",
+    "exact": true
+  },
+  {
+    "file": "research/m7/outputs/edge/workflow-simple.png",
+    "kind": "png",
+    "dimensions": [
+      1600,
+      1200
+    ],
+    "extrema": [
+      [
+        0,
+        143
+      ],
+      [
+        0,
+        143
+      ],
+      [
+        0,
+        143
+      ],
+      [
+        0,
+        0
+      ]
+    ],
+    "rms": [
+      2.956464403782554,
+      2.956464403782554,
+      2.956464403782554,
+      0.0
+    ],
+    "exact": false
+  },
+  {
+    "file": "research/m7/outputs/edge/workflow-simple.svg",
+    "kind": "svg",
+    "exact": true
+  }
+]

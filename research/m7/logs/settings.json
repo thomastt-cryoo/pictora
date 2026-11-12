@@ -1,0 +1,199 @@
+{
+  "method": "Actual file URL, network disabled before navigation, synthetic HTML DataTransfer drop into the application handler. Process memory is a sample rather than an allocation peak.",
+  "records": [
+    {
+      "browser": "chrome",
+      "version": "151.0.7922.72",
+      "status": "PASS",
+      "conversionMs": 2153.3760999999995,
+      "modelSha256": "8df12263999bec10b762c8ec966040899c2eb820ddedf216ac161c5f5bb10eff",
+      "svgSha256": "e8b2b55a6fc5e615f3b34a03b454036cf9cfca625aca6555701132beb2f7f2f0",
+      "settings": {
+        "workingResolution": 700,
+        "smoothing": 70,
+        "minShapeSize": 160,
+        "connectivity": 8
+      },
+      "zoom": {
+        "before": "33%",
+        "after": "50%"
+      },
+      "memory": {
+        "processes": [
+          {
+            "pid": 2060,
+            "workingSet": 151187456,
+            "peakWorkingSet": 158105600,
+            "privateBytes": 55111680
+          },
+          {
+            "pid": 25952,
+            "workingSet": 33718272,
+            "peakWorkingSet": 34025472,
+            "privateBytes": 18272256
+          },
+          {
+            "pid": 14540,
+            "workingSet": 237752320,
+            "peakWorkingSet": 253927424,
+            "privateBytes": 164438016
+          },
+          {
+            "pid": 18524,
+            "workingSet": 427700224,
+            "peakWorkingSet": 437915648,
+            "privateBytes": 603561984
+          },
+          {
+            "pid": 13792,
+            "workingSet": 38920192,
+            "peakWorkingSet": 38920192,
+            "privateBytes": 13369344
+          },
+          {
+            "pid": 28364,
+            "workingSet": 19927040,
+            "peakWorkingSet": 19927040,
+            "privateBytes": 9347072
+          }
+        ],
+        "workingSet": 909205504,
+        "privateBytes": 864100352,
+        "sumLifetimePeakWorkingSets": 942821376
+      },
+      "resources": {
+        "transfers": [
+          {
+            "type": "generatePalette",
+            "before": 2615,
+            "after": 0
+          },
+          {
+            "type": "segment",
+            "before": 2615,
+            "after": 0
+          },
+          {
+            "type": "generatePalette",
+            "before": 2615,
+            "after": 0
+          },
+          {
+            "type": "segment",
+            "before": 2615,
+            "after": 0
+          }
+        ],
+        "progress": 12
+      },
+      "errors": [],
+      "external": []
+    },
+    {
+      "browser": "edge",
+      "version": "157.0.4341.46",
+      "status": "PASS",
+      "conversionMs": 3503.055800000002,
+      "modelSha256": "8df12263999bec10b762c8ec966040899c2eb820ddedf216ac161c5f5bb10eff",
+      "svgSha256": "e8b2b55a6fc5e615f3b34a03b454036cf9cfca625aca6555701132beb2f7f2f0",
+      "settings": {
+        "workingResolution": 700,
+        "smoothing": 70,
+        "minShapeSize": 160,
+        "connectivity": 8
+      },
+      "zoom": {
+        "before": "33%",
+        "after": "50%"
+      },
+      "memory": {
+        "processes": [
+          {
+            "pid": 9848,
+            "workingSet": 181809152,
+            "peakWorkingSet": 189407232,
+            "privateBytes": 67915776
+          },
+          {
+            "pid": 17548,
+            "workingSet": 80826368,
+            "peakWorkingSet": 80826368,
+            "privateBytes": 37789696
+          },
+          {
+            "pid": 21352,
+            "workingSet": 31879168,
+            "peakWorkingSet": 31879168,
+            "privateBytes": 16904192
+          },
+          {
+            "pid": 20896,
+            "workingSet": 222171136,
+            "peakWorkingSet": 241889280,
+            "privateBytes": 156545024
+          },
+          {
+            "pid": 956,
+            "workingSet": 370884608,
+            "peakWorkingSet": 381153280,
+            "privateBytes": 563027968
+          },
+          {
+            "pid": 17700,
+            "workingSet": 41947136,
+            "peakWorkingSet": 42774528,
+            "privateBytes": 11964416
+          },
+          {
+            "pid": 21324,
+            "workingSet": 20070400,
+            "peakWorkingSet": 20070400,
+            "privateBytes": 7643136
+          },
+          {
+            "pid": 15744,
+            "workingSet": 20942848,
+            "peakWorkingSet": 20942848,
+            "privateBytes": 8466432
+          },
+          {
+            "pid": 16972,
+            "workingSet": 18006016,
+            "peakWorkingSet": 18006016,
+            "privateBytes": 7286784
+          }
+        ],
+        "workingSet": 988536832,
+        "privateBytes": 877543424,
+        "sumLifetimePeakWorkingSets": 1026949120
+      },
+      "resources": {
+        "transfers": [
+          {
+            "type": "generatePalette",
+            "before": 2615,
+            "after": 0
+          },
+          {
+            "type": "segment",
+            "before": 2615,
+            "after": 0
+          },
+          {
+            "type": "generatePalette",
+            "before": 2615,
+            "after": 0
+          },
+          {
+            "type": "segment",
+            "before": 2615,
+            "after": 0
+          }
+        ],
+        "progress": 12
+      },
+      "errors": [],
+      "external": []
+    }
+  ]
+}

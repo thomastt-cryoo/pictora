@@ -1,0 +1,37 @@
+[
+  {
+    "file": "cold-portrait.png",
+    "sameDimensions": true,
+    "exactMacChromeEdge": true
+  },
+  {
+    "file": "offline-paints.png",
+    "sameDimensions": true,
+    "exactMacChromeEdge": true
+  },
+  {
+    "file": "offline-warmup.png",
+    "sameDimensions": true,
+    "exactMacChromeEdge": true
+  },
+  {
+    "file": "portrait-reduced-styled.png",
+    "sameDimensions": true,
+    "exactMacChromeEdge": true
+  },
+  {
+    "file": "workflow-manual.png",
+    "sameDimensions": true,
+    "exactMacChromeEdge": true
+  },
+  {
+    "file": "workflow-paints.png",
+    "sameDimensions": true,
+    "exactMacChromeEdge": true
+  },
+  {
+    "file": "workflow-simple.png",
+    "sameDimensions": true,
+    "exactMacChromeEdge": true
+  }
+]
