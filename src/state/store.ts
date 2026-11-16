@@ -1,7 +1,9 @@
 import { create } from 'zustand';
 import type { PaletteColor, RegionModel, RenderSettings, SegmentationSettings } from '../pipeline/types';
+import { rgbToHex } from '../pipeline/color';
 import { renderSvg } from '../render/toSVG';
 import { emptyHistory, recordEdit, stepHistory, type EditHistory } from './editHistory';
+import { applyRegionColors, emptyRegionColors, regionKey, type RegionColors } from './regionColors';
 
 export type PaletteMode = 'manual' | 'source' | 'paints';
 export type ProcessingStatus = 'empty' | 'decoding-source' | 'decoding-paints' | 'palette-pending' | 'palette' | 'segment-pending' | 'segment' | 'ready' | 'needs-paints' | 'needs-palette' | 'failed' | 'cancelled';
@@ -18,7 +20,8 @@ export interface AppState {
   palette: PaletteColor[]; paletteMode: PaletteMode; colorCount: number;
   segmentation: SegmentationSettings; render: RenderSettings;
   history: EditHistory;
-  model: RegionModel | null; modelOwner: ModelOwner | null;
+  baseModel: RegionModel | null; model: RegionModel | null; modelOwner: ModelOwner | null;
+  regionColors: RegionColors;
   svg: string | null; svgWidth: number; svgHeight: number;
   status: ProcessingStatus; busy: boolean; progressStage: string; progressFraction: number;
   error: string | null; errorScope: ErrorScope | null; errorAction: RecoveryAction;
@@ -35,6 +38,7 @@ export interface AppState {
   removePaletteColor: (index: number) => void;
   setSegmentation: (patch: Partial<SegmentationSettings>) => void;
   setRender: (patch: Partial<RenderSettings>) => void;
+  setRegionColor: (revision: number, index: number, hex: string | null, colorNumber?: number) => void;
   undo: () => void;
   redo: () => void;
   retry: () => void;
@@ -65,7 +69,7 @@ const manualSeed: PaletteColor[] = [
   [255, 255, 255], [240, 219, 79], [235, 137, 49], [208, 70, 72],
   [89, 125, 206], [106, 190, 48], [91, 110, 225], [68, 36, 52],
 ].map(([r, g, b], index) => ({ r, g, b, number: index + 1 }));
-const clearedOutput = { model: null, modelOwner: null, svg: null, svgWidth: 0, svgHeight: 0 };
+const clearedOutput = { baseModel: null, model: null, modelOwner: null, svg: null, svgWidth: 0, svgHeight: 0 };
 const clearedError = { error: null, errorScope: null };
 function statusPatch(status: ProcessingStatus, stage = '') {
   return { status, busy: ['decoding-source','decoding-paints','palette-pending','palette','segment-pending','segment'].includes(status), progressStage: stage, progressFraction: 0 };
@@ -90,12 +94,18 @@ function changedRender(state: AppState, render: RenderSettings): Partial<AppStat
   return { render, renderRevision: state.renderRevision + 1, ...(state.errorScope === 'export' ? clearedError : {}), ...(result ? { svg: result.svg, svgWidth: result.width, svgHeight: result.height } : {}) };
 }
 
+function changedRegionColors(state: AppState, regionColors: RegionColors): Partial<AppState> {
+  const model = state.baseModel && applyRegionColors(state.baseModel, regionColors);
+  return { ...changedRender({ ...state, model }, state.render), model, regionColors };
+}
+
 function restoreEdit(state: AppState, direction: 'undo' | 'redo'): Partial<AppState> {
   const step = stepHistory(state, direction);
   if (!step) return state;
   const { snapshot, history } = step;
   switch (snapshot.kind) {
     case 'render': return { ...changedRender(state, snapshot.value), history };
+    case 'region': return { ...changedRegionColors(state, snapshot.value), history };
     case 'segmentation': return changedInputs(state, { segmentation: snapshot.value, history });
     case 'palette': return changedInputs(state, {
       ...snapshot.value, history, paletteRevision: state.paletteRevision + 1,
@@ -110,13 +120,13 @@ export const useStore = create<AppState>((set, get) => ({
   sourceLoading: false, paintsLoading: false, paletteReady: false,
   palette: [], paletteMode: 'source', colorCount: 12,
   segmentation: defaultSegmentation, render: defaultRender,
-  history: emptyHistory,
+  history: emptyHistory, regionColors: emptyRegionColors,
   ...clearedOutput, status: 'empty', busy: false, progressStage: '', progressFraction: 0,
   ...clearedError, errorAction: 'retry',
 
   beginSource: (name) => {
     const state = get(), revision = state.sourceRevision + 1, previous = state.sourceBitmap;
-    const patch: Partial<AppState> = { sourceName: name, sourceBitmap: null, sourceRevision: revision, sourceLoading: true, history: emptyHistory };
+    const patch: Partial<AppState> = { sourceName: name, sourceBitmap: null, sourceRevision: revision, sourceLoading: true, history: emptyHistory, regionColors: emptyRegionColors };
     if (state.paletteMode === 'source') Object.assign(patch, { palette: [], paletteReady: false, paletteRevision: state.paletteRevision + 1 });
     set(changedInputs(state, patch)); closeBitmap(previous); return revision;
   },
@@ -177,6 +187,30 @@ export const useStore = create<AppState>((set, get) => ({
     const group = Object.keys(patch).length === 1 && typeof Object.values(patch)[0] !== 'boolean' ? `render:${key}` : undefined;
     set({ ...changedRender(state, render), history: recordEdit(state, 'render', group) });
   },
+  setRegionColor: (revision, index, hex, colorNumber) => set((state) => {
+    const { baseModel, model } = state;
+    if (revision !== state.inputRevision || !canExport(state) || !baseModel || !model) return state;
+    const originalShape = baseModel.shapes[index];
+    if (!originalShape) return state;
+
+    const key = regionKey(baseModel, originalShape);
+    const regionColors = new Map(state.regionColors);
+    const original = baseModel.palette[originalShape.colorIndex];
+    const current = model.palette[model.shapes[index].colorIndex];
+    if (hex === null || (hex === rgbToHex(original.r, original.g, original.b) && (colorNumber === undefined || colorNumber === original.number))) {
+      if (!regionColors.delete(key)) return state;
+    } else {
+      if (!/^#[0-9a-f]{6}$/.test(hex)) return state;
+      if (hex === rgbToHex(current.r, current.g, current.b) && (colorNumber === undefined || colorNumber === current.number)) return state;
+      const matching = model.palette.find(({ r, g, b, number }) =>
+        (colorNumber === undefined || colorNumber === number) && rgbToHex(r, g, b) === hex);
+      const number = matching?.number ?? Math.max(...model.palette.map((color) => color.number)) + 1;
+      regionColors.set(key, { hex, number });
+    }
+
+    const group = hex !== null && colorNumber === undefined ? `region:${index}` : undefined;
+    return { ...changedRegionColors(state, regionColors), history: recordEdit(state, 'region', group) };
+  }),
   undo: () => set((state) => restoreEdit(state, 'undo')),
   redo: () => set((state) => restoreEdit(state, 'redo')),
   retry: () => set((state) => changedInputs(state, { paletteRevision: state.paletteRevision + (state.paletteReady ? 0 : 1) })),
@@ -184,10 +218,11 @@ export const useStore = create<AppState>((set, get) => ({
   _setStatus: (status, stage) => set(statusPatch(status, stage)),
   _setBusy: (busy) => set({ busy }),
   _setProgress: (stage, fraction) => set({ progressStage: stage, progressFraction: fraction }),
-  _setModel: (model, owner = modelOwner(get())) => {
+  _setModel: (baseModel, owner = modelOwner(get())) => {
     const state = get(); if (!ownsModel(state, owner)) return false;
+    const model = applyRegionColors(baseModel, state.regionColors);
     const result = renderSvg(model, state.render);
-    set({ model, modelOwner: { ...owner }, svg: result.svg, svgWidth: result.width, svgHeight: result.height, ...clearedError, ...statusPatch('ready') }); return true;
+    set({ baseModel, model, modelOwner: { ...owner }, svg: result.svg, svgWidth: result.width, svgHeight: result.height, ...clearedError, ...statusPatch('ready') }); return true;
   },
   _setPaletteResult: (palette, owner) => {
     const state = get(); if (!ownsPalette(state, owner)) return false;
@@ -207,7 +242,7 @@ export const useStore = create<AppState>((set, get) => ({
   },
   _releaseInputs: () => {
     const state = get();
-    set({ ...clearedOutput, ...clearedError, sourceBitmap: null, sourceName: null, paintsBitmap: null, paintsName: null, sourceLoading: false, paintsLoading: false, sourceRevision: state.sourceRevision + 1, paintsRevision: state.paintsRevision + 1, inputRevision: state.inputRevision + 1, paletteRevision: state.paletteRevision + 1, palette: state.paletteMode === 'manual' ? state.palette : [], paletteReady: state.paletteMode === 'manual' && state.palette.length > 0, history: emptyHistory, ...statusPatch('empty') });
+    set({ ...clearedOutput, ...clearedError, sourceBitmap: null, sourceName: null, paintsBitmap: null, paintsName: null, sourceLoading: false, paintsLoading: false, sourceRevision: state.sourceRevision + 1, paintsRevision: state.paintsRevision + 1, inputRevision: state.inputRevision + 1, paletteRevision: state.paletteRevision + 1, palette: state.paletteMode === 'manual' ? state.palette : [], paletteReady: state.paletteMode === 'manual' && state.palette.length > 0, history: emptyHistory, regionColors: emptyRegionColors, ...statusPatch('empty') });
     closeBitmap(state.sourceBitmap); closeBitmap(state.paintsBitmap);
   },
 }));

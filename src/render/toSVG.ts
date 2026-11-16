@@ -14,6 +14,10 @@ function ringToPath(ring: Ring): string {
   return d + 'Z';
 }
 
+export function regionPath(rings: Ring[]): string {
+  return rings.map(ringToPath).join(' ');
+}
+
 function escapeXml(s: string): string {
   return s.replace(/[<>&'"]/g, (c) =>
     c === '<' ? '&lt;' : c === '>' ? '&gt;' : c === '&' ? '&amp;' : c === "'" ? '&apos;' : '&quot;',
@@ -52,7 +56,7 @@ export function renderSvg(model: RegionModel, settings: RenderSettings): SvgResu
     for (const shape of model.shapes) {
       const color = model.palette[shape.colorIndex];
       const fill = color ? rgbToHex(color.r, color.g, color.b) : '#ffffff';
-      const d = shape.rings.map(ringToPath).join(' ');
+      const d = regionPath(shape.rings);
       parts.push(`<path d="${d}" fill="${fill}"/>`);
     }
     parts.push('</g>');
@@ -63,7 +67,7 @@ export function renderSvg(model: RegionModel, settings: RenderSettings): SvgResu
       `stroke-linejoin="round" fill-rule="evenodd">`,
   );
   for (const shape of model.shapes) {
-    const d = shape.rings.map(ringToPath).join(' ');
+    const d = regionPath(shape.rings);
     parts.push(`<path d="${d}"/>`);
   }
   parts.push('</g>');

@@ -7,11 +7,16 @@ PICTORA — OFFLINE BROWSER EDITION
 3. Let Pictora prepare its colors and template. Adjust the colors and detail
    settings to suit your picture. You can also use a manual palette or a
    photograph of your paints.
-   Use Undo and Redo in the toolbar to step through palette, settings and styling
-   edits. Selecting a new source image or paint photo starts a new edit history.
-4. Under Output styling, turn Show numbers off to remove the numbers from the
+4. In the Template view, click a region and choose a numbered palette color
+   or use the Custom color picker. The change applies only to that region.
+   Use Show color fill to see the colors, or Reset region color to restore
+   the selected region. Region edits carry through to SVG and PNG exports.
+   Use Undo and Redo to step through edits. A new source photo clears region
+   edits. If regeneration changes a region's outline, its edit is set aside
+   and comes back when the same outline returns.
+5. Under Output styling, turn Show numbers off to remove the numbers from the
    template and exports. Use Line color and Line thickness to style the outlines.
-5. Choose Export SVG or Export PNG. Your browser saves the finished template.
+6. Choose Export SVG or Export PNG. Your browser saves the finished template.
 
 All image processing happens on your computer. No internet connection,
 account, installation or activation is required. Pictora.html works by itself.

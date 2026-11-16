@@ -1,4 +1,5 @@
 import type { PaletteColor, RenderSettings, SegmentationSettings } from '../pipeline/types';
+import type { RegionColors } from './regionColors';
 import type { AppState, PaletteMode } from './store';
 
 type PaletteState = {
@@ -11,6 +12,7 @@ type PaletteState = {
 export type EditSnapshot =
   | { kind: 'palette'; value: PaletteState }
   | { kind: 'segmentation'; value: SegmentationSettings }
+  | { kind: 'region'; value: RegionColors }
   | { kind: 'render'; value: RenderSettings };
 
 export interface EditHistory {
@@ -30,6 +32,7 @@ export function snapshotEdit(state: AppState, kind: EditSnapshot['kind']): EditS
       return { kind, value: { palette, paletteMode, paletteReady, colorCount } };
     }
     case 'segmentation': return { kind, value: state.segmentation };
+    case 'region': return { kind, value: state.regionColors };
     case 'render': return { kind, value: state.render };
   }
 }

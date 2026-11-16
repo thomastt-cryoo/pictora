@@ -55,6 +55,118 @@ async function countVisibleLayers(page, png) {
   }, png.toString('base64'));
 }
 
+async function checkRegionColor(page, directory) {
+  await page.reload();
+  await upload(page, 'research/m1/fixtures/checkerboard.png');
+  await range(page, 'Number of colors', 2);
+  await open(page, 'Region generation');
+  await range(page, 'Smoothing / complexity', 0);
+  await range(page, 'Min shape size', 0);
+  await ready(page);
+
+  const template = page.locator('.preview-artwork > svg');
+  async function clickRegion(x, y) {
+    const point = await template.evaluate((svg, [x, y]) => {
+      const point = new DOMPoint(x, y).matrixTransform(svg.getScreenCTM());
+      return {x: point.x, y: point.y};
+    }, [x, y]);
+    await page.mouse.click(point.x, point.y);
+  }
+
+  await clickRegion(2, 2);
+  const picker = page.getByLabel('Custom region color');
+  const palette = page.getByRole('combobox', {name: 'Region color'});
+  const before = await picker.inputValue();
+  assert.equal(before, '#141414', 'The clicked region should be selectable with color fill off');
+  await page.getByRole('button', {name: 'Show color fill', exact: true}).click();
+  await open(page, 'Output styling');
+  await range(page, 'Preview opacity', 100);
+  const baseline = await exportFile(page, directory, 'SVG', 'region-original.svg');
+  const basePng = await exportFile(page, directory, 'PNG', 'region-original.png');
+
+  const paletteIndex = await palette.inputValue();
+  await palette.selectOption({index: 1 - Number(paletteIndex)});
+  assert.equal(await picker.inputValue(), '#f0f0f0');
+  await clickRegion(10, 2);
+  assert.equal(await picker.inputValue(), before, 'A disconnected region of the same paint should retain its color');
+  await clickRegion(2, 2);
+  assert.equal(await picker.inputValue(), '#f0f0f0');
+  await picker.fill('#000000');
+  assert.equal(await picker.inputValue(), '#000000');
+
+  const svg = await exportFile(page, directory, 'SVG', 'region-custom.svg');
+  const png = await exportFile(page, directory, 'PNG', 'region-custom.png');
+  const success = await page.evaluate(([before, after]) => {
+    const parse = (value) => new DOMParser().parseFromString(value, 'image/svg+xml').documentElement;
+    const fills = (root) => [...root.querySelectorAll('g[opacity] > path')].map((p) => [p.getAttribute('d'), p.getAttribute('fill')]);
+    const labels = (root) => [...root.querySelectorAll('text')].map((t) => [t.getAttribute('x'), t.getAttribute('y'), t.textContent]);
+    const outlines = (root) => root.querySelector('g[stroke-width]').outerHTML;
+    const original = parse(before), edited = parse(after);
+    const originalFills = fills(original), editedFills = fills(edited);
+    const changedFills = editedFills.filter((entry, i) => entry[1] !== originalFills[i][1]);
+    const originalLabels = labels(original), editedLabels = labels(edited);
+    const changedLabels = editedLabels.filter((entry, i) => entry[2] !== originalLabels[i][2]);
+    return {
+      preservedOutlines: outlines(original) === outlines(edited),
+      activePathChanged: changedFills.length === 1 && changedFills[0][0] === document.querySelector('.region-selection path').getAttribute('d'),
+      changedColor: changedFills[0]?.[1], changedLabel: changedLabels[0], labelChanges: changedLabels.length,
+    };
+  }, [baseline.toString('utf8'), svg.toString('utf8')]);
+  assert(success.preservedOutlines && success.activePathChanged);
+  assert.equal(success.changedColor, '#000000');
+  assert.equal(success.labelChanges, 1);
+  assert(Number(success.changedLabel[0]) < 4 && Number(success.changedLabel[1]) < 4 && success.changedLabel[2] === '3');
+  assert(!svg.includes('region-selection'), 'Selection markup must stay out of the export');
+  const raster = await page.evaluate(async values => {
+    async function pixels(value) {
+      const image = new Image();
+      image.src = `data:image/png;base64,${value}`;
+      await image.decode();
+      const canvas = document.createElement('canvas');
+      canvas.width = image.naturalWidth;
+      canvas.height = image.naturalHeight;
+      const ctx = canvas.getContext('2d');
+      ctx.drawImage(image, 0, 0);
+      return ctx.getImageData(0, 0, canvas.width, canvas.height);
+    }
+    const [original, edited] = await Promise.all(values.map(pixels));
+    let outsideDifferences = 0;
+    for (let i = 0; i < edited.data.length; i += 4) {
+      const x = (i / 4) % edited.width, y = Math.floor(i / 4 / edited.width);
+      if (x < 101 && y < 101) continue;
+      if (edited.data.subarray(i, i + 4).some((value, channel) => value !== original.data[i + channel])) outsideDifferences++;
+    }
+    return {outsideDifferences, editedPixel: [...edited.data.slice((20 * edited.width + 20) * 4, (20 * edited.width + 21) * 4)]};
+  }, [basePng, png].map((bytes) => bytes.toString('base64')));
+  assert.deepEqual(raster, {outsideDifferences: 0, editedPixel: [0, 0, 0, 255]});
+  await open(page, 'Color key');
+  assert.equal(await page.locator('.legend-item[title="#000000"]').innerText(), '3');
+  await page.screenshot({path: resolve(directory, 'region-color.png')});
+
+  const undo = page.getByRole('button', {name: 'Undo', exact: true});
+  const redo = page.getByRole('button', {name: 'Redo', exact: true});
+  await undo.click();
+  assert.equal(await picker.inputValue(), '#f0f0f0');
+  await redo.click();
+  assert.equal(await picker.inputValue(), '#000000');
+  await page.getByRole('button', {name: 'Reset region color', exact: true}).click();
+  assert.equal(await picker.inputValue(), before);
+  await undo.click();
+  assert.equal(await picker.inputValue(), '#000000');
+
+  await page.getByRole('button', {name: '8-way', exact: true}).click();
+  await ready(page);
+  assert.equal(await picker.count(), 0, 'Regenerating should clear the selection');
+  assert.equal(await template.locator('path[fill="#000000"]').count(), 0, 'An altered contour must not inherit a region edit');
+  await undo.click();
+  await ready(page);
+  assert.equal(await template.locator('path[fill="#000000"]').count(), 1, 'Returning to the same contour should restore its edit');
+  await upload(page, 'research/m1/fixtures/checkerboard.png', 'replacement.png');
+  await ready(page);
+  assert.equal(await template.locator('path[fill="#000000"]').count(), 0, 'Even an identical replacement source should start free of old recolors');
+  return {svg: success, png: raster};
+}
+
 const results = [];
 try {
   for (const channel of ['chrome', 'msedge']) {
@@ -151,8 +263,6 @@ try {
         result.combinations.push({showNumbers, pixels});
         if (!showNumbers) await page.screenshot({path: resolve(directory, 'numbers-hidden-preview.png')});
       }
-      assert.deepEqual(errors, []);
-      assert.deepEqual(external, []);
       await page.setViewportSize({width: 375, height: 800});
       await page.getByRole('button', {name: 'Show settings'}).click();
       const drawer = page.getByRole('dialog', {name: 'Image settings'});
@@ -163,8 +273,12 @@ try {
       await upload(page, 'research/m1/fixtures/gradient.png');
       assert(await undo.isDisabled() && await redo.isDisabled(), 'A replacement photo must clear history');
       await ready(page);
+      await page.setViewportSize({width: 1440, height: 1000});
+      result.regionEdit = await checkRegionColor(page, directory);
+      assert.deepEqual(errors, []);
+      assert.deepEqual(external, []);
       result.status = 'PASS';
-      console.log(`${process.platform} ${channel} ${result.version}: undo/redo buttons, shortcuts, palette, settings, narrow layout and offline exports passed`);
+      console.log(`${process.platform} ${channel} ${result.version}: undo/redo, individual region colors, settings and offline exports passed`);
     } finally {
       await browser.close();
     }

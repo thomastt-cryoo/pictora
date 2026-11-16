@@ -1,7 +1,9 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, type MouseEvent } from 'react';
 import { useStore } from '../state/store';
 import { Icon } from './ui/Icon';
 import { statusText } from '../controller/PipelineController';
+import { regionPath } from '../render/toSVG';
+import { RegionColorEditor, type RegionSelection } from './RegionColorEditor';
 
 interface Props {
   sourceUrl: string | null;
@@ -17,6 +19,7 @@ const zoomSteps = [0.1, 0.25, 0.5, 0.75, 1, 1.5, 2];
 export function OutputPreview({ sourceUrl, onChooseImage, onChoosePaints, onRetry, onFile }: Props) {
   const svg = useStore((state) => state.svg);
   const model = useStore((state) => state.model);
+  const inputRevision = useStore((state) => state.inputRevision);
   const busy = useStore((state) => state.busy);
   const stage = useStore((state) => state.progressStage);
   const fraction = useStore((state) => state.progressFraction);
@@ -32,6 +35,7 @@ export function OutputPreview({ sourceUrl, onChooseImage, onChoosePaints, onRetr
   const [view, setView] = useState<'template' | 'original'>('template');
   const [zoom, setZoom] = useState<'fit' | number>('fit');
   const [drag, setDrag] = useState(false);
+  const [selection, setSelection] = useState<RegionSelection | null>(null);
   const [size, setSize] = useState({ width: 0, height: 0 });
   const viewportRef = useRef<HTMLDivElement>(null);
 
@@ -52,6 +56,9 @@ export function OutputPreview({ sourceUrl, onChooseImage, onChoosePaints, onRetr
   const paperWidth = width * scale;
   const paperHeight = height * scale;
   const hasContent = original ? !!sourceUrl : !!svg;
+  const canSelectRegion = !original && !!svg && !!model && !busy;
+  const activeSelection = canSelectRegion && selection?.revision === inputRevision ? selection : null;
+  const selectedShape = activeSelection && model?.shapes[activeSelection.index];
   const displayedError = errorScope === 'export' ? null : error;
   const retryAction = errorAction === 'source' ? onChooseImage : errorAction === 'paints' ? onChoosePaints : onRetry;
   const retryLabel = errorAction === 'source' ? 'Choose another image' : errorAction === 'paints' ? 'Choose a paint photo' : 'Try again';
@@ -59,6 +66,15 @@ export function OutputPreview({ sourceUrl, onChooseImage, onChoosePaints, onRetr
   function changeZoom(direction: -1 | 1) {
     const next = direction === 1 ? zoomSteps.find((step) => step > scale + 0.001) : [...zoomSteps].reverse().find((step) => step < scale - 0.001);
     if (next !== undefined) setZoom(next);
+  }
+
+  function selectRegion(event: MouseEvent<HTMLDivElement>) {
+    const { target } = event;
+    if (!canSelectRegion || !(target instanceof SVGPathElement)) return;
+    const group = target.parentElement;
+    if (!group?.matches('svg > g[stroke-width]')) return;
+    const index = Array.prototype.indexOf.call(group.children, target);
+    if (model?.shapes[index]) setSelection({ revision: inputRevision, index });
   }
 
   return <main className={`workspace${drag ? ' is-dragging' : ''}`} data-has-content={hasContent} aria-label="Image workspace"
@@ -79,6 +95,10 @@ export function OutputPreview({ sourceUrl, onChooseImage, onChoosePaints, onRetr
       </div>
     </div>
 
+    <div className="workspace-region-bar">
+      {canSelectRegion && <RegionColorEditor selection={activeSelection} onClear={() => setSelection(null)} />}
+    </div>
+
     <div className="preview-viewport" ref={viewportRef} aria-busy={busy}>
       {errorScope === 'export' && error && <div className="workspace-alert" role="alert"><span>{error}</span><button type="button" className="icon-button" aria-label="Dismiss export error" onClick={dismissError}><Icon name="close" size={16} /></button></div>}
       {displayedError ? <div className="workspace-message error-state" role="alert">
@@ -91,7 +111,12 @@ export function OutputPreview({ sourceUrl, onChooseImage, onChoosePaints, onRetr
         {busy && <div className="processing-banner" role="status">Updating template<span>{statusText(status, stage)}…</span></div>}
         <div className="preview-surface" style={{ width: Math.max(size.width, paperWidth + padding * 2), minHeight: Math.max(size.height, paperHeight + padding * 2), padding }}>
           <div className={`preview-paper${original ? ' original-paper' : ''}`} style={{ width: paperWidth }}>
-            {original ? <img src={sourceUrl!} alt="Original uploaded image" draggable={false} /> : <div className="preview-artwork" dangerouslySetInnerHTML={{ __html: svg! }} />}
+            {original ? <img src={sourceUrl!} alt="Original uploaded image" draggable={false} /> : <>
+              <div className="preview-artwork" onClick={selectRegion} dangerouslySetInnerHTML={{ __html: svg! }} />
+              {selectedShape && model && <svg className="region-selection" aria-hidden="true" viewBox={`0 0 ${model.width} ${model.height}`}>
+                <path d={regionPath(selectedShape.rings)} vectorEffect="non-scaling-stroke" />
+              </svg>}
+            </>}
           </div>
         </div>
       </> : bitmap || busy || status === 'needs-paints' || status === 'needs-palette' ? <div className="workspace-message loading-state" role="status">
