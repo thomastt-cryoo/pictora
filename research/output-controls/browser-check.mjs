@@ -79,38 +79,37 @@ try {
       }
 
       await open(page, 'Output styling');
-      const outlines = page.getByRole('switch', {name: 'Show outlines', exact: true});
       const numbers = page.getByRole('switch', {name: 'Show numbers', exact: true});
-      assert(await outlines.isChecked() && await numbers.isChecked(), 'Outlines and numbers should start on');
+      assert.equal(await page.getByRole('switch', {name: 'Show outlines', exact: true}).count(), 0);
+      assert(await numbers.isChecked(), 'Numbers should start on');
       await page.getByRole('switch', {name: 'Color preview fill', exact: true}).check();
       await range(page, 'Preview opacity', 100);
       await page.getByLabel('Line color', {exact: true}).fill('#ff00ff');
       await range(page, 'Line thickness', 6);
       await page.getByLabel('Label color', {exact: true}).fill('#00ffff');
       await range(page, 'Label size', 32);
-      for (const [showOutlines, showNumbers] of [[true, true], [false, true], [false, false], [true, false], [true, true]]) {
-        await outlines.setChecked(showOutlines);
+      for (const showNumbers of [true, false, true]) {
         await numbers.setChecked(showNumbers);
-        const name = `${showOutlines ? 'outlines' : 'no-outlines'}-${showNumbers ? 'numbers' : 'no-numbers'}`;
+        const name = showNumbers ? 'numbers' : 'no-numbers';
         const preview = await page.locator('.preview-artwork > svg').evaluate(svg => svg.outerHTML);
         const svg = (await exportFile(page, directory, 'SVG', `${name}.svg`)).toString('utf8');
         for (const value of [preview, svg]) {
-          assert.equal(value.includes('stroke="#ff00ff"'), showOutlines);
+          assert(value.includes('stroke="#ff00ff"'), 'The outline stroke should remain');
           assert.equal(value.includes('<text '), showNumbers);
           assert.match(value, /<path [^>]+fill="#[0-9a-f]{6}"/i);
         }
         const png = await exportFile(page, directory, 'PNG', `${name}.png`);
         const pixels = await countVisibleLayers(page, png);
-        assert.equal(pixels.outlines > 0, showOutlines);
+        assert(pixels.outlines > 0, 'The exported PNG should retain visible outlines');
         assert.equal(pixels.numbers > 0, showNumbers);
         assert(pixels.colored > 0 && pixels.width === 1600 && pixels.height === 1200);
-        result.combinations.push({showOutlines, showNumbers, pixels});
-        if (!showOutlines && !showNumbers) await page.screenshot({path: resolve(directory, 'color-only-preview.png')});
+        result.combinations.push({showNumbers, pixels});
+        if (!showNumbers) await page.screenshot({path: resolve(directory, 'numbers-hidden-preview.png')});
       }
       assert.deepEqual(errors, []);
       assert.deepEqual(external, []);
       result.status = 'PASS';
-      console.log(`${process.platform} ${channel} ${result.version}: default SVG and all preview/SVG/PNG combinations passed`);
+      console.log(`${process.platform} ${channel} ${result.version}: default SVG matched; the preview, SVG and PNG retained outlines with numbers on or off`);
     } finally {
       await browser.close();
     }

@@ -92,7 +92,6 @@ export interface RenderSettings {
   /** Output width in px (height derived from aspect ratio). */
   outputWidth: number;
   backgroundColor: string;
-  showOutlines: boolean;
   lineColor: string;
   /** Stroke width in output px. */
   lineThickness: number;

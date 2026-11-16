@@ -7,9 +7,8 @@ PICTORA — OFFLINE BROWSER EDITION
 3. Let Pictora prepare its colors and template. Adjust the colors and detail
    settings to suit your picture. You can also use a manual palette or a
    photograph of your paints.
-4. Under Output styling, turn Show outlines or Show numbers off to hide them in
-   the template and exports. For a color-only result, turn both off, turn Color
-   preview fill on, and set Preview opacity to 100%.
+4. Under Output styling, turn Show numbers off to remove the numbers from the
+   template and exports. Use Line color and Line thickness to style the outlines.
 5. Choose Export SVG or Export PNG. Your browser saves the finished template.
 
 All image processing happens on your computer. No internet connection,

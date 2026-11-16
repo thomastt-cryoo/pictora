@@ -58,17 +58,15 @@ export function renderSvg(model: RegionModel, settings: RenderSettings): SvgResu
     parts.push('</g>');
   }
 
-  if (settings.showOutlines) {
-    parts.push(
-      `<g fill="none" stroke="${escapeXml(settings.lineColor)}" stroke-width="${stroke.toFixed(3)}" ` +
-        `stroke-linejoin="round" fill-rule="evenodd">`,
-    );
-    for (const shape of model.shapes) {
-      const d = shape.rings.map(ringToPath).join(' ');
-      parts.push(`<path d="${d}"/>`);
-    }
-    parts.push('</g>');
+  parts.push(
+    `<g fill="none" stroke="${escapeXml(settings.lineColor)}" stroke-width="${stroke.toFixed(3)}" ` +
+      `stroke-linejoin="round" fill-rule="evenodd">`,
+  );
+  for (const shape of model.shapes) {
+    const d = shape.rings.map(ringToPath).join(' ');
+    parts.push(`<path d="${d}"/>`);
   }
+  parts.push('</g>');
 
   // Number labels. Skip regions whose inscribed circle can't hold the number,
   // and shrink the font to fit tighter regions.
