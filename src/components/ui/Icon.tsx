@@ -1,5 +1,5 @@
 import type { CSSProperties, ReactNode } from 'react';
-export type IconName = 'panel' | 'chevron' | 'image' | 'upload' | 'plus' | 'minus' | 'close' | 'sun' | 'moon' | 'system' | 'download' | 'document' | 'fit' | 'lock' | 'error';
+export type IconName = 'panel' | 'chevron' | 'image' | 'upload' | 'plus' | 'minus' | 'close' | 'sun' | 'moon' | 'system' | 'download' | 'document' | 'fit' | 'lock' | 'error' | 'undo' | 'redo';
 const paths: Record<IconName, ReactNode> = {
   panel: <><rect x="3" y="4" width="18" height="16" rx="2" /><path d="M9 4v16M5.5 8h1M5.5 11h1" /></>,
   chevron: <path d="m8 10 4 4 4-4" />,
@@ -16,6 +16,8 @@ const paths: Record<IconName, ReactNode> = {
   fit: <path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5M8 8h8v8H8Z" />,
   lock: <><rect x="5" y="10" width="14" height="11" rx="2" /><path d="M8 10V7a4 4 0 0 1 8 0v3m-4 5v2" /></>,
   error: <><circle cx="12" cy="12" r="9" /><path d="M12 7v6m0 3h.01" /></>,
+  undo: <path d="M9 9h7a5 5 0 0 1 0 10h-5M8 4l-5 5 5 5M3 9h6" />,
+  redo: <path d="M15 9H8a5 5 0 0 0 0 10h5m3-15 5 5-5 5m5-5h-6" />,
 };
 export function Icon({ name, size = 18, style }: { name: IconName; size?: number; style?: CSSProperties }) {
   return <svg className="icon" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" style={style}>{paths[name]}</svg>;

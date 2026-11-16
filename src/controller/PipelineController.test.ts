@@ -31,6 +31,44 @@ beforeEach(()=>{vi.useFakeTimers();useStore.setState(useStore.getInitialState(),
 afterEach(()=>{controller?.dispose();vi.useRealTimers();});
 
 describe('source and export ownership',()=>{
+  it('undoing a pending segmentation edit ignores that edit’s late result', async () => {
+    await ready();
+    const state = useStore.getState();
+    state.setSegmentation({ smoothing: 65 });
+    await advance();
+    const obsolete = latestSegment();
+    state.undo();
+    expect(useStore.getState().segmentation.smoothing).toBe(40);
+    replySegment(obsolete);
+    await Promise.resolve();
+    expect(canExport(useStore.getState())).toBe(false);
+    await advance();
+    expect(latestSegment().settings.smoothing).toBe(40);
+    replySegment();
+    await Promise.resolve();
+    expect(canExport(useStore.getState())).toBe(true);
+    state.redo();
+    expect(canExport(useStore.getState())).toBe(false);
+    await advance();
+    expect(latestSegment().settings.smoothing).toBe(65);
+  });
+
+  it('undoes grouped slider changes without reprocessing the image', async () => {
+    await ready();
+    const state = useStore.getState();
+    state.setRender({ outputWidth: 1700 });
+    state.setRender({ outputWidth: 1800 });
+    state.setRender({ outputWidth: 1900 });
+    const edited = captureExport(useStore.getState())!;
+    state.undo();
+    expect(useStore.getState().svgWidth).toBe(1600);
+    expect(useStore.getState().history.past).toHaveLength(0);
+    expect(exportIsCurrent(useStore.getState(), edited)).toBe(false);
+    expect(useStore.getState().model).toBe(state.model);
+    state.redo();
+    expect(useStore.getState().svgWidth).toBe(1900);
+  });
+
   it('invalidates output immediately at selection, before decode and debounce',async()=>{
     await ready();const previous=useStore.getState().sourceBitmap!,decode=deferred<ImageBitmap>();
     controller.dispose();useStore.setState(useStore.getInitialState(),true);manualSource();start({decodeBitmap:()=>decode.promise});await advance();replySegment();await Promise.resolve();

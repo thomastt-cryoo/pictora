@@ -7,6 +7,8 @@ PICTORA — OFFLINE BROWSER EDITION
 3. Let Pictora prepare its colors and template. Adjust the colors and detail
    settings to suit your picture. You can also use a manual palette or a
    photograph of your paints.
+   Use Undo and Redo in the toolbar to step through palette, settings and styling
+   edits. Selecting a new source image or paint photo starts a new edit history.
 4. Under Output styling, turn Show numbers off to remove the numbers from the
    template and exports. Use Line color and Line thickness to style the outlines.
 5. Choose Export SVG or Export PNG. Your browser saves the finished template.

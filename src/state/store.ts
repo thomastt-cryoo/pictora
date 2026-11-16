@@ -1,6 +1,7 @@
 import { create } from 'zustand';
 import type { PaletteColor, RegionModel, RenderSettings, SegmentationSettings } from '../pipeline/types';
 import { renderSvg } from '../render/toSVG';
+import { emptyHistory, recordEdit, stepHistory, type EditHistory } from './editHistory';
 
 export type PaletteMode = 'manual' | 'source' | 'paints';
 export type ProcessingStatus = 'empty' | 'decoding-source' | 'decoding-paints' | 'palette-pending' | 'palette' | 'segment-pending' | 'segment' | 'ready' | 'needs-paints' | 'needs-palette' | 'failed' | 'cancelled';
@@ -16,6 +17,7 @@ export interface AppState {
   sourceLoading: boolean; paintsLoading: boolean; paletteReady: boolean;
   palette: PaletteColor[]; paletteMode: PaletteMode; colorCount: number;
   segmentation: SegmentationSettings; render: RenderSettings;
+  history: EditHistory;
   model: RegionModel | null; modelOwner: ModelOwner | null;
   svg: string | null; svgWidth: number; svgHeight: number;
   status: ProcessingStatus; busy: boolean; progressStage: string; progressFraction: number;
@@ -33,6 +35,8 @@ export interface AppState {
   removePaletteColor: (index: number) => void;
   setSegmentation: (patch: Partial<SegmentationSettings>) => void;
   setRender: (patch: Partial<RenderSettings>) => void;
+  undo: () => void;
+  redo: () => void;
   retry: () => void;
   dismissError: () => void;
   _setStatus: (status: ProcessingStatus, stage?: string) => void;
@@ -57,6 +61,10 @@ export function ownsPalette(state: AppState, owner: PaletteOwner) { return owner
 export function canExport(state: AppState) { return !!state.sourceBitmap && state.paletteReady && state.palette.length > 0 && !!state.svg && !!state.model && !!state.modelOwner && ownsModel(state, state.modelOwner) && state.status === 'ready' && !state.busy; }
 
 const renumber = (colors: PaletteColor[]) => colors.map((color, index) => ({ ...color, number: index + 1 }));
+const manualSeed: PaletteColor[] = [
+  [255, 255, 255], [240, 219, 79], [235, 137, 49], [208, 70, 72],
+  [89, 125, 206], [106, 190, 48], [91, 110, 225], [68, 36, 52],
+].map(([r, g, b], index) => ({ r, g, b, number: index + 1 }));
 const clearedOutput = { model: null, modelOwner: null, svg: null, svgWidth: 0, svgHeight: 0 };
 const clearedError = { error: null, errorScope: null };
 function statusPatch(status: ProcessingStatus, stage = '') {
@@ -77,18 +85,38 @@ function changedInputs(state: AppState, patch: Partial<AppState> = {}): Partial<
   return { ...clearedOutput, ...clearedError, ...patch, inputRevision: state.inputRevision + 1, ...(fileError ? { error: state.error, errorScope: state.errorScope, ...statusPatch('failed') } : statusPatch(nextStatus(next))) };
 }
 
+function changedRender(state: AppState, render: RenderSettings): Partial<AppState> {
+  const result = state.model && state.modelOwner && ownsModel(state, state.modelOwner) ? renderSvg(state.model, render) : null;
+  return { render, renderRevision: state.renderRevision + 1, ...(state.errorScope === 'export' ? clearedError : {}), ...(result ? { svg: result.svg, svgWidth: result.width, svgHeight: result.height } : {}) };
+}
+
+function restoreEdit(state: AppState, direction: 'undo' | 'redo'): Partial<AppState> {
+  const step = stepHistory(state, direction);
+  if (!step) return state;
+  const { snapshot, history } = step;
+  switch (snapshot.kind) {
+    case 'render': return { ...changedRender(state, snapshot.value), history };
+    case 'segmentation': return changedInputs(state, { segmentation: snapshot.value, history });
+    case 'palette': return changedInputs(state, {
+      ...snapshot.value, history, paletteRevision: state.paletteRevision + 1,
+      paintsLoading: snapshot.value.paletteMode === 'paints' && state.paintsLoading,
+    });
+  }
+}
+
 export const useStore = create<AppState>((set, get) => ({
   sourceBitmap: null, sourceName: null, paintsBitmap: null, paintsName: null,
   sourceRevision: 0, paintsRevision: 0, paletteRevision: 0, inputRevision: 0, renderRevision: 0,
   sourceLoading: false, paintsLoading: false, paletteReady: false,
   palette: [], paletteMode: 'source', colorCount: 12,
   segmentation: defaultSegmentation, render: defaultRender,
+  history: emptyHistory,
   ...clearedOutput, status: 'empty', busy: false, progressStage: '', progressFraction: 0,
   ...clearedError, errorAction: 'retry',
 
   beginSource: (name) => {
     const state = get(), revision = state.sourceRevision + 1, previous = state.sourceBitmap;
-    const patch: Partial<AppState> = { sourceName: name, sourceBitmap: null, sourceRevision: revision, sourceLoading: true };
+    const patch: Partial<AppState> = { sourceName: name, sourceBitmap: null, sourceRevision: revision, sourceLoading: true, history: emptyHistory };
     if (state.paletteMode === 'source') Object.assign(patch, { palette: [], paletteReady: false, paletteRevision: state.paletteRevision + 1 });
     set(changedInputs(state, patch)); closeBitmap(previous); return revision;
   },
@@ -101,7 +129,7 @@ export const useStore = create<AppState>((set, get) => ({
   },
   beginPaints: (name) => {
     const state = get(), revision = state.paintsRevision + 1, previous = state.paintsBitmap;
-    const patch: Partial<AppState> = { paintsName: name, paintsBitmap: null, paintsRevision: revision, paintsLoading: true, paletteReady: false, paletteRevision: state.paletteRevision + 1, palette: [] };
+    const patch: Partial<AppState> = { paintsName: name, paintsBitmap: null, paintsRevision: revision, paintsLoading: true, paletteReady: false, paletteRevision: state.paletteRevision + 1, palette: [], history: emptyHistory };
     set(changedInputs(state, patch)); closeBitmap(previous); return revision;
   },
   completePaints: (bitmap, revision) => {
@@ -112,30 +140,45 @@ export const useStore = create<AppState>((set, get) => ({
     set({ paintsBitmap: bitmap, paintsLoading: false, ...(unrelatedError ? {} : clearedError), ...statusPatch(unrelatedError ? 'failed' : nextStatus(next)) }); return true;
   },
   setSource: (bitmap, name) => { const state = get(); const revision = state.beginSource(name); get().completeSource(bitmap, revision); },
-  setPaletteMode: (mode) => set((state) => mode === state.paletteMode ? {} : changedInputs(state, { paletteMode: mode, paletteRevision: state.paletteRevision + 1, paletteReady: mode === 'manual' && state.palette.length > 0, paintsLoading: mode === 'paints' && state.paintsLoading })),
+  setPaletteMode: (mode) => set((state) => {
+    if (mode === state.paletteMode) return state;
+    return changedInputs(state, {
+      paletteMode: mode, paletteRevision: state.paletteRevision + 1,
+      palette: mode === 'manual' && !state.palette.length ? manualSeed : state.palette,
+      paletteReady: mode === 'manual', paintsLoading: mode === 'paints' && state.paintsLoading,
+      history: recordEdit(state, 'palette'),
+    });
+  }),
   setColorCount: (count) => set((state) => {
     const value = Math.max(2, Math.min(48, Math.round(count)));
     if (value === state.colorCount) return {};
-    return state.paletteMode === 'manual' ? { colorCount: value } : changedInputs(state, { colorCount: value, paletteReady: false, paletteRevision: state.paletteRevision + 1 });
+    const patch = { colorCount: value, history: recordEdit(state, 'palette', 'colorCount') };
+    return state.paletteMode === 'manual' ? patch : changedInputs(state, { ...patch, paletteReady: false, paletteRevision: state.paletteRevision + 1 });
   }),
-  setPalette: (palette) => set((state) => changedInputs(state, { palette: renumber(palette), paletteReady: true, paletteRevision: state.paletteRevision + 1 })),
+  setPalette: (palette) => set((state) => changedInputs(state, { palette: renumber(palette), paletteReady: true, paletteRevision: state.paletteRevision + 1, history: recordEdit(state, 'palette') })),
   updatePaletteColor: (index, patch) => set((state) => {
     const palette = state.palette.slice(); if (!palette[index]) return {};
+    if (Object.entries(patch).every(([key, value]) => palette[index][key as keyof PaletteColor] === value)) return state;
     palette[index] = { ...palette[index], ...patch };
-    return changedInputs(state, { palette, paletteReady: true, paletteRevision: state.paletteRevision + 1 });
+    return changedInputs(state, { palette, paletteReady: true, paletteRevision: state.paletteRevision + 1, history: recordEdit(state, 'palette', `color:${index}`) });
   }),
   addPaletteColor: () => get().setPalette([...get().palette, { number: 0, r: 128, g: 128, b: 128 }]),
   removePaletteColor: (index) => get().setPalette(get().palette.filter((_, i) => i !== index)),
   setSegmentation: (patch) => set((state) => {
     if (Object.entries(patch).every(([key, value]) => state.segmentation[key as keyof SegmentationSettings] === value)) return {};
-    return changedInputs(state, { segmentation: { ...state.segmentation, ...patch } });
+    const key = Object.keys(patch).join(',');
+    const group = key === 'smoothing' || key === 'minShapeSize' ? `segmentation:${key}` : undefined;
+    return changedInputs(state, { segmentation: { ...state.segmentation, ...patch }, history: recordEdit(state, 'segmentation', group) });
   }),
   setRender: (patch) => {
     const state = get(), render = { ...state.render, ...patch };
     if (Object.entries(patch).every(([key, value]) => state.render[key as keyof RenderSettings] === value)) return;
-    const result = state.model && state.modelOwner && ownsModel(state, state.modelOwner) ? renderSvg(state.model, render) : null;
-    set({ render, renderRevision: state.renderRevision + 1, ...(state.errorScope === 'export' ? clearedError : {}), ...(result ? { svg: result.svg, svgWidth: result.width, svgHeight: result.height } : {}) });
+    const key = Object.keys(patch).join(',');
+    const group = Object.keys(patch).length === 1 && typeof Object.values(patch)[0] !== 'boolean' ? `render:${key}` : undefined;
+    set({ ...changedRender(state, render), history: recordEdit(state, 'render', group) });
   },
+  undo: () => set((state) => restoreEdit(state, 'undo')),
+  redo: () => set((state) => restoreEdit(state, 'redo')),
   retry: () => set((state) => changedInputs(state, { paletteRevision: state.paletteRevision + (state.paletteReady ? 0 : 1) })),
   dismissError: () => set(clearedError),
   _setStatus: (status, stage) => set(statusPatch(status, stage)),
@@ -164,7 +207,7 @@ export const useStore = create<AppState>((set, get) => ({
   },
   _releaseInputs: () => {
     const state = get();
-    set({ ...clearedOutput, ...clearedError, sourceBitmap: null, sourceName: null, paintsBitmap: null, paintsName: null, sourceLoading: false, paintsLoading: false, sourceRevision: state.sourceRevision + 1, paintsRevision: state.paintsRevision + 1, inputRevision: state.inputRevision + 1, paletteRevision: state.paletteRevision + 1, palette: state.paletteMode === 'manual' ? state.palette : [], paletteReady: state.paletteMode === 'manual' && state.palette.length > 0, ...statusPatch('empty') });
+    set({ ...clearedOutput, ...clearedError, sourceBitmap: null, sourceName: null, paintsBitmap: null, paintsName: null, sourceLoading: false, paintsLoading: false, sourceRevision: state.sourceRevision + 1, paintsRevision: state.paintsRevision + 1, inputRevision: state.inputRevision + 1, paletteRevision: state.paletteRevision + 1, palette: state.paletteMode === 'manual' ? state.palette : [], paletteReady: state.paletteMode === 'manual' && state.palette.length > 0, history: emptyHistory, ...statusPatch('empty') });
     closeBitmap(state.sourceBitmap); closeBitmap(state.paintsBitmap);
   },
 }));

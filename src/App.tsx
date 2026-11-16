@@ -12,30 +12,19 @@ import { useTheme } from './hooks/useTheme';
 import { ThemeControl } from './components/ThemeControl';
 import { SidebarSection } from './components/ui/SidebarSection';
 import { Icon } from './components/ui/Icon';
-
-const DEFAULT_MANUAL_PALETTE: Array<{ r: number; g: number; b: number }> = [
-  { r: 255, g: 255, b: 255 },
-  { r: 240, g: 219, b: 79 },
-  { r: 235, g: 137, b: 49 },
-  { r: 208, g: 70, b: 72 },
-  { r: 89, g: 125, b: 206 },
-  { r: 106, g: 190, b: 48 },
-  { r: 91, g: 110, b: 225 },
-  { r: 68, g: 36, b: 52 },
-];
+import { HistoryButtons, useHistoryShortcuts } from './components/HistoryButtons';
 
 export default function App() {
   const pipeline = usePipeline();
   const { loadSource, loadPaints, retry } = pipeline;
+  useHistoryShortcuts();
 
   const sourceBitmap = useStore((s) => s.sourceBitmap);
   const paletteMode = useStore((s) => s.paletteMode);
-  const palette = useStore((s) => s.palette);
   const status = useStore((s) => s.status);
   const stage = useStore((s) => s.progressStage);
   const fraction = useStore((s) => s.progressFraction);
   const model = useStore((s) => s.model);
-  const setPalette = useStore((s) => s.setPalette);
   const sourceName = useStore((s) => s.sourceName);
   const error = useStore((s) => s.error);
   const theme = useTheme();
@@ -131,19 +120,13 @@ export default function App() {
     [loadPaints],
   );
 
-  // Seed a default palette when switching to manual with nothing set.
-  useEffect(() => {
-    if (paletteMode === 'manual' && palette.length === 0) {
-      setPalette(DEFAULT_MANUAL_PALETTE.map((c, i) => ({ number: i + 1, ...c })));
-    }
-  }, [paletteMode, palette.length, setPalette]);
-
   return (
     <div className="app">
       <header className="app-header">
         <div className="header-brand">
           <button ref={sidebarButtonRef} type="button" className="icon-button" aria-label={sidebarOpen ? 'Hide settings' : 'Show settings'} title={sidebarOpen ? 'Hide settings' : 'Show settings'} aria-expanded={sidebarOpen} aria-controls="settings-sidebar" onClick={() => setSidebarOpen((open) => !open)}><Icon name="panel" size={19} /></button>
           <span className="brand">Pictora</span>
+          <HistoryButtons />
         </div>
         <div className="header-document">
           <span className="document-name" title={sourceName ?? 'Untitled image'}>{sourceName ?? 'Untitled image'}</span>
@@ -159,7 +142,7 @@ export default function App() {
       <div className={`app-body${sidebarOpen ? '' : ' sidebar-collapsed'}`}>
         {sidebarOpen && <button className="sidebar-backdrop" type="button" tabIndex={-1} aria-label="Dismiss settings overlay" onClick={() => setSidebarOpen(false)} />}
         <aside ref={sidebarRef} id="settings-sidebar" className="settings-sidebar" tabIndex={-1} role={narrow ? 'dialog' : undefined} aria-modal={narrow && sidebarOpen ? true : undefined} aria-label="Image settings">
-          <div className="sidebar-heading"><h2>Image settings</h2><button type="button" className="icon-button sidebar-close" aria-label="Close settings" onClick={() => { setSidebarOpen(false); sidebarButtonRef.current?.focus(); }}><Icon name="close" size={17} /></button></div>
+          <div className="sidebar-heading"><h2>Image settings</h2>{narrow && sidebarOpen && <HistoryButtons />}<button type="button" className="icon-button sidebar-close" aria-label="Close settings" onClick={() => { setSidebarOpen(false); sidebarButtonRef.current?.focus(); }}><Icon name="close" size={17} /></button></div>
           <div className="sidebar-content">
             <SidebarSection title="Source image">
               <ImageUploader label="Add your image" inputLabel="Source image file" inputRef={sourceInputRef} onFile={handleSource} previewUrl={previewUrl} fileName={sourceName} dimensions={sourceBitmap} />

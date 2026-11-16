@@ -80,6 +80,51 @@ try {
 
       await open(page, 'Output styling');
       const numbers = page.getByRole('switch', {name: 'Show numbers', exact: true});
+      const undo = page.getByRole('button', {name: 'Undo', exact: true});
+      const redo = page.getByRole('button', {name: 'Redo', exact: true});
+      const modifier = process.platform === 'darwin' ? 'Meta' : 'Control';
+      assert(await undo.isDisabled() && await redo.isDisabled(), 'A newly opened source should have no edit history');
+      await numbers.uncheck();
+      await undo.click();
+      assert(await numbers.isChecked() && await redo.isEnabled(), 'Undo should restore the numbers');
+      await redo.click();
+      assert(!await numbers.isChecked(), 'Redo should hide the numbers again');
+      await page.keyboard.press(`${modifier}+z`);
+      assert(await numbers.isChecked(), 'Undo keyboard shortcut should restore numbers');
+      await numbers.uncheck();
+      assert(await redo.isDisabled(), 'A different edit after undo should clear redo');
+      await page.keyboard.press(`${modifier}+z`);
+      await page.keyboard.press(process.platform === 'darwin' ? 'Meta+Shift+z' : 'Control+y');
+      assert(!await numbers.isChecked(), 'Redo keyboard shortcut should restore the edit');
+      await undo.click();
+
+      await open(page, 'Region generation');
+      await range(page, 'Smoothing / complexity', 65);
+      await ready(page);
+      await undo.click();
+      await ready(page);
+      assert.equal(await page.getByLabel('Smoothing / complexity').inputValue(), '40');
+      await redo.click();
+      await ready(page);
+      assert.equal(await page.getByLabel('Smoothing / complexity').inputValue(), '65');
+
+      await page.getByRole('button', {name: 'Manual', exact: true}).click();
+      await ready(page);
+      const swatch = page.getByLabel('Edit color 1', {exact: true});
+      const previousColor = await swatch.inputValue();
+      await swatch.fill('#13579b');
+      await ready(page);
+      await undo.click();
+      await ready(page);
+      assert.equal(await swatch.inputValue(), previousColor);
+      await redo.click();
+      await ready(page);
+      assert.equal(await swatch.inputValue(), '#13579b');
+
+      await page.reload();
+      await upload(page, 'research/m1/fixtures/complex.png');
+      await ready(page);
+      await open(page, 'Output styling');
       assert.equal(await page.getByRole('switch', {name: 'Show outlines', exact: true}).count(), 0);
       assert(await numbers.isChecked(), 'Numbers should start on');
       await page.getByRole('switch', {name: 'Color preview fill', exact: true}).check();
@@ -108,8 +153,18 @@ try {
       }
       assert.deepEqual(errors, []);
       assert.deepEqual(external, []);
+      await page.setViewportSize({width: 375, height: 800});
+      await page.getByRole('button', {name: 'Show settings'}).click();
+      const drawer = page.getByRole('dialog', {name: 'Image settings'});
+      assert(await drawer.getByRole('button', {name: 'Undo', exact: true}).isEnabled());
+      await drawer.getByRole('button', {name: 'Undo', exact: true}).click();
+      assert(await drawer.getByRole('button', {name: 'Redo', exact: true}).isEnabled());
+      await drawer.getByRole('button', {name: 'Close settings'}).click();
+      await upload(page, 'research/m1/fixtures/gradient.png');
+      assert(await undo.isDisabled() && await redo.isDisabled(), 'A replacement photo must clear history');
+      await ready(page);
       result.status = 'PASS';
-      console.log(`${process.platform} ${channel} ${result.version}: default SVG matched; the preview, SVG and PNG retained outlines with numbers on or off`);
+      console.log(`${process.platform} ${channel} ${result.version}: undo/redo buttons, shortcuts, palette, settings, narrow layout and offline exports passed`);
     } finally {
       await browser.close();
     }

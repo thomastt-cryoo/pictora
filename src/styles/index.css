@@ -56,6 +56,10 @@ button, input, select, summary { scroll-margin: 20px; }
 .app { display: grid; grid-template-rows: var(--header-height) minmax(0,1fr); height: 100%; height: 100dvh; min-height: 320px; background: var(--surface); }
 .app-header { display: grid; grid-template-columns: auto minmax(0,1fr) auto; align-items: center; gap: 24px; padding: 0 24px 0 18px; border-bottom: 1px solid var(--border); z-index: 5; background: var(--surface); }
 .header-brand { display: flex; align-items: center; gap: 16px; }
+.history-buttons { display: flex; align-items: center; gap: 2px; }
+.history-buttons .icon-button { width: auto; min-width: 32px; padding: 0 7px; gap: 5px; font-size: 12px; }
+.sidebar-heading .history-buttons { margin-left: auto; }
+.sidebar-heading .history-buttons span { display: none; }
 .brand { font-size: 21px; line-height: 1; letter-spacing: -.8px; font-weight: 600; }
 .icon-button { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; padding: 0; border: 0; border-radius: var(--radius); background: transparent; }
 .icon-button:not(:disabled):hover { background: var(--surface-hover); }
@@ -219,5 +223,6 @@ input[type='range']::-moz-range-thumb { width: 11px; height: 11px; border: 0; ba
   .zoom-controls .toolbar-divider { margin: 0 4px; }
 }
 @media (max-width: 390px) { .workspace-toolbar { padding: 0 10px; } .zoom-value { width: 34px; } .view-tabs button { padding: 7px 6px; } .workspace-message h1 { font-size: 27px; } }
+@media (max-width: 480px) { .header-brand .history-buttons span { display: none; } }
 @media (hover: none) { .remove-color { opacity: 1; } }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; } }
