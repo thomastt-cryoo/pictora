@@ -9,3 +9,4 @@ research/m6/** -text
 release/windows/** -text
 research/m7/** -text
 release/candidates/m7-browser/** -text
+release/candidates/m7-browser-output-controls/** -text

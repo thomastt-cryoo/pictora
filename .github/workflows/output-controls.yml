@@ -1,0 +1,37 @@
+name: Pictora output controls
+on:
+  push:
+    branches: [codex/pictora-output-controls]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  browser:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, macos-15]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      - run: npm run build
+      - name: Install browser test tooling
+        shell: bash
+        run: |
+          npm install --prefix .build-tools/output-controls --no-audit --no-fund playwright@1.62.1
+          echo "PICTORA_PLAYWRIGHT_PATH=$GITHUB_WORKSPACE/.build-tools/output-controls/node_modules/playwright" >> "$GITHUB_ENV"
+      - name: Test the offline HTML in Chrome and Edge
+        run: node research/output-controls/browser-check.mjs
+      - uses: actions/upload-artifact@v4
+        if: ${{ always() }}
+        with:
+          name: output-controls-${{ runner.os }}-${{ runner.arch }}
+          path: .build-tools/output-controls-evidence/
+          include-hidden-files: true

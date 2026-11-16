@@ -6,7 +6,7 @@ import {createHash} from 'node:crypto';
 import {createZip} from './zip.mjs';
 import {compatibilityGate} from './compatibility.mjs';
 
-export async function buildOffline({outputDirectory=resolve('release/browser')}={}){
+export async function buildOffline({outputDirectory=resolve('release/candidates/m7-browser-output-controls')}={}){
  const previousEnvironment=process.env.NODE_ENV;
  let result;
  try{

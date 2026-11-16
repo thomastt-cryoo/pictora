@@ -1,12 +1,12 @@
 import { useId } from 'react';
 import { useStore } from '../state/store';
-import { Slider, ColorField } from './ui/Fields';
+import { Slider, ColorField, Toggle } from './ui/Fields';
 import { SidebarSection } from './ui/SidebarSection';
 export function ControlsPanel() {
   const seg = useStore((state) => state.segmentation), render = useStore((state) => state.render);
   const width = useStore((state) => state.svgWidth), height = useStore((state) => state.svgHeight);
   const setSegmentation = useStore((state) => state.setSegmentation), setRender = useStore((state) => state.setRender);
-  const resolutionId = useId(), previewId = useId();
+  const resolutionId = useId();
   return <>
     <SidebarSection title="Region generation" defaultOpen={false}>
       <Slider label="Smoothing / complexity" value={seg.smoothing} min={0} max={100} onChange={(value) => setSegmentation({ smoothing: value })} />
@@ -16,12 +16,19 @@ export function ControlsPanel() {
     </SidebarSection>
     <SidebarSection title="Output styling" defaultOpen={false}>
       <ColorField label="Background color" value={render.backgroundColor} onChange={(value) => setRender({ backgroundColor: value })} />
-      <ColorField label="Line color" value={render.lineColor} onChange={(value) => setRender({ lineColor: value })} />
-      <Slider label="Line thickness" value={render.lineThickness} min={0.25} max={6} step={0.25} suffix=" px" onChange={(value) => setRender({ lineThickness: value })} />
-      <ColorField label="Label color" value={render.labelColor} onChange={(value) => setRender({ labelColor: value })} />
-      <Slider label="Label size" value={render.labelFontSize} min={4} max={40} suffix=" px" onChange={(value) => setRender({ labelFontSize: value })} />
-      <div className="field toggle-field"><label htmlFor={previewId}>Color preview fill</label><input id={previewId} className="switch" type="checkbox" role="switch" checked={render.showColorPreview} onChange={(event) => setRender({ showColorPreview: event.target.checked })} /></div>
+      <Toggle label="Show outlines" checked={render.showOutlines} onChange={(showOutlines) => setRender({ showOutlines })} />
+      {render.showOutlines && <>
+        <ColorField label="Line color" value={render.lineColor} onChange={(value) => setRender({ lineColor: value })} />
+        <Slider label="Line thickness" value={render.lineThickness} min={0.25} max={6} step={0.25} suffix=" px" onChange={(value) => setRender({ lineThickness: value })} />
+      </>}
+      <Toggle label="Show numbers" checked={render.showNumbers} onChange={(showNumbers) => setRender({ showNumbers })} />
+      {render.showNumbers && <>
+        <ColorField label="Label color" value={render.labelColor} onChange={(value) => setRender({ labelColor: value })} />
+        <Slider label="Label size" value={render.labelFontSize} min={4} max={40} suffix=" px" onChange={(value) => setRender({ labelFontSize: value })} />
+      </>}
+      <Toggle label="Color preview fill" checked={render.showColorPreview} onChange={(showColorPreview) => setRender({ showColorPreview })} />
       {render.showColorPreview && <Slider label="Preview opacity" value={Math.round(render.previewOpacity * 100)} min={5} max={100} suffix="%" onChange={(value) => setRender({ previewOpacity: value / 100 })} />}
+      {!render.showOutlines && !render.showNumbers && !render.showColorPreview && <p className="hint">Turn on Color preview fill to show the colored shapes.</p>}
     </SidebarSection>
     <SidebarSection title="Canvas & output" meta={`${render.outputWidth.toLocaleString()} px`} defaultOpen={false}>
       <Slider label="Canvas width" value={render.outputWidth} min={600} max={6000} step={100} suffix=" px" onChange={(value) => setRender({ outputWidth: value })} />

@@ -42,8 +42,10 @@ const seg: SegmentationSettings = {
 const render: RenderSettings = {
   outputWidth: 1200,
   backgroundColor: '#ffffff',
+  showOutlines: true,
   lineColor: '#222222',
   lineThickness: 1.5,
+  showNumbers: true,
   labelColor: '#777777',
   labelFontSize: 16,
   showColorPreview: false,

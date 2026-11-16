@@ -7,13 +7,16 @@ PICTORA — OFFLINE BROWSER EDITION
 3. Let Pictora prepare its colors and template. Adjust the colors and detail
    settings to suit your picture. You can also use a manual palette or a
    photograph of your paints.
-4. Choose Export SVG or Export PNG. Your browser saves the finished template.
+4. Under Output styling, turn Show outlines or Show numbers off to hide them in
+   the template and exports. For a color-only result, turn both off, turn Color
+   preview fill on, and set Preview opacity to 100%.
+5. Choose Export SVG or Export PNG. Your browser saves the finished template.
 
 All image processing happens on your computer. No internet connection,
 account, installation or activation is required. Pictora.html works by itself.
 
-Use a current desktop version of Chrome or Edge. Windows Chrome and Edge were
-verified for this edition. Other browsers and operating systems are unverified.
+Use Google Chrome or Microsoft Edge on Windows or macOS. On a Mac, use the
+browser's Open file command if double-clicking opens Safari. Safari is unverified.
 Your browser may remember the theme for this file; storage preferences can vary.
 
 Large photos and high-resolution PNGs need more memory. If an export fails,

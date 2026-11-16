@@ -92,9 +92,11 @@ export interface RenderSettings {
   /** Output width in px (height derived from aspect ratio). */
   outputWidth: number;
   backgroundColor: string;
+  showOutlines: boolean;
   lineColor: string;
   /** Stroke width in output px. */
   lineThickness: number;
+  showNumbers: boolean;
   labelColor: string;
   /** Label font size in output px (auto-shrinks to fit small regions). */
   labelFontSize: number;

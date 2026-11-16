@@ -11,6 +11,17 @@ export function Slider({ label, value, min, max, step = 1, suffix = '', onChange
     <input id={id} type="range" aria-label={label} min={min} max={max} step={step} value={value} onChange={(event) => onChange(Number(event.target.value))} />
   </div>;
 }
+
+export function Toggle({ label, checked, onChange }: {
+  label: string; checked: boolean; onChange: (checked: boolean) => void;
+}) {
+  const id = useId();
+  return <div className="field toggle-field">
+    <label htmlFor={id}>{label}</label>
+    <input id={id} className="switch" type="checkbox" role="switch" checked={checked} onChange={(event) => onChange(event.target.checked)} />
+  </div>;
+}
+
 export function ColorField({ label, value, onChange }: { label: string; value: string; onChange: (value: string) => void }) {
   const id = useId();
   const [draft, setDraft] = useState(value);

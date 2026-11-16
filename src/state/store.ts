@@ -48,7 +48,7 @@ export interface AppState {
 }
 
 export const defaultSegmentation: SegmentationSettings = { workingResolution: 1000, smoothing: 40, minShapeSize: 80, connectivity: 4 };
-export const defaultRender: RenderSettings = { outputWidth: 1600, backgroundColor: '#ffffff', lineColor: '#333333', lineThickness: 1, labelColor: '#888888', labelFontSize: 12, showColorPreview: false, previewOpacity: 0.25 };
+export const defaultRender: RenderSettings = { outputWidth: 1600, backgroundColor: '#ffffff', showOutlines: true, lineColor: '#333333', lineThickness: 1, showNumbers: true, labelColor: '#888888', labelFontSize: 12, showColorPreview: false, previewOpacity: 0.25 };
 
 export function closeBitmap(bitmap: ImageBitmap | null) { try { bitmap?.close?.(); } catch { /* Closing an already detached bitmap is harmless. */ } }
 export function modelOwner(state: AppState): ModelOwner { return { sourceRevision: state.sourceRevision, inputRevision: state.inputRevision, sourceName: state.sourceName ?? '' }; }

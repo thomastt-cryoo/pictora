@@ -58,36 +58,39 @@ export function renderSvg(model: RegionModel, settings: RenderSettings): SvgResu
     parts.push('</g>');
   }
 
-  // Region outlines.
-  parts.push(
-    `<g fill="none" stroke="${escapeXml(settings.lineColor)}" stroke-width="${stroke.toFixed(3)}" ` +
-      `stroke-linejoin="round" fill-rule="evenodd">`,
-  );
-  for (const shape of model.shapes) {
-    const d = shape.rings.map(ringToPath).join(' ');
-    parts.push(`<path d="${d}"/>`);
+  if (settings.showOutlines) {
+    parts.push(
+      `<g fill="none" stroke="${escapeXml(settings.lineColor)}" stroke-width="${stroke.toFixed(3)}" ` +
+        `stroke-linejoin="round" fill-rule="evenodd">`,
+    );
+    for (const shape of model.shapes) {
+      const d = shape.rings.map(ringToPath).join(' ');
+      parts.push(`<path d="${d}"/>`);
+    }
+    parts.push('</g>');
   }
-  parts.push('</g>');
 
   // Number labels. Skip regions whose inscribed circle can't hold the number,
   // and shrink the font to fit tighter regions.
-  parts.push(
-    `<g fill="${escapeXml(settings.labelColor)}" font-family="Arial, Helvetica, sans-serif" ` +
-      `text-anchor="middle" dominant-baseline="central">`,
-  );
-  for (const shape of model.shapes) {
-    if (!shape.label) continue;
-    const text = String(shape.label.number);
-    // Approx half-height a glyph needs; require the inscribed radius to exceed it.
-    const digits = text.length;
-    const fitFont = Math.min(baseFont, (shape.label.radius * 1.8) / Math.max(1, digits * 0.5));
-    if (fitFont < baseFont * 0.35 || shape.label.radius < baseFont * 0.35) continue;
+  if (settings.showNumbers) {
     parts.push(
-      `<text x="${shape.label.x.toFixed(2)}" y="${shape.label.y.toFixed(2)}" ` +
-        `font-size="${fitFont.toFixed(2)}">${escapeXml(text)}</text>`,
+      `<g fill="${escapeXml(settings.labelColor)}" font-family="Arial, Helvetica, sans-serif" ` +
+        `text-anchor="middle" dominant-baseline="central">`,
     );
+    for (const shape of model.shapes) {
+      if (!shape.label) continue;
+      const text = String(shape.label.number);
+      // Approx half-height a glyph needs; require the inscribed radius to exceed it.
+      const digits = text.length;
+      const fitFont = Math.min(baseFont, (shape.label.radius * 1.8) / Math.max(1, digits * 0.5));
+      if (fitFont < baseFont * 0.35 || shape.label.radius < baseFont * 0.35) continue;
+      parts.push(
+        `<text x="${shape.label.x.toFixed(2)}" y="${shape.label.y.toFixed(2)}" ` +
+          `font-size="${fitFont.toFixed(2)}">${escapeXml(text)}</text>`,
+      );
+    }
+    parts.push('</g>');
   }
-  parts.push('</g>');
 
   parts.push('</svg>');
 
